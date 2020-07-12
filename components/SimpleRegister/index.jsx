@@ -12,10 +12,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import ResponsiveImage from "../ResponsiveImage";
+
 export default function SimpleRegister() {
 	return (
 		<div className="grid grid-cols-12 justify-center mb-16">
-			<div className="col-span-3 hidden md:block"></div>
+			<div className="col-span-3 hidden md:block">
+				<ResponsiveImage
+					publicId={"kingdom-8.svg"}
+					height={1000}
+				/>
+			</div>
 			<form className="col-span-10 col-start-2 md:col-start-0 md:col-span-6">
 				<div className="grid grid-cols-12 items-center">
 					<div className="col-span-7 md:col-span-8">

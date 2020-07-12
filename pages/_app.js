@@ -16,6 +16,7 @@
 // TODO: Add facebook pixel
 
 import '../css/main.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 // import ReactPixel from 'react-facebook-pixel';
 
 

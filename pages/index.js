@@ -4,6 +4,7 @@ import {head} from '../locales/pages/index.json'
 import Container from "../components/Container";
 import BannerWelcome from "../components/BannerWelcome";
 import SimpleRegister from "../components/SimpleRegister";
+import ResponsiveImage from "../components/ResponsiveImage";
 
 export default function Home() {
 	return (
