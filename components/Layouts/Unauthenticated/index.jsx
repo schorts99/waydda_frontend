@@ -17,8 +17,13 @@ import Head from "next/head";
 import es from '../../../locales/layouts/es.json'
 import UnAuthenticatedHeader from "../../Headers/UnAuthenticaed";
 import Footer from "../../Footer";
+import {useState} from "react";
+import Sidebar from "../../SideBar";
 
 export default function LayoutUnAuthenticated({children, head, withHeader}) {
+	
+	const [openSidebar, setOpenSidebar] = useState(false);
+	
 	return (
 		<>
 			<Head>
@@ -26,8 +31,15 @@ export default function LayoutUnAuthenticated({children, head, withHeader}) {
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<main>
+				<Sidebar locales={es.sidebar} isOpen={openSidebar}/>
 				{withHeader &&
-				<UnAuthenticatedHeader elements={es.header.elements}/>
+				<UnAuthenticatedHeader
+					toggleSidebar={() => {
+						setOpenSidebar(!openSidebar)
+					}}
+					isSidebarOpen={openSidebar}
+					elements={es.header.elements}
+				/>
 				}
 				{children}
 			</main>

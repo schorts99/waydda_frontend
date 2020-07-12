@@ -14,16 +14,26 @@
 
 import PropTypes from 'prop-types'
 import Link from "next/link";
+import HamburgerMenu from 'react-hamburger-menu';
 
-export default function UnAuthenticatedHeader({elements}) {
+
+export default function UnAuthenticatedHeader({elements, isSidebarOpen, toggleSidebar}) {
 	return (
 		<header className="grid grid-cols-12 gap-4 px-8 bg-white py-5 items-center">
-			<div className="col-span-10 md:col-span-2">
-				<h2 className="font-title text-2xl font-extrabold">
+			<div className="col-span-8 md:col-span-2">
+				<h2 className="font-title text-2xl font-extrabold z-20">
 					<Link href="/">
 						<a>Waydda QR</a>
 					</Link>
 				</h2>
+			</div>
+			<div className="col-span-4 flex justify-end block md:hidden z-20">
+				<HamburgerMenu
+					isOpen={isSidebarOpen}
+					menuClicked={toggleSidebar}
+					width={20}
+					height={14}
+				/>
 			</div>
 			<div className="col-span-4 hidden md:block">
 				<div className="grid grid-cols-12 gap-4">
@@ -37,6 +47,7 @@ export default function UnAuthenticatedHeader({elements}) {
 					))}
 				</div>
 			</div>
+			
 			<div className="col-span-6 hidden md:block">
 				<div className="grid grid-cols-12 items-center ">
 					<div className="col-span-3 col-start-3 text-center">

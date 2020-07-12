@@ -15,9 +15,10 @@
 import PropTypes from 'prop-types'
 
 export default function Container({children, size}) {
+	console.log("S", size)
 	return (
-		<div className={`grid grid-cols-12 ${size === "small" ? "px-6 md:px-12" : ""}`}>
-			<div className={`${size === "small" ? "col-span-12" : "col-span-10 col-start-2"}`}>
+		<div className={`grid grid-cols-12 ${size === "small" ? "" : "px-6 md:px-12"}`}>
+			<div className={`${size === "small" ? "col-span-10 col-start-2" : "col-span-12"}`}>
 				{children}
 			</div>
 		</div>
@@ -25,10 +26,10 @@ export default function Container({children, size}) {
 }
 
 Container.propTypes = {
-  children: PropTypes.any.isRequired,
-  size: PropTypes.any
+	children: PropTypes.any.isRequired,
+	size: PropTypes.any
 }
 
 Container.defaultProps = {
-  size: "small"
+	size: ""
 }

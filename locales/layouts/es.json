@@ -2,6 +2,38 @@
   "head": {
     "title": "Lo local en la palma de tu mano"
   },
+  "sidebar": {
+    "items": [
+      {
+        "label": "Inicio",
+        "href": "/"
+      },
+      {
+        "label": "Funciones",
+        "href": "/services"
+      },
+      {
+        "label": "Precio",
+        "href": "/"
+      },
+      {
+        "label": "Iniciar sesión",
+        "href": "/sign-in",
+        "featured": true
+      },
+      {
+        "label": "Registrarse",
+        "href": "/sign-up",
+        "featured": true
+      },
+      {
+        "label": "AzaChii",
+        "href": "https://azachii.dev/?ref=waydda-qr",
+        "isExternal": true,
+        "featured": true
+      }
+    ]
+  },
   "header": {
     "elements": [
       {

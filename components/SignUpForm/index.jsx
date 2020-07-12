@@ -14,25 +14,26 @@
 
 import Link from "next/link";
 
-export default function SignInForm() {
+export default function SignUpForm() {
 	return (
 		<div className="grid grid-cols-12 my-8 md:my-12">
 			<div className="col-span-12 mb-12 md:text-center">
-				<h1 className="text-2xl font-bold font-title">Bienvenido de nuevo</h1>
+				<h1 className="text-2xl font-bold font-title">¡Registrarse es gratis!</h1>
 			</div>
 			<div className="col-span-12">
 				<Input placeholder="Jonh Doe" type={"text"} label={"Nombre completo"}/>
 				<Input placeholder="jonhdoe@empresa.com" type={"email"} label={"Correo electrónico"}/>
+				<Input placeholder="******" type={"password"} label={"Contraseña"}/>
 				<div className="col-span-12">
 					<button
 						disabled={true}
 						className="cursor-not-allowed bg-black md:w-auto w-full text-white text-white font-bold py-4 rounded mt-5 shadow-2xl px-5">
-						INICIAR SESIÓN
+						REGISTRARSE
 					</button>
 				</div>
 				<div className="col-span-12 mt-8">
-					<Link href={"/sign-up"}>
-						<a>¿Aún no tienes cuenta? <span className="font-bold" >&#160;Registrate</span></a>
+					<Link href={"/sign-in"}>
+						<a>¿Ya tienes cuenta? <span className="font-bold">&#160;Inicia sesión</span></a>
 					</Link>
 				</div>
 			</div>

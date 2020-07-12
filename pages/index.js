@@ -15,10 +15,10 @@ export default function Home() {
 		>
 			<BannerWelcome title={"El camino a la nueva normalidad"}/>
 			<SimpleRegister/>
-			<Container size={"small"}>
+			<Container>
 				<HowItWork/>
 			</Container>
-			<Container size={"small"}>
+			<Container>
 				<RetailBanner/>
 			</Container>
 		</LayoutUnAuthenticated>
