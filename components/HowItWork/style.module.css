@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) AzaChii and its affiliates. All Rights Reserved.
+ *
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ *
+ * Proprietary and confidential
+ *
+ * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ *
+ * https://azachii.dev
+ *
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+.box_shadow {
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+.shadow_box::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    bottom: -0.555556rem;
+    right: -10px;
+    right: -0.555556rem;
+    height: calc(100% - 46PX);
+    width: calc(100% - 37PX);
+    background-color: #1d1d1d;
+    z-index: -1;
+    border-radius: 2px;
+    -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+    transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
+    background-color: #000;
+}

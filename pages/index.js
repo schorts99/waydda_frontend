@@ -5,6 +5,7 @@ import Container from "../components/Container";
 import BannerWelcome from "../components/BannerWelcome";
 import SimpleRegister from "../components/SimpleRegister";
 import ResponsiveImage from "../components/ResponsiveImage";
+import HowItWork from "../components/HowItWork";
 
 export default function Home() {
 	return (
@@ -13,6 +14,9 @@ export default function Home() {
 		>
 			<BannerWelcome title={"El camino a la nueva normalidad"}/>
 			<SimpleRegister/>
+			<Container size={"small"}>
+				<HowItWork/>
+			</Container>
 		</LayoutUnAuthenticated>
 	)
 }

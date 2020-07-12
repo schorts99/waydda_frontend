@@ -13,10 +13,11 @@
  */
 
 import PropTypes from 'prop-types'
-export default function Container({children}) {
+
+export default function Container({children, size}) {
 	return (
-		<div className="grid grid-cols-12">
-			<div className="col-span-10 col-start-2">
+		<div className={`grid grid-cols-12 ${size === "small" ? "px-6 md:px-12" : ""}`}>
+			<div className={`${size === "small" ? "col-span-12" : "col-span-10 col-start-2"}`}>
 				{children}
 			</div>
 		</div>
@@ -24,5 +25,10 @@ export default function Container({children}) {
 }
 
 Container.propTypes = {
-  children: PropTypes.any.isRequired
+  children: PropTypes.any.isRequired,
+  size: PropTypes.any
+}
+
+Container.defaultProps = {
+  size: "small"
 }
