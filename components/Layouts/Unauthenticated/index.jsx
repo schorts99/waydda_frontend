@@ -16,6 +16,7 @@ import PropTypes from 'prop-types'
 import Head from "next/head";
 import es from '../../../locales/layouts/es.json'
 import UnAuthenticatedHeader from "../../Headers/UnAuthenticaed";
+import Footer from "../../Footer";
 
 export default function LayoutUnAuthenticated({children, head}) {
 	return (
@@ -28,6 +29,7 @@ export default function LayoutUnAuthenticated({children, head}) {
 				<UnAuthenticatedHeader elements={es.header.elements}/>
 				{children}
 			</main>
+			<Footer  locales={es.footer} />
 		</>
 	)
 }

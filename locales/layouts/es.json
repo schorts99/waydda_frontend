@@ -18,5 +18,20 @@
         "featured": true
       }
     ]
+  },
+  "footer": {
+    "services": {
+      "title": "Servicios"
+    },
+    "about": {
+      "title": "Acerca de",
+      "podcast": "https://open.spotify.com/show/7f2lgmXd7JpPrGxJkxe6nq?si=R8Br6y3dTvGN7YKogtf41w",
+      "blog": "https://medium.com/los-nunca-nunca-del-emprendedor",
+      "channel": "https://azachii.slack.com/archives/C015LEGLL6S"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "hello@azachii.dev"
+    }
   }
 }
