@@ -18,14 +18,14 @@ import Link from "next/link";
 export default function UnAuthenticatedHeader({elements}) {
 	return (
 		<header className="grid grid-cols-12 gap-4 px-8 bg-white py-5 items-center">
-			<div className="col-span-2">
+			<div className="col-span-10 md:col-span-2">
 				<h2 className="font-title text-2xl font-extrabold">
 					<Link href="/">
 						<a>Waydda QR</a>
 					</Link>
 				</h2>
 			</div>
-			<div className="col-span-4">
+			<div className="col-span-4 hidden md:block">
 				<div className="grid grid-cols-12 gap-4">
 					{elements.map((item, k) => (
 						<div key={k} className="col-span-4 text-center">
@@ -37,7 +37,7 @@ export default function UnAuthenticatedHeader({elements}) {
 					))}
 				</div>
 			</div>
-			<div className="col-span-6">
+			<div className="col-span-6 hidden md:block">
 				<div className="grid grid-cols-12 items-center ">
 					<div className="col-span-3 col-start-3 text-center">
 						<Link href="/sign-in">
