@@ -18,7 +18,7 @@ import es from '../../../locales/layouts/es.json'
 import UnAuthenticatedHeader from "../../Headers/UnAuthenticaed";
 import Footer from "../../Footer";
 
-export default function LayoutUnAuthenticated({children, head}) {
+export default function LayoutUnAuthenticated({children, head, withHeader}) {
 	return (
 		<>
 			<Head>
@@ -26,15 +26,22 @@ export default function LayoutUnAuthenticated({children, head}) {
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<main>
+				{withHeader &&
 				<UnAuthenticatedHeader elements={es.header.elements}/>
+				}
 				{children}
 			</main>
-			<Footer  locales={es.footer} />
+			<Footer locales={es.footer}/>
 		</>
 	)
 }
 
 LayoutUnAuthenticated.propTypes = {
 	children: PropTypes.any.isRequired,
-	head: PropTypes.object
+	head: PropTypes.object,
+	withHeader: PropTypes.bool
+}
+
+LayoutUnAuthenticated.defaultProps = {
+	withHeader: true
 }
