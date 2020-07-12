@@ -6,6 +6,7 @@ import BannerWelcome from "../components/BannerWelcome";
 import SimpleRegister from "../components/SimpleRegister";
 import ResponsiveImage from "../components/ResponsiveImage";
 import HowItWork from "../components/HowItWork";
+import RetailBanner from "../components/RetailBanner";
 
 export default function Home() {
 	return (
@@ -16,6 +17,9 @@ export default function Home() {
 			<SimpleRegister/>
 			<Container size={"small"}>
 				<HowItWork/>
+			</Container>
+			<Container size={"small"}>
+				<RetailBanner/>
 			</Container>
 		</LayoutUnAuthenticated>
 	)

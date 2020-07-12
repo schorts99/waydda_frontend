@@ -4,7 +4,8 @@ module.exports = {
 		
 		extend: {
 			colors: {
-				"red-principal": "#ff441f"
+				"red-principal": "#ff441f",
+				"purple-principal": "#5B3093"
 			},
 		},
 	},
