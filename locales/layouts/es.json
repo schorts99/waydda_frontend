@@ -1,0 +1,22 @@
+{
+  "head": {
+    "title": "Lo local en la palma de tu mano"
+  },
+  "header": {
+    "elements": [
+      {
+        "title": "Funciones",
+        "href": "/"
+      },
+      {
+        "title": "Precio",
+        "href": "/"
+      },
+      {
+        "title": "AzaChii ",
+        "href": "/",
+        "featured": true
+      }
+    ]
+  }
+}
