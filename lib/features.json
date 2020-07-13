@@ -1,0 +1,342 @@
+[
+  {
+    "name": "Free",
+    "pricing": {
+      "description": "Gratis por apertura",
+      "monthly": 0,
+      "annual": 0,
+      "before": 49
+    },
+    "monthly": true,
+    "button": "INICIAR GRATIS",
+    "features": [
+      {
+        "title": "Código QR",
+        "included": true
+      },
+      {
+        "title": "Categorías",
+        "included": true
+      },
+      {
+        "title": "Búrbuja de WhatsApp",
+        "included": true
+      },
+      {
+        "title": "Mapa de ubicación",
+        "included": true
+      },
+      {
+        "title": "Fotos de los productos",
+        "included": true
+      },
+      {
+        "title": "Favicon propio",
+        "included": true
+      },
+      {
+        "title": "Almacenamiento gratuito",
+        "included": true
+      },
+      {
+        "title": "Link a redes sociales",
+        "included": true
+      },
+      {
+        "title": "Adaptado a teléfonos",
+        "included": true
+      },
+      {
+        "title": "Filtros de búsqueda",
+        "included": true
+      },
+      {
+        "title": "Agregar los ingredientes",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Agregar contenido calorico",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Sitckers de tu código QR",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Feed de instagram",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Cupones de descuento",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pagos desde la página",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Múltiples divisas",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pago con Google Pay",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pago con Apple Pay",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Tarjeta de regalo",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Múltiples idiomas",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Facebook Pixel",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Formulario de contacto",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Reseñas",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pagos desde la mesa",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Dividir cuenta",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Gestión de inventario",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Reservaciones",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pedidos a domicilio",
+        "included": false,
+        "coming": true
+      }
+    ]
+  },
+  {
+    "name": "Crecimiento",
+    "pricing": {
+      "description": "Todo lo que necesitas para crecer",
+      "monthly": 129,
+      "annual": 99,
+      "before": 249
+    },
+    "coming": true,
+    "monthly": true,
+    "button": "RECIBIR ACTUALIZACIONES",
+    "features": [
+      {
+        "title": "Todos los servicios del paquete gratuito",
+        "included": true
+      },
+      {
+        "title": "Agregar los ingredientes",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Agregar contenido calorico",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Sitckers de tu código QR",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Feed de instagram",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Cupones de descuento",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pagos desde la página",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Múltiples divisas",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pago con Google Pay",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pago con Apple Pay",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Tarjeta de regalo",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Múltiples idiomas",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Facebook Pixel",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Formulario de contacto",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Reseñas",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pagos desde la mesa",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Dividir cuenta",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Gestión de inventario",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Reservaciones",
+        "included": false,
+        "coming": true
+      },
+      {
+        "title": "Pedidos a domicilio",
+        "included": false,
+        "coming": true
+      }
+    ]
+  },
+  {
+    "name": "PRO",
+    "pricing": {
+      "description": "Herramientas serias para personas serias",
+      "monthly": 229,
+      "annual": 149,
+      "before": 499
+    },
+    "coming": true,
+    "monthly": true,
+    "button": "RECIBIR ACTUALIZACIONES",
+    "features": [
+      {
+        "title": "Todas las funciones de los paquetes anteriores",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pago con Google Pay",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pago con Apple Pay",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Tarjeta de regalo",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Múltiples idiomas",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Facebook Pixel",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Formulario de contacto",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Reseñas",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pagos desde la mesa",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Dividir cuenta",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Gestión de inventario",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Reservaciones",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Pedidos a domicilio",
+        "included": true,
+        "coming": true
+      }
+    ]
+  }
+]

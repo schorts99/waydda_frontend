@@ -5,8 +5,10 @@ import Container from "../components/Container";
 import BannerWelcome from "../components/BannerWelcome";
 import SimpleRegister from "../components/SimpleRegister";
 import dynamic from 'next/dynamic'
+
 const RetailBanner = dynamic(() => import('../components/RetailBanner'))
 const HowItWork = dynamic(() => import('../components/HowItWork'))
+const Pricing = dynamic(() => import('../components/Pricing'))
 
 export default function Home() {
 	return (
@@ -21,6 +23,7 @@ export default function Home() {
 			<Container>
 				<RetailBanner/>
 			</Container>
+			<Pricing/>
 		</LayoutUnAuthenticated>
 	)
 }
