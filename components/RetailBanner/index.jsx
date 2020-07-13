@@ -11,6 +11,7 @@
  *
  * LICENSE file in the root directory of this source tree.
  */
+import Link from 'next/link'
 
 export default function RetailBanner() {
 	return (
@@ -25,10 +26,13 @@ export default function RetailBanner() {
 						</h4>
 					</div>
 					<div className="col-span-12 md:col-span-4 mt-6 justify-end flex md:mt-0">
-						<button
-							className="bg-white hover:bg-purple-600 md:w-auto w-full px-8 shadow-2xl py-4 text-purple-800 hover:text-white font-bold">
-							REGISTRARSE
-						</button>
+						<Link href={"/sign-up"}>
+							<a
+								className="bg-white hover:bg-purple-600 text-center md:w-auto w-full px-8 shadow-2xl py-4 text-purple-800 hover:text-white font-bold">
+								REGISTRARSE
+							</a>
+						</Link>
+					
 					</div>
 				</div>
 			</div>

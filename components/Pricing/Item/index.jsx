@@ -17,7 +17,7 @@ import {GoCheck} from 'react-icons/go'
 
 export default function PricingItem({name, description, pricing, monthly, button, features, coming}) {
 	return (
-		<div className="grid grid-cols-12 my-6 px-6 bg-white py-6">
+		<div className="grid grid-cols-12 my-6 px-6 bg-white py-6 shadow-2xl">
 			<div className="col-span-12 text-center">
 				<h3 className="font-bold text-2xl">{name}</h3>
 				{coming &&
