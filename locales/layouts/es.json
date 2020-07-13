@@ -10,11 +10,11 @@
       },
       {
         "label": "Funciones",
-        "href": "/services"
+        "href": "/#pricing"
       },
       {
         "label": "Precio",
-        "href": "/"
+        "href": "/#pricing"
       },
       {
         "label": "Iniciar sesión",
@@ -38,11 +38,11 @@
     "elements": [
       {
         "title": "Funciones",
-        "href": "/"
+        "href": "/#pricing"
       },
       {
         "title": "Precio",
-        "href": "/"
+        "href": "/#pricing"
       },
       {
         "title": "AzaChii ",

@@ -9,6 +9,7 @@ import dynamic from 'next/dynamic'
 const RetailBanner = dynamic(() => import('../components/RetailBanner'))
 const HowItWork = dynamic(() => import('../components/HowItWork'))
 const Pricing = dynamic(() => import('../components/Pricing'))
+const FromAzaChii = dynamic(() => import('../components/FromAzaChii'))
 
 export default function Home() {
 	return (
@@ -24,6 +25,7 @@ export default function Home() {
 				<RetailBanner/>
 			</Container>
 			<Pricing/>
+			<FromAzaChii />
 		</LayoutUnAuthenticated>
 	)
 }

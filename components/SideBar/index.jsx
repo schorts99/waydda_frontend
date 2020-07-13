@@ -19,6 +19,7 @@ import PropTypes from 'prop-types';
 function Sidebar({isOpen, locales}) {
 	return (
 		<div
+			id={"sidebar"}
 			className="transition-all duration-500 ease-in-out bg-white fixed h-full w-full top-0 shadow sm:hidden"
 			style={{
 				left: isOpen ? 0 : '-100%',
