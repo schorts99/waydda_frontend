@@ -17,3 +17,6 @@
 .font-title {
     font-family: 'Playfair Display', serif !important;
 }
+.no_scrollbar::-webkit-scrollbar{
+    display: none;
+}

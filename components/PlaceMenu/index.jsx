@@ -18,22 +18,30 @@ import Link from 'next/link';
 export default function PlaceMenu() {
 	const router = useRouter();
 	const currentRoute = router.pathname.split("/").slice(-1).toString();
-
+	
 	return (
-		<div className="flex flex-grow">
+		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
 			<MenuItem
 				active={currentRoute}
 				keyValue={"[slug]"}
 				index
-				label={"Acerca de"}/>
+				label={"Sopas"}/>
 			<MenuItem
 				active={currentRoute}
 				keyValue={"products"}
-				label={"Menú"}/>
+				label={"Carnes"}/>
 			<MenuItem
 				active={currentRoute}
 				keyValue={"reviews"}
-				label={"Reseñas"}/>
+				label={"Vegetariana"}/>
+			<MenuItem
+				active={currentRoute}
+				keyValue={"reviews"}
+				label={"Italiana"}/>
+			<MenuItem
+				active={currentRoute}
+				keyValue={"reviews"}
+				label={"Italiana"}/>
 		</div>
 	)
 }
@@ -43,7 +51,7 @@ const MenuItem = ({label, index, active, keyValue}) => {
 	return (
 		<Link href={`/places/[slug]${index ? "" : `/${keyValue}`}`} as={`/places/demo${index ? "" : `/${keyValue}`}`}>
 			<a
-				className={`py-4 px-4 text-center ${isActive ? "border-black border-b-2" : ""}`}
+				className={`py-3 px-5 text-center ${isActive ? "border-black border-b-2" : ""}`}
 			>
 				<span className={`select-none text-sm uppercase ${isActive ? "text-black" : "text-gray-500"}`}>{label}</span>
 			</a>

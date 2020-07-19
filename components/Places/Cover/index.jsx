@@ -16,6 +16,7 @@ import PropTypes from 'prop-types'
 import ResponsiveImage from "../../ResponsiveImage";
 import Rating from 'react-rating';
 import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
+import Link from "next/link";
 
 export default function PlaceCover({image}) {
 	return (
@@ -54,7 +55,7 @@ export default function PlaceCover({image}) {
 						<h4 className="text-gray-700 mt-2 text-sm">Oaxaca&#160;&bull;&#160;Avenida los jepos 101</h4>
 					</div>
 					<div className="col-span-12 mt-5">
-						<div className="grid grid-cols-3 gap-2 items-center">
+						<div className="grid grid-cols-2 gap-2 items-end">
 							<Item
 								text={"3.6 (10 reseñas)"}
 							>
@@ -69,6 +70,11 @@ export default function PlaceCover({image}) {
 									readonly
 								/>
 							</Item>
+							<div className="col-span-1 text-right">
+								<Link href="/places/[slug]/reviews" as={"/places/demo/reviews"}>
+									<a className="font-bold text-xs pt-2">Ver reseñas</a>
+								</Link>
+							</div>
 						</div>
 					</div>
 				</div>

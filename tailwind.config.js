@@ -13,12 +13,13 @@ module.exports = {
 			'md': '0.375rem',
 			'lg': '0.5rem',
 			'full': '9999px',
-			'large': '2em',
+			'large': '1.5em',
 		},
 		extend: {
 			colors: {
 				"red-principal": "#ff441f",
-				"purple-principal": "#5B3093"
+				"purple-principal": "#5B3093",
+				background: "#fafafa"
 			},
 		},
 	},
