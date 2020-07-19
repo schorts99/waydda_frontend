@@ -22,7 +22,7 @@ export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
 			withHeader={false}
-			head={{title: "Demo"}}>
+			head={{title: "Demo", description: "Descripción de ejemplo"}}>
 			<PlacePresentation>
 				<ListAllProducts/>
 			</PlacePresentation>

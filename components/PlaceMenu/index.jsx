@@ -13,7 +13,8 @@
  */
 
 import {useRouter} from "next/router";
-import Link from 'next/link';
+import {Link} from 'react-scroll';
+import {useState} from "react";
 
 export default function PlaceMenu() {
 	const router = useRouter();
@@ -24,7 +25,7 @@ export default function PlaceMenu() {
 			
 			<MenuItem
 				active={currentRoute}
-				keyValue={"[slug]"}
+				keyValue={"index"}
 				index
 				label={"Sopas"}/>
 			<MenuItem
@@ -47,13 +48,24 @@ export default function PlaceMenu() {
 	)
 }
 
-const MenuItem = ({label, index, active, keyValue}) => {
-	const isActive = active === keyValue;
+const MenuItem = ({label, keyValue}) => {
+	const [active, setActive] = useState(false);
 	return (
-		<div
-			className={`py-3 px-5 text-center ${isActive ? "border-black border-b-2" : ""}`}
+		<Link
+			className={`py-3 px-5 text-center`}
+			activeClass="border-black border-b-2"
+			to={keyValue}
+			spy={true}
+			smooth={true}
+			offset={-100}
+			onSetInactive={() => {
+				setActive(false);
+			}}
+			onSetActive={() => {
+				setActive(true);
+			}}
 		>
-			<span className={`select-none text-sm uppercase ${isActive ? "text-black" : "text-gray-500"}`}>{label}</span>
-		</div>
+			<span className={`select-none text-sm uppercase ${active ? "text-black" : "text-gray-500"}`}>{label}</span>
+		</Link>
 	)
 }

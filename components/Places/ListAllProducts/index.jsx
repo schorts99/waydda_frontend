@@ -15,20 +15,14 @@
 import Container from "../../Container";
 import Category from "../Category";
 import ProductItem from "../ProductItem";
+import {Link, Element, Events, animateScroll as scroll, scrollSpy, scroller} from 'react-scroll'
+import CategoryList from "../CategoryList";
 
 export default function ListAllProducts() {
 	return (
 		<div className="grid grid-cols-12 items-center bg-background">
-			<div className="col-span-12 mt-6 mx-2">
-				<Category count={12} label={"Carnes del mencho"}/>
-			</div>
-			<div className="col-span-12">
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
-			</div>
+			<CategoryList name={"index"} count={12} label={"Carnes el mencho"}/>
+			<CategoryList name={"products"} count={12} label={"Carnes el mencho"}/>
 		</div>
 	)
 }
