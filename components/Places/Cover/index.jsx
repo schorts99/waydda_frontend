@@ -48,7 +48,7 @@ export default function PlaceCover({image}) {
 				/>
 			</div>
 			<div
-				className="col-span-12 bg-white -mt-16 md:pt-12 md:pb-8 pb-4 pt-6 px-8 md:px-16 rounded-t-lg z-20 rounded-t-large md:rounded-t-full">
+				className="col-span-12 bg-white -mt-16 md:pt-12 md:pb-8 pb-4 pt-6 px-4 md:px-16 rounded-t-lg z-20 rounded-t-large md:rounded-t-full">
 				<div className="grid grid-cols-12">
 					<div className="col-span-12">
 						<h1 className="text-3xl font-bold">Restaurante perro</h1>

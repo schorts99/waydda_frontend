@@ -13,10 +13,9 @@
  */
 
 import PlaceCover from "../Cover";
-import Container from "../../Container";
 import PlaceMenu from "../../PlaceMenu";
 
-export default function PlacePresentation() {
+export default function PlacePresentation({children}) {
 	return (
 		<div className="grid grid-cols-12 ">
 			<div className="col-span-12">
@@ -26,8 +25,11 @@ export default function PlacePresentation() {
 					}}
 				/>
 			</div>
-			<div className="col-span-12 shadow bg-white">
+			<div className="col-span-12 sticky top-0 shadow z-20 bg-white">
 				<PlaceMenu/>
+			</div>
+			<div className="col-span-12">
+				{children}
 			</div>
 		</div>
 	)

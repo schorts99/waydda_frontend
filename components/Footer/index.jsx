@@ -20,8 +20,8 @@ import PropTypes from 'prop-types';
 function Footer({locales}) {
 	return (
 		<footer style={{background: "#fafafa", borderTop: "1px solid #eaeaea"}}
-		        className="grid grid-cols-12 m-0 justify-center py-10">
-			<div className="col-span-10 col-start-2 p-0">
+		        className="flex m-0 justify-center py-10">
+			<div className="w-11/12 p-0">
 				<div className="grid grid-cols-12 m-0">
 					<div className="col-span-12 md:col-span-4 p-0">
 						<h2 className="font-bold text-lg mb-6">
@@ -71,7 +71,7 @@ function Footer({locales}) {
 							{locales.contact.title}
 						</h2>
 						<a className="text-sm" href={`mailto:${locales.contact.email}`}>{locales.contact.email}</a>
-						<div className="grid grid-cols-12 mt-20 md:mt-4">
+						<div className="grid grid-cols-12 mt-12 md:mt-4">
 							<div className="col-span-12 p-0 sm:hidden md:block">
 								<Social/>
 							</div>

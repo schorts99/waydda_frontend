@@ -21,6 +21,7 @@ export default function PlaceMenu() {
 	
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
+			
 			<MenuItem
 				active={currentRoute}
 				keyValue={"[slug]"}
@@ -49,12 +50,10 @@ export default function PlaceMenu() {
 const MenuItem = ({label, index, active, keyValue}) => {
 	const isActive = active === keyValue;
 	return (
-		<Link href={`/places/[slug]${index ? "" : `/${keyValue}`}`} as={`/places/demo${index ? "" : `/${keyValue}`}`}>
-			<a
-				className={`py-3 px-5 text-center ${isActive ? "border-black border-b-2" : ""}`}
-			>
-				<span className={`select-none text-sm uppercase ${isActive ? "text-black" : "text-gray-500"}`}>{label}</span>
-			</a>
-		</Link>
+		<div
+			className={`py-3 px-5 text-center ${isActive ? "border-black border-b-2" : ""}`}
+		>
+			<span className={`select-none text-sm uppercase ${isActive ? "text-black" : "text-gray-500"}`}>{label}</span>
+		</div>
 	)
 }
