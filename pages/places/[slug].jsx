@@ -12,18 +12,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-@import "./general.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
+import PlacePresentation from "../../components/Places/Presentation";
 
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    font-size: 16px;
-    overflow-x: hidden;
+export default function PlacePage() {
+	return (
+		<LayoutUnAuthenticated
+			withHeader={false}
+			head={{title: "Demo"}}>
+			<PlacePresentation/>
+		</LayoutUnAuthenticated>
+	)
 }
-
-

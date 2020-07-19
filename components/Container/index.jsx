@@ -16,7 +16,7 @@ import PropTypes from 'prop-types'
 
 export default function Container({children, size}) {
 	return (
-		<div className={`grid grid-cols-12 ${size === "small" ? "" : "px-6 md:px-12"}`}>
+		<div className={`grid grid-cols-12 z-20 ${size === "small" ? "" : "px-6 md:px-12"}`}>
 			<div className={`${size === "small" ? "col-span-10 col-start-2" : "col-span-12"}`}>
 				{children}
 			</div>

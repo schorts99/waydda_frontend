@@ -26,7 +26,7 @@ export default function FromAzaChii() {
 				<h6 className="text-xs text-gray-700 font-light mt-8">
 					Un servicio de&#160;
 					<a
-						href="https://azachii.dev"s
+						href="https://azachii.dev"
 						target={"_blank"}>
 						<strong>
 							AzaChii International Group

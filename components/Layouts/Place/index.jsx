@@ -12,18 +12,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-@import "./general.css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-html, body {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-    font-size: 16px;
-    overflow-x: hidden;
+import Head from "next/head";
+export default function PlaceLayout({children,head}) {
+	return (
+		<>
+			<Head>
+				<title>{head.title ? `${head.title} | Waydda QR` : "Waydda QR"}</title>
+				<link rel="icon" href="/favicon.ico"/>
+			</Head>
+			<main>
+				{children}
+			</main>
+		</>
+	)
 }
-
-

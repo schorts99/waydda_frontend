@@ -25,12 +25,14 @@ export default function LayoutUnAuthenticated({children, head, withHeader}) {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	
 	useEffect(() => {
-		const element = document.getElementById("sidebar");
-		if (element.firstChild) {
-			document.getElementById("sidebar").firstChild.addEventListener("click", handleClick)
+		if (withHeader) {
+			const element = document.getElementById("sidebar");
+			if (element.firstChild) {
+				document.getElementById("sidebar").firstChild.addEventListener("click", handleClick)
+			}
+			return () => document.removeEventListener("click", handleClick)
 		}
-		return () => document.removeEventListener("click", handleClick)
-	}, [])
+	}, [withHeader])
 	
 	const handleClick = () => {
 		setOpenSidebar(false)
@@ -43,15 +45,17 @@ export default function LayoutUnAuthenticated({children, head, withHeader}) {
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<main>
-				<Sidebar locales={es.sidebar} isOpen={openSidebar}/>
 				{withHeader &&
-				<UnAuthenticatedHeader
-					toggleSidebar={() => {
-						setOpenSidebar(!openSidebar)
-					}}
-					isSidebarOpen={openSidebar}
-					elements={es.header.elements}
-				/>
+				<>
+					<Sidebar locales={es.sidebar} isOpen={openSidebar}/>
+					<UnAuthenticatedHeader
+						toggleSidebar={() => {
+							setOpenSidebar(!openSidebar)
+						}}
+						isSidebarOpen={openSidebar}
+						elements={es.header.elements}
+					/>
+				</>
 				}
 				{children}
 			</main>

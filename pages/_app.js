@@ -18,9 +18,20 @@
 import '../css/main.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 // import ReactPixel from 'react-facebook-pixel';
-
+import NextNprogress from 'nextjs-progressbar';
 
 export default function WayddaApp({Component, pageProps}) {
 	
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<NextNprogress
+				color="#29D"
+				startPosition="0.3"
+				stopDelayMs="200"
+				height="3"
+				options={{showSpinner: false}}
+			/>
+			<Component {...pageProps} />
+		</>
+	);
 }
