@@ -32,7 +32,7 @@ export default function Review({image, stars, comment, date, user}) {
 					size={10}
 					start={0}
 					stop={5}
-					emptySymbol={<AiOutlineStar size={16}/>}
+					emptySymbol={<AiOutlineStar color={"rgba(0,0,0,.4)"} size={16}/>}
 					fullSymbol={<AiFillStar size={16}/>}
 					initialRating={stars}
 					fractions={2}
