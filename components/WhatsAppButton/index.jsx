@@ -26,7 +26,7 @@ export default function WhatsAppButton() {
 	
 	if (rounded) {
 		return (
-			<div className="fixed bottom-0 right-0 mb-6 mr-6">
+			<div className="fixed bottom-0 z-20 right-0 mb-6 mr-6">
 				<button
 					onClick={handleClick}
 					style={{background: "#075E54"}}
@@ -45,7 +45,7 @@ export default function WhatsAppButton() {
 	return (
 		<button
 			onClick={handleClick}
-			className="grid grid-cols-1 py-3 items-center rounded shadow fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0"
+			className="grid grid-cols-1 z-20 py-3 items-center rounded shadow fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0"
 			style={{
 				background: "#075E54"
 			}}

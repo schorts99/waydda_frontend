@@ -20,7 +20,7 @@ import Footer from "../../Footer";
 import {useEffect, useState} from "react";
 import Sidebar from "../../SideBar";
 
-export default function LayoutUnAuthenticated({children, head, withHeader}) {
+export default function LayoutUnAuthenticated({children, head, withHeader,moreSpaceInFooter}) {
 	
 	const [openSidebar, setOpenSidebar] = useState(false);
 	
@@ -59,7 +59,7 @@ export default function LayoutUnAuthenticated({children, head, withHeader}) {
 				}
 				{children}
 			</main>
-			<Footer locales={es.footer}/>
+			<Footer moreSpaceInFooter={moreSpaceInFooter} locales={es.footer}/>
 		</>
 	)
 }
@@ -67,9 +67,11 @@ export default function LayoutUnAuthenticated({children, head, withHeader}) {
 LayoutUnAuthenticated.propTypes = {
 	children: PropTypes.any.isRequired,
 	head: PropTypes.object,
-	withHeader: PropTypes.bool
+	withHeader: PropTypes.bool,
+	moreSpaceInFooter: PropTypes.bool
 }
 
 LayoutUnAuthenticated.defaultProps = {
-	withHeader: true
+	withHeader: true,
+	moreSpaceInFooter: false
 }

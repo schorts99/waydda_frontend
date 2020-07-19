@@ -17,10 +17,10 @@ import {GrSpotify, GrMedium} from 'react-icons/gr';
 import {AiOutlineSlack} from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
-function Footer({locales}) {
+function Footer({locales, moreSpaceInFooter}) {
 	return (
 		<footer style={{background: "#fafafa", borderTop: "1px solid #eaeaea"}}
-		        className="flex m-0 justify-center py-10">
+		        className={`flex m-0 justify-center py-10 ${moreSpaceInFooter ? "mb-20 md:mb-0" : ""}`}>
 			<div className="w-11/12 p-0">
 				<div className="grid grid-cols-12 m-0">
 					<div className="col-span-12 md:col-span-4 p-0">
@@ -88,6 +88,12 @@ function Footer({locales}) {
 
 Footer.propTypes = {
 	locales: PropTypes.object.isRequired,
-};
+	moreSpaceInFooter: PropTypes.bool.isRequired
+}
+
 
 export default Footer;
+
+Footer.defaultProps = {
+	moreSpaceInFooter: false
+}

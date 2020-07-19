@@ -16,17 +16,16 @@
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
 import ListAllProducts from "../../components/Places/ListAllProducts";
-import WhatsAppButton from "../../components/WhatsAppButton";
 
 export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
+			moreSpaceInFooter
 			withHeader={false}
 			head={{title: "Demo", description: "Descripción de ejemplo"}}>
 			<PlacePresentation>
 				<ListAllProducts/>
 			</PlacePresentation>
-			<WhatsAppButton/>
 		</LayoutUnAuthenticated>
 	)
 }

@@ -12,12 +12,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import PropTypes from 'prop-types'
 import PlaceCover from "../Cover";
 import PlaceMenu from "../../PlaceMenu";
+import {useState} from "react";
+import WhatsAppButton from "../../WhatsAppButton";
 
-export default function PlacePresentation({children}) {
+export default function PlacePresentation({children, withSticky}) {
+	const [activeItem,setActiveItem] = useState("")
+	const onHandleReceive = (e) =>{
+		setActiveItem(e);
+	}
 	return (
 		<div className="grid grid-cols-12 ">
+			<WhatsAppButton/>
 			<div className="col-span-12">
 				<PlaceCover
 					image={{
@@ -25,12 +33,23 @@ export default function PlacePresentation({children}) {
 					}}
 				/>
 			</div>
-			<div className="col-span-12 sticky top-0 shadow z-20 bg-white">
-				<PlaceMenu/>
+			<div className={`col-span-12 z-20 ${activeItem ? "shadow": ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>
+				<PlaceMenu
+				handleSendItem={onHandleReceive}
+				/>
 			</div>
 			<div className="col-span-12">
 				{children}
 			</div>
 		</div>
 	)
+}
+
+PlacePresentation.propTypes = {
+	children: PropTypes.any.isRequired,
+	withSticky: PropTypes.bool.isRequired
+}
+
+PlacePresentation.defaultProps = {
+	withSticky: true
 }
