@@ -12,18 +12,25 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import PropTypes from 'prop-types'
 import Head from "next/head";
-// TODO: Add theme-color metatag
-export default function PlaceLayout({children,head}) {
+import AuthHeader from "../../Headers/AuthHeader";
+
+export default function DashboardLayout({children}) {
 	return (
 		<>
 			<Head>
-				<title>{head.title ? `${head.title} | Waydda QR` : "Waydda QR"}</title>
-				<link rel="icon" href="/favicon.ico"/>
+				<title>Panel de control | Waydda</title>
+				<meta name="theme-color" content="#1d2226"/>
 			</Head>
+			<AuthHeader/>
 			<main>
 				{children}
 			</main>
 		</>
 	)
+}
+
+DashboardLayout.propTypes = {
+	children: PropTypes.any.isRequired,
 }

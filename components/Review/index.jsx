@@ -27,7 +27,9 @@ export default function Review({image, stars, comment, date, user}) {
 				/>
 			</div>
 			<div className="col-span-10">
-				<h3 className="font-bold mb-1">{user.name}</h3>
+				<h3 className="font-bold mb-1">{user.name} <span
+					className="text-xs text-gray-700 font-normal"> - Hace 5 horas</span></h3>
+				{/*<p className="my-2 text-xs text-gray-700" >El 12/11/20</p>*/}
 				<Rating
 					size={10}
 					start={0}

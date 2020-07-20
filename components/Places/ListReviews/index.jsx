@@ -12,11 +12,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import PropTypes from 'prop-types'
 import Review from "../../Review";
 
-export default function ListReviews() {
+export default function ListReviews({withTitle}) {
 	return (
 		<div className="grid grid-cols-2 bg-background">
+			{withTitle &&
 			<div className="col-span-2 px-4 sticky top-0 z-20 bg-white border-b mb-6">
 				<div className="grid grid-cols-2 items-center py-4">
 					<div className="col-span-1">
@@ -29,6 +31,7 @@ export default function ListReviews() {
 					</div>
 				</div>
 			</div>
+			}
 			<div className="col-span-2 px-4">
 				<Review comment={""} date={""} stars={4} user={{name: "Angel Mendez"}}/>
 				<Review comment={""} date={""} stars={4} user={{name: "Angel Mendez"}}/>
@@ -39,4 +42,12 @@ export default function ListReviews() {
 			</div>
 		</div>
 	)
+}
+
+ListReviews.propTypes = {
+	withTitle: PropTypes.bool
+}
+
+ListReviews.defaultProps = {
+	withTitle: true
 }
