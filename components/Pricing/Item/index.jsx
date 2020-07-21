@@ -15,7 +15,7 @@
 import PropTypes from 'prop-types'
 import {GoCheck} from 'react-icons/go'
 
-export default function PricingItem({name, description, pricing, monthly, button, features, coming}) {
+export default function PricingItem({name, description, pricing, monthly, button, features, coming, important, handleClickPrice}) {
 	return (
 		<div className="grid grid-cols-12 my-6 px-6 bg-white py-6 shadow-2xl">
 			<div className="col-span-12 text-center">
@@ -25,7 +25,8 @@ export default function PricingItem({name, description, pricing, monthly, button
 					<span className="bg-red-principal py-1 px-2 rounded-full text-xs text-white">¡Próximamente!</span>
 				</p>
 				}
-				<h5 className="mt-4 text-sm text-gray-800">{pricing.description}</h5>
+				<h5
+					className={`mt-4 text-sm ${important ? "text-red-principal font-bold" : "text-gray-800"}`}>{pricing.description}</h5>
 			</div>
 			<div className="col-span-12 text-center mt-4">
 				{pricing.before &&
@@ -37,7 +38,9 @@ export default function PricingItem({name, description, pricing, monthly, button
 			
 			</div>
 			<div className="col-span-12 mt-5">
-				<button className="bg-black text-white shadow-2xl px-4 w-full py-4 font-bold text-sm">{button}</button>
+				<button
+					onClick={handleClickPrice}
+					className="bg-black text-white shadow-2xl px-4 w-full py-4 font-bold text-sm">{button}</button>
 			</div>
 			
 			<div className="col-span-12 mt-10 py-4 border-b-2 border-t-2">
@@ -68,9 +71,16 @@ const Feature = ({title, included, coming}) => (
 )
 
 PricingItem.propTypes = {
+	button: PropTypes.string.isRequired,
+	coming: PropTypes.any,
 	description: PropTypes.string.isRequired,
+	features: PropTypes.any,
+	important: PropTypes.bool.isRequired,
 	monthly: PropTypes.bool.isRequired,
 	name: PropTypes.string.isRequired,
-	pricing: PropTypes.object.isRequired,
-	button: PropTypes.string.isRequired,
+	pricing: PropTypes.object.isRequired
+}
+
+PricingItem.defaultProps = {
+	important: false
 }

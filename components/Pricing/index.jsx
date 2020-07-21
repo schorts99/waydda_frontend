@@ -16,13 +16,18 @@ import PricingItem from "./Item";
 import features from '../../lib/features.json'
 import Switch from '@bit/mui-org.material-ui.switch';
 import {useState} from "react";
+import {Element} from 'react-scroll'
 
-export default function Pricing() {
+export default function Pricing({onHandleClickPrice}) {
 	
 	const [monthly, setmonthly] = useState(false);
 	
 	return (
-		<div className="grid grid-cols-12 py-10 bg-red-100 justify-center items-center" id={"pricing"}>
+		<Element
+			name={"pricing"}
+			className="grid grid-cols-12 py-10 bg-red-100 justify-center items-center"
+			id={"pricing"}
+		>
 			<div className="col-span-12 text-center px-6 ">
 				<h2 className="font-bold text-4xl font-title">¡Empieza gratis!</h2>
 				<h4 className="mt-4 text-gray-700">Pruebe cualquier plan pagado de forma gratuita durante 14 días
@@ -56,6 +61,7 @@ export default function Pricing() {
 					{features.map((item, k) => (
 						<div key={k} className="col-span-12 md:col-span-4">
 							<PricingItem
+								handleClickPrice={onHandleClickPrice}
 								monthly={monthly}
 								{...item}
 								// pricing={{monthly: 0, annual: 0, before: 49, description: "Gratis por apertura"}}
@@ -68,6 +74,6 @@ export default function Pricing() {
 					))}
 				</div>
 			</div>
-		</div>
+		</Element>
 	)
 }

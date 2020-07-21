@@ -12,6 +12,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import styles from './style.module.css'
+import {Link} from 'react-scroll'
 
 export default function HowItWork() {
 	return (
@@ -26,7 +27,14 @@ export default function HowItWork() {
 						step={1}
 						description="Selecciona el paquete que más se adapte a tus necesidades y registrate."
 						action={() => (
-							<button className="bg-red-principal text-white px-5 py-3 font-bold text-sm rounded shadow-xl">VER PRECIOS</button>
+							<Link
+								smooth={true}
+								to={"pricing"}
+								className={"bg-red-principal uppercase text-white px-5 py-4 font-bold text-sm rounded shadow-xl"}>
+								VER PRECIOS
+							</Link>
+							
+							// <button className="">VER PRECIOS</button>
 						)}
 					/>
 					<Item

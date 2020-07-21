@@ -1,13 +1,14 @@
 [
   {
     "name": "Free",
+    "important": true,
     "pricing": {
-      "description": "Gratis por apertura",
+      "description": "Gratis por apertura*",
       "monthly": 0,
       "annual": 0,
       "before": 49
     },
-    "button": "INICIAR GRATIS",
+    "button": "RESERVAR MI LUGAR",
     "features": [
       {
         "title": "Código QR",

@@ -13,8 +13,12 @@
  */
 
 import ResponsiveImage from "../ResponsiveImage";
+import {useState} from "react";
 
-export default function SimpleRegister() {
+export default function SimpleRegister({handleSubmit}) {
+	
+	const [email, setEmail] = useState("");
+	
 	return (
 		<div className="grid grid-cols-12 justify-center gap-4 mb-16">
 			<div className="col-span-3 hidden md:block mx-auto">
@@ -25,13 +29,22 @@ export default function SimpleRegister() {
 					wrapperClass=""
 				/>
 			</div>
-			<form className="col-span-10 col-start-2 md:col-start-0 md:col-span-6">
+			<form
+				onSubmit={(e) => {
+					e.preventDefault()
+					handleSubmit(email)
+				}}
+				className="col-span-10 col-start-2 md:col-start-0 md:col-span-6">
 				<div className="grid grid-cols-12 items-center">
 					<div className="col-span-7 md:col-span-8">
 						<input
 							required
 							placeholder="Ingresa tu correo electrónico"
 							type="email"
+							value={email}
+							onChange={(e) => {
+								setEmail(e.target.value || "")
+							}}
 							className="border-2 w-full border-black py-5 px-4 focus:outline-none text-sm md:text-lg font-semibold placeholder-black"/>
 					</div>
 					<div className="col-span-5 md:col-span-4 h-full">
@@ -40,9 +53,10 @@ export default function SimpleRegister() {
 							Registrarse
 						</button>
 					</div>
-					<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">
-						<button className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">VER DEMOSTRACIÓN</button>
-					</div>
+					{/*<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">*/}
+					{/*	<button className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">VER DEMOSTRACIÓN*/}
+					{/*	</button>*/}
+					{/*</div>*/}
 				</div>
 			</form>
 			<div className="col-span-3 hidden md:block mx-auto">
@@ -52,27 +66,36 @@ export default function SimpleRegister() {
 					height={1000}
 				/>
 			</div>
-			<div className="col-span-12 block md:hidden mt-12">
-				<div className="grid grid-cols-12 items-center gap-4 justify-between">
-					<div className="col-span-3 mx-auto">
-						<ResponsiveImage
-							publicId={"kingdom-4.svg"}
-							className="h-auto md:h-56"
-							height={1000}
-						/>
-					</div>
-					<div className="col-span-6 mx-auto">
-						<button className="bg-red-principal rounded shadow font-bold text-sm py-4 px-4 text-white">VER DEMOSTRACIÓN</button>
-					</div>
-					<div className="col-span-3 mx-auto">
-						<ResponsiveImage
-							publicId={"kingdom-744.svg"}
-							className="h-auto md:h-56"
-							height={1000}
-						/>
-					</div>
-				</div>
+			<div className="col-span-12 block md:hidden mt-12 mx-auto">
+				<ResponsiveImage
+					publicId={"kingdom-4.svg"}
+					className="h-56 mx-auto md:h-56"
+					height={1000}
+				/>
 			</div>
+			{/*<div className="col-span-12 block md:hidden mt-12 ">*/}
+			{/*	<div className="grid grid-cols-12 items-center gap-4 justify-around">*/}
+			{/*		<div className="col-span-3 mx-auto">*/}
+			{/*			<ResponsiveImage*/}
+			{/*				publicId={"kingdom-4.svg"}*/}
+			{/*				className="h-auto md:h-56"*/}
+			{/*				height={1000}*/}
+			{/*			/>*/}
+			{/*		</div>*/}
+			{/*		<div className="col-span-6 mx-auto">*/}
+			{/*			<button className="bg-red-principal rounded shadow font-bold text-sm py-4 px-4 text-white">VER*/}
+			{/*				DEMOSTRACIÓN*/}
+			{/*			</button>*/}
+			{/*		</div>*/}
+			{/*		<div className="col-span-3 mx-auto">*/}
+			{/*			<ResponsiveImage*/}
+			{/*				publicId={"kingdom-744.svg"}*/}
+			{/*				className="h-auto md:h-56"*/}
+			{/*				height={1000}*/}
+			{/*			/>*/}
+			{/*		</div>*/}
+			{/*	</div>*/}
+			{/*</div>*/}
 		</div>
 	)
 }

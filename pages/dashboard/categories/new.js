@@ -12,13 +12,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export default function BannerWelcome({title}) {
+import NewCategoryComponent from "../../../components/Dashboard/Categories/Create";
+import DashboardLayout from "../../../components/Layouts/Dashboard";
+
+export default function NewPlacePage() {
 	return (
-		<div className="grid grid-cols-12 mb-20 mt-16 items-center">
-			<div className="col-span-12 text-center">
-				<h1 className="text-3xl md:text-5xl lg:text-6xl font-title font-extrabold">{title}</h1>
-				<h3 className="mt-2 text-red-principal font-bold">¡Acceso anticipado!</h3>
-			</div>
-		</div>
+		<DashboardLayout>
+			<NewCategoryComponent/>
+		</DashboardLayout>
 	)
 }
+
