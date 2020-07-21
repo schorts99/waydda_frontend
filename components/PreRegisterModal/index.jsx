@@ -110,7 +110,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 			contentLabel="Pre register form"
 		>
 			<div
-				className="grid grid-cols-12 py-4 md:py-8">
+				className="grid grid-cols-12 py-4 md:py-8 px-6">
 				{success ?
 					<>
 						<div className="col-span-12 text-center">
@@ -179,7 +179,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								}}
 								label={"Tu nombre"}
 								placeholder={"Armando Pérez"}
-								minLength={10}
+								minLength={6}
 								maxLength={50}
 								value={fields.name}
 							/>
