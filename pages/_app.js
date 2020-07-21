@@ -19,19 +19,25 @@ import '../css/main.css';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 // import ReactPixel from 'react-facebook-pixel';
 import NextNprogress from 'nextjs-progressbar';
+import {ApolloProvider} from '@apollo/react-hooks'
+import withApollo from "../lib/withApollo"
 
-export default function WayddaApp({Component, pageProps}) {
+function WayddaApp({Component, pageProps, apolloClient}) {
 	
 	return (
 		<>
-			<NextNprogress
-				color="#29D"
-				startPosition={0.3}
-				stopDelayMs={200}
-				height="3"
-				options={{showSpinner: false}}
-			/>
-			<Component {...pageProps} />
+			<ApolloProvider client={apolloClient}>
+				<NextNprogress
+					color="#29D"
+					startPosition={0.3}
+					stopDelayMs={200}
+					height="3"
+					options={{showSpinner: false}}
+				/>
+				<Component {...pageProps} />
+			</ApolloProvider>
 		</>
 	);
 }
+
+export default withApollo(WayddaApp)

@@ -1,130 +1,162 @@
 [
   {
     "clave": "AGS",
-    "nombre": "Aguascalientes"
+    "label": "Aguascalientes",
+    "nombre": "AGUASCALIENTES"
   },
   {
     "clave": "BC",
-    "nombre": "Baja California"
+    "label": "Baja California",
+    "nombre": "BAJA CALIFORNIA"
   },
   {
     "clave": "BCS",
-    "nombre": "Baja California Sur"
+    "label": "Baja California Sur",
+    "nombre": "BAJA CALIFORNIA SUR"
   },
   {
     "clave": "CHI",
-    "nombre": "Chihuahua"
+    "label": "Chihuahua",
+    "nombre": "CHIHUAHUA"
   },
   {
     "clave": "CHS",
-    "nombre": "Chiapas"
+    "label": "Chiapas",
+    "nombre": "CHIAPAS"
   },
   {
     "clave": "CMP",
-    "nombre": "Campeche"
+    "label": "Campeche",
+    "nombre": "CAMPECHE"
   },
   {
     "clave": "CMX",
-    "nombre": "Ciudad de México"
+    "label": "Ciudad de México",
+    "nombre": "CIUDAD DE MEXICO"
   },
   {
     "clave": "COA",
-    "nombre": "Coahuila"
+    "label": "Coahuila",
+    "nombre": "COAHUILA"
   },
   {
     "clave": "COL",
-    "nombre": "Colima"
+    "label": "Colima",
+    "nombre": "COLIMA"
   },
   {
     "clave": "DGO",
-    "nombre": "Durango"
+    "label": "Durango",
+    "nombre": "DURANGO"
   },
   {
     "clave": "GRO",
-    "nombre": "Guerrero"
+    "label": "Guerrero",
+    "nombre": "GUERRERO"
   },
   {
     "clave": "GTO",
-    "nombre": "Guanajuato"
+    "label": "Guanajuato",
+    "nombre": "GUANAJUATO"
   },
   {
     "clave": "HGO",
-    "nombre": "Hidalgo"
+    "label": "Hidalgo",
+    "nombre": "HIDALGO"
   },
   {
     "clave": "JAL",
-    "nombre": "Jalisco"
+    "label": "Jalisco",
+    "nombre": "JALISCO"
   },
   {
     "clave": "MCH",
-    "nombre": "Michoacán"
+    "label": "Michoacán",
+    "nombre": "MICHOACAN"
   },
   {
     "clave": "MEX",
-    "nombre": "Estado de México"
+    "label": "Estado de México",
+    "nombre": "ESTADO DE MEXICO"
   },
   {
     "clave": "MOR",
-    "nombre": "Morelos"
+    "label": "Morelos",
+    "nombre": "MORELOS"
   },
   {
     "clave": "NAY",
-    "nombre": "Nayarit"
+    "label": "Nayarit",
+    "nombre": "NAYARIT"
   },
   {
     "clave": "NL",
-    "nombre": "Nuevo León"
+    "label": "Nuevo León",
+    "nombre": "NUEVO LEON"
   },
   {
     "clave": "OAX",
-    "nombre": "Oaxaca"
+    "label": "Oaxaca",
+    "nombre": "OAXACA"
   },
   {
     "clave": "PUE",
-    "nombre": "Puebla"
+    "label": "Puebla",
+    "nombre": "PUEBLA"
   },
   {
     "clave": "QR",
-    "nombre": "Quintana Roo"
+    "label": "Quintana Roo",
+    "nombre": "QUINTANA ROO"
   },
   {
     "clave": "QRO",
-    "nombre": "Querétaro"
+    "label": "Querétaro",
+    "nombre": "QUERETARO"
   },
   {
     "clave": "SIN",
-    "nombre": "Sinaloa"
+    "label": "Sinaloa",
+    "nombre": "SINALOA"
   },
   {
     "clave": "SLP",
-    "nombre": "San Luis Potosí"
+    "label": "San Luis Potosí",
+    "nombre": "SAN LUIS POTOSI"
   },
   {
     "clave": "SON",
-    "nombre": "Sonora"
+    "label": "Sonora",
+    "nombre": "SONORA"
   },
   {
     "clave": "TAB",
-    "nombre": "Tabasco"
+    "label": "Tabasco",
+    "nombre": "TABASCO"
   },
   {
     "clave": "TLX",
-    "nombre": "Tlaxcala"
+    "label": "Tlaxcala",
+    "nombre": "TLAXCALA"
   },
   {
     "clave": "TMS",
-    "nombre": "Tamaulipas"
+    "label": "Tamaulipas",
+    "nombre": "TAMA ULIPAS"
   },
   {
     "clave": "VER",
-    "nombre": "Veracruz"
+    "label": "Veracruz",
+    "nombre": "VERACRUZ"
   },
   {
     "clave": "YUC",
-    "nombre": "Yucatán"
+    "label": "Yucatán",
+    "nombre": "YUCATAN"
   },
   {
     "clave": "ZAC",
-    "nombre": "Zacatecas"
+    "label": "Zacatecas",
+    "nombre": "ZACATECAS"
   }
 ]

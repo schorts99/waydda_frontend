@@ -33,10 +33,11 @@ export default function SimpleRegister({handleSubmit}) {
 				onSubmit={(e) => {
 					e.preventDefault()
 					handleSubmit(email)
+					setEmail("")
 				}}
 				className="col-span-10 col-start-2 md:col-start-0 md:col-span-6">
 				<div className="grid grid-cols-12 items-center">
-					<div className="col-span-7 md:col-span-8">
+					<div className="col-span-12 md:col-span-8">
 						<input
 							required
 							placeholder="Ingresa tu correo electrónico"
@@ -47,10 +48,10 @@ export default function SimpleRegister({handleSubmit}) {
 							}}
 							className="border-2 w-full border-black py-5 px-4 focus:outline-none text-sm md:text-lg font-semibold placeholder-black"/>
 					</div>
-					<div className="col-span-5 md:col-span-4 h-full">
+					<div className="col-span-12 md:col-span-4 mt-2 md:mt-0 h-full">
 						<button
-							className="bg-black text-white h-full uppercase w-full text-sm font-bold md:text-base focus:border-none focus:outline-none">
-							Registrarse
+							className="bg-black md:py-0 py-5 text-white rounded md:rounded-none h-full uppercase w-full text-sm font-bold md:text-base focus:border-none focus:outline-none shadow-2xl md:shadow-none">
+							RESERVAR MI LUGAR
 						</button>
 					</div>
 					{/*<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">*/}

@@ -19,6 +19,8 @@ import {IoLogoWhatsapp} from 'react-icons/io'
 import {AiFillFacebook, AiOutlineTwitter} from 'react-icons/ai'
 import states from '../../lib/states.json'
 import ResponsiveImage from "../ResponsiveImage";
+import {CREATE_PRE_REGISTER_USER} from "../../lib/graohql/mutations";
+import {useMutation} from "@apollo/react-hooks";
 
 const customStyles = {
 	content: {
@@ -37,15 +39,6 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 	
 	const [modalIsOpen, setModalIsOpen] = useState(isOpen);
 	const [success, setSuccess] = useState(false);
-	
-	
-	useEffect(() => {
-		setModalIsOpen(isOpen);
-	}, [isOpen])
-	useEffect(() => {
-		setFields({...fields, email: defaultEmail})
-	}, [defaultEmail])
-	
 	const [fields, setFields] = useState({
 		name: "",
 		email: defaultEmail,
@@ -55,6 +48,36 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 		city: "",
 		state: ""
 	})
+	
+	const [createPreRegister, {data, loading, error}] = useMutation(CREATE_PRE_REGISTER_USER, {
+		onCompleted: () => {
+			setSuccess(true);
+		},
+		onError: () => {
+		
+		},
+		variables: {
+			input: {
+				user: {
+					name: fields.name,
+					email: fields.email
+				},
+				business: {
+					name: fields.place_name,
+					state: fields.state
+				}
+			}
+		}
+	})
+	
+	
+	useEffect(() => {
+		setModalIsOpen(isOpen);
+	}, [isOpen])
+	useEffect(() => {
+		setFields({...fields, email: defaultEmail})
+	}, [defaultEmail])
+	
 	
 	const handleClick = () => {
 		setSuccess(true);
@@ -107,7 +130,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								</div>
 								<div className="col-span-1 text-center flex justify-center mt-3">
 									<a href="https://www.facebook.com/sharer/sharer.php?u=https://waydda.azachii.dev" target="_blank"
-									className="px-3"
+									   className="px-3"
 									>
 										<AiFillFacebook size={35}/>
 									</a>
@@ -115,7 +138,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								<div className="col-span-1 text-center flex justify-center mt-3">
 									<a href="https://twitter.com/home?status=https://waydda.azachii.dev He apartado mi lugar en Waydda!"
 									   target="_blank"
-									className="px-3"
+									   className="px-3"
 									>
 										<AiOutlineTwitter size={35}/>
 									</a>
@@ -123,21 +146,31 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								<div className="col-span-1 text-center flex justify-center mt-3">
 									<a href="https://wa.me/?text=https://waydda.azachii.dev He apartado mi lugar en Waydda!"
 									   target="_blank"
-									className="px-3"
+									   className="px-3"
 									>
 										<IoLogoWhatsapp size={35}/>
 									</a>
 								</div>
 							</div>
-							
-							{/*<FaWha*/}
 						</div>
 					</>
 					:
-					<>
+					<form
+						onSubmit={(e) => {
+							e.preventDefault();
+							createPreRegister()
+						}} className={"col-span-12"}>
 						<div className="col-span-12 mb-6 text-center">
-							<h2 className="text-2xl md:text-3xl mb-2 font-bold uppercase">Reserva tu lugar ahora</h2>
-							<p className="text-sm text-red-principal font-bold">Acceso gratuito a las primeras 300 personas</p>
+							<h2 className="text-2xl md:text-3xl font-bold uppercase">Reserva tu lugar ahora</h2>
+							<p className="text-sm font-bold my-2">Acceso gratuito a las primeras 300 personas</p>
+							{error &&
+							<p className="text-sm mt-3 rounded shadow-2xl bg-red-principal py-2 text-white font-bold">
+								{
+									error.graphQLErrors ? error.graphQLErrors.length > 0 ? error.graphQLErrors[0].message : "" : error.message
+								}
+							</p>
+							}
+						
 						</div>
 						<div className="col-span-12">
 							<SimpleInput
@@ -148,10 +181,11 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								placeholder={"Armando Pérez"}
 								minLength={10}
 								maxLength={50}
+								value={fields.name}
 							/>
 							<SimpleInput
 								handleChange={(e) => {
-									setFields({...fields, name: e.target.value})
+									setFields({...fields, email: e.target.value})
 								}}
 								label={"Correo Electrónico"}
 								placeholder={"armandoperez@gmail.com"}
@@ -162,13 +196,13 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 							/>
 							<SimpleInput
 								handleChange={(e) => {
-									setFields({...fields, name: e.target.value})
+									setFields({...fields, place_name: e.target.value})
 								}}
 								label={"Nombre de tu restaurante"}
 								placeholder={"Tacos los primos"}
-								minLength={10}
+								minLength={5}
 								maxLength={50}
-								type={"email"}
+								value={fields.place_name}
 							/>
 							<div className="grid grid-cols-1">
 								<div className="col-span-1 mb-2">
@@ -176,11 +210,17 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								</div>
 								<div className="col-span-1">
 									<select
+										onChange={(e) => {
+											const element = states.find(el => el.clave === e.target.value);
+											if (element) {
+												setFields({...fields, state: JSON.stringify({nombre: element.nombre, clave: element.clave})})
+											}
+										}}
 										placeholder={"selecciona un estado"}
 										className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full bg-white">
 										<option value={""}>Selecciona un estado</option>
 										{states.map((state) => (
-											<option className="capitalize" value={state.clave}>{state.nombre}</option>
+											<option className="capitalize" value={state.clave}>{state.label}</option>
 										))}
 									</select>
 								</div>
@@ -188,14 +228,17 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 						</div>
 						<div className="col-span-12 mt-6 text-center">
 							<button
-								onClick={handleClick}
-								className="bg-black mb-4 w-full py-4 text-white font-bold rounded shadow-2xl">Rerservar mi lugar
+								type={"submit"}
+								disabled={loading}
+								// onClick={handleClick}
+								className={`bg-black mb-4 w-full py-4 text-white font-bold rounded shadow-2xl ${loading ? "cursor-not-allowed opacity-50" : ""}`}>Rerservar
+								mi lugar
 							</button>
 							<span
 								onClick={handleClose}
 								className="text-xs">Cerrar</span>
 						</div>
-					</>
+					</form>
 				}
 			</div>
 		</Modal>
