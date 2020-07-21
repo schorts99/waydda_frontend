@@ -64,28 +64,28 @@ export default function CreatePlaceForm() {
 						label={"Nombre del restaurante"}
 						placeholder={"Ej. Tacos el Pancho"}
 					/>
-					<Autocomplete
-						title="Fruits"
-						onChange={(changedItem) => console.log(changedItem)}
-						items={['Apple', 'Apricot', 'Banana', 'Cherry', 'Cucumber']}
-					>
-						{(props) => {
-							const {getInputProps, getRef, inputValue} = props
-							return (
-								<SimpleInput
-									label={"Dirección"}
-									innerRef={getRef}
-								/>
-								// <TextInput
-								// 	placeholder="Fruits"
-								// 	value={inputValue}
-								// 	innerRef={getRef}
-								// 	{...getInputProps()}
-								// />
-							)
-						}}
-					</Autocomplete>
-				
+					{/*<Autocomplete*/}
+					{/*	title="Fruits"*/}
+					{/*	onChange={(changedItem) => console.log(changedItem)}*/}
+					{/*	items={['Apple', 'Apricot', 'Banana', 'Cherry', 'Cucumber']}*/}
+					{/*>*/}
+					{/*	{(props) => {*/}
+					{/*		const {getInputProps, getRef, inputValue} = props*/}
+					{/*		return (*/}
+					{/*			<SimpleInput*/}
+					{/*				label={"Dirección"}*/}
+					{/*				innerRef={getRef}*/}
+					{/*			/>*/}
+					{/*			// <TextInput*/}
+					{/*			// 	placeholder="Fruits"*/}
+					{/*			// 	value={inputValue}*/}
+					{/*			// 	innerRef={getRef}*/}
+					{/*			// 	{...getInputProps()}*/}
+					{/*			// />*/}
+					{/*		)*/}
+					{/*	}}*/}
+					{/*</Autocomplete>*/}
+					
 				</div>
 				<div className="col-span-12 z-0">
 					<MapNoSsr/>
