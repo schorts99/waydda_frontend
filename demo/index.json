@@ -1,0 +1,57 @@
+{
+  "name": "Moose",
+  "theme": "#000",
+  "cover": "places/demo/restaurant-690569_1280.jpg",
+  "address": "Av Instituto Politécnico Nacional 2508",
+  "city": "CDMX",
+  "reviews": {
+    "count": 10,
+    "total": 4.4,
+    "items": [
+      {
+        "user": {
+          "name": "Angel Mendez"
+        },
+        "date": "2020-04-15",
+        "stars": 4,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa debitis eligendi enim est iste laboriosam necessitatibus nisi"
+      },
+      {
+        "user": {
+          "name": "Armando Díaz"
+        },
+        "date": "2020-04-14",
+        "stars": 3,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa debitis eligendi enim est iste laboriosam necessitatibus nisi"
+      },
+      {
+        "user": {
+          "name": "Ernesto Benitez"
+        },
+        "date": "2020-04-14",
+        "stars": 1,
+        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias culpa debitis eligendi enim est iste laboriosam necessitatibus nisi"
+      }
+    ]
+  },
+  "food": {
+    "categories": [
+      {
+        "name": "sopas",
+        "items": []
+      },
+      {
+        "name": "carnes",
+        "items": []
+      },
+      {
+        "name": "italiana",
+        "items": []
+      },
+      {
+        "name": "sopas",
+        "items": []
+      }
+    ]
+  }
+}

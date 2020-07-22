@@ -15,13 +15,23 @@
 import LayoutUnAuthenticated from "../../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../../components/Places/Presentation";
 import ListReviews from "../../../components/Places/ListReviews";
+import demo from '../../../demo/index.json'
 
 export default function Reviews() {
 	return (
 		<LayoutUnAuthenticated moreSpaceInFooter={true} withHeader={false}
-		                       head={{title: "Reseñas de Demo", description: "Reseñas del servicio de Demo en Waydda"}}>
-			<PlacePresentation withSticky={false}>
-				<ListReviews/>
+		                       head={{
+			                       title: "Reseñas de Demo",
+			                       description: "Reseñas del servicio de Demo en Waydda",
+			                       theme: "#000"
+		                       }}>
+			<PlacePresentation
+				withSticky={false}
+				data={{...demo}}
+			>
+				<ListReviews
+					reviews={demo.reviews}
+				/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>
 	)

@@ -16,14 +16,17 @@
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
 import ListAllProducts from "../../components/Places/ListAllProducts";
+import demo from '../../demo/index.json'
 
 export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
 			moreSpaceInFooter
 			withHeader={false}
-			head={{title: "Demo", description: "Conoce el menú de Demo en Waydda"}}>
-			<PlacePresentation>
+			head={{title: "Demo", description: "Conoce el menú de Demo en Waydda",theme: "#000"}}>
+			<PlacePresentation
+				data={{...demo}}
+			>
 				<ListAllProducts/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>

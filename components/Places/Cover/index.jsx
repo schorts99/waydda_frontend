@@ -18,7 +18,7 @@ import Rating from 'react-rating';
 import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
 import Link from "next/link";
 
-export default function PlaceCover({image}) {
+export default function PlaceCover({image, name, city, address, reviews}) {
 	return (
 		<div className="grid grid-cols-12">
 			<div className="col-span-12 h-56 bg-orange-200">
@@ -26,6 +26,7 @@ export default function PlaceCover({image}) {
 					byDefault
 					publicId={image.src}
 					height={700}
+					address={address}
 					srcsetSizes={{
 						w_480: {
 							height: 600,
@@ -53,15 +54,16 @@ export default function PlaceCover({image}) {
 					<div className="col-span-12">
 						<h2 className="text-3xl font-bold">
 							<Link href={"/places/[slug]"} as={"/places/demo"}>
-								<a>Restaurante perro</a>
+								<a>{name}</a>
 							</Link>
 						</h2>
-						<h4 className="text-gray-700 mt-2 text-sm">Oaxaca&#160;&bull;&#160;Avenida los jepos 101</h4>
+						<h4 className="text-gray-700 mt-2 text-sm">{city}&#160;&bull;&#160;{address}</h4>
 					</div>
 					<div className="col-span-12 mt-5">
 						<div className="grid grid-cols-2 gap-2 items-end">
 							<Item
-								text={"3.6 (10 reseñas)"}
+								text={`${reviews.total} (${reviews.count} reseñas)`}
+								// text={"3.6 (10 reseñas)"}
 							>
 								<Rating
 									size={10}

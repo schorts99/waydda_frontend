@@ -15,7 +15,7 @@
 import PropTypes from 'prop-types'
 import Review from "../../Review";
 
-export default function ListReviews({withTitle}) {
+export default function ListReviews({withTitle, reviews}) {
 	return (
 		<div className="grid grid-cols-2 bg-background">
 			{withTitle &&
@@ -26,19 +26,22 @@ export default function ListReviews({withTitle}) {
 					</div>
 					<div className="col-span-1 text-right">
 						<span className="text-sm text-gray-600">
-							18 en total
+							{reviews.count} en total
 						</span>
 					</div>
 				</div>
 			</div>
 			}
 			<div className="col-span-2 px-4">
-				<Review comment={""} date={""} stars={4} user={{name: "Angel Mendez"}}/>
-				<Review comment={""} date={""} stars={4} user={{name: "Angel Mendez"}}/>
-				<Review comment={""} date={""} stars={3} user={{name: "Angel Mendez"}}/>
-				<Review comment={""} date={""} stars={2} user={{name: "Angel Mendez"}}/>
-				<Review comment={""} date={""} stars={1} user={{name: "Angel Mendez"}}/>
-				<Review comment={""} date={""} stars={0} user={{name: "Angel Mendez"}}/>
+				{reviews.items.map((review, i) => (
+					<Review
+						key={i}
+						comment={review.comment}
+						date={review.date}
+						stars={review.stars}
+						user={review.user}
+					/>
+				))}
 			</div>
 		</div>
 	)

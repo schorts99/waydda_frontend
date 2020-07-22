@@ -15,8 +15,9 @@
 import ResponsiveImage from "../ResponsiveImage";
 import Rating from "react-rating";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
+import moment from 'moment';
 
-export default function Review({image, stars, comment, date, user}) {
+export default function Review({ stars, comment, date, user}) {
 	return (
 		<div className="grid grid-cols-12 gap-4 z-0 items-center pb-6 border-b mb-6">
 			<div className="col-span-2">
@@ -28,7 +29,7 @@ export default function Review({image, stars, comment, date, user}) {
 			</div>
 			<div className="col-span-10">
 				<h3 className="font-bold mb-1">{user.name} <span
-					className="text-xs text-gray-700 font-normal"> - Hace 5 horas</span></h3>
+					className="text-xs text-gray-700 font-normal"> - {moment(date).fromNow()}</span></h3>
 				{/*<p className="my-2 text-xs text-gray-700" >El 12/11/20</p>*/}
 				<Rating
 					size={10}
@@ -42,10 +43,7 @@ export default function Review({image, stars, comment, date, user}) {
 				/>
 			</div>
 			<div className="col-span-12 mt-1">
-				<p className="text-gray-700 text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi dicta
-					explicabo
-					natus voluptas voluptate. A, alias, deleniti esse fuga in ipsum magnam modi, molestiae nulla numquam officia
-					quae quam?</p>
+				<p className="text-gray-700 text-sm">{comment}</p>
 			</div>
 		</div>
 	)

@@ -20,7 +20,7 @@ import Footer from "../../Footer";
 import {useEffect, useState} from "react";
 import Sidebar from "../../SideBar";
 
-export default function LayoutUnAuthenticated({children, head, withHeader,moreSpaceInFooter}) {
+export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter}) {
 	
 	const [openSidebar, setOpenSidebar] = useState(false);
 	
@@ -43,6 +43,7 @@ export default function LayoutUnAuthenticated({children, head, withHeader,moreSp
 			<Head>
 				<title>{head.title ? `${head.title} | ${es.head.title}` : es.head.title}</title>
 				<link rel="icon" href="/favicon.ico"/>
+				<meta name={"theme-color"} content={head.theme || "#fff"}/>
 			</Head>
 			<main>
 				{withHeader &&

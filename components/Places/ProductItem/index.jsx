@@ -33,7 +33,10 @@ export default function ProductItem({views}) {
 				}
 				<h6
 					className={`text-sm mt-1 ${views ? "" : "font-bold"}`}>{views ? `${views} ${views > 1 ? "visitas" : "visita"}` : "MXN 45.00"}</h6>
-				<h5 className="text-gray-700 text-xs my-1">Última actualización: <span className="font-bold" >Hace 5 horas</span></h5>
+				{views &&
+				<h5 className="text-gray-700 text-xs my-1">Última actualización: <span className="font-bold">Hace 5 horas</span>
+				</h5>
+				}
 			</div>
 		</div>
 	)
