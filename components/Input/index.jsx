@@ -14,19 +14,33 @@
 
 import PropTypes from 'prop-types'
 
-export default function SimpleInput({label, type, placeholder, maxLength, minLength, handleChange, value}) {
+export default function SimpleInput({label, type, placeholder, maxLength, minLength, handleChange, value, name}) {
 	return (
 		<div className="grid grid-cols-1 mb-5">
 			<div className="col-span-1 mb-2">
 				<label className="text-xs text-gray-600 uppercase font-bold">{label}</label>
 			</div>
 			<div className="col-span-1">
-				<input type={type}
-				       value={value}
-				       onChange={handleChange}
-				       maxLength={maxLength}
-				       minLength={minLength}
-				       className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full" placeholder={placeholder}/>
+				{type === "textarea" ?
+					<textarea
+						onChange={handleChange}
+						value={value}
+						placeholder={placeholder}
+						rows={4}
+						name={name}
+						className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full"
+					/>
+					:
+					<input type={type}
+					       value={value}
+					       name={name}
+					       onChange={handleChange}
+					       maxLength={maxLength}
+					       minLength={minLength}
+					       className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full"
+					       placeholder={placeholder}/>
+				}
+			
 			</div>
 		</div>
 	)

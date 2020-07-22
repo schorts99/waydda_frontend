@@ -18,14 +18,16 @@ import PlaceMenu from "../../PlaceMenu";
 import {useState} from "react";
 import WhatsAppButton from "../../WhatsAppButton";
 
-export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews, food}}) {
+export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews, food, whatsapp}}) {
 	const [activeItem, setActiveItem] = useState("")
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
 	}
 	return (
 		<div className="grid grid-cols-12 ">
-			<WhatsAppButton/>
+			{whatsapp &&
+			<WhatsAppButton data={whatsapp}/>
+			}
 			<div className="col-span-12">
 				<PlaceCover
 					name={name}

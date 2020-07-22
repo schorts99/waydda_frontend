@@ -15,11 +15,12 @@
 import PropTypes from 'prop-types'
 import ResponsiveImage from "../../ResponsiveImage";
 
-export default function ProductItem({views, name, description, price, image}) {
+export default function ProductItem({views, name, description, price, image, scrollPosition}) {
 	return (
 		<div className="flex pb-6 mt-6 border-b items-start px-3">
 			<div className="w-4/12">
 				<ResponsiveImage
+					scrollPosition={scrollPosition}
 					publicId={image}
 					height={500}
 					bgColor="#fafafa"

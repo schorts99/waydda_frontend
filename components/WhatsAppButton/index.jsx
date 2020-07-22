@@ -14,7 +14,7 @@
 import {FaWhatsapp} from 'react-icons/fa'
 import {useState} from "react";
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({data: {number, message, style}}) {
 	
 	
 	const [rounded, setRounded] = useState(false);
@@ -24,13 +24,13 @@ export default function WhatsAppButton() {
 		setRounded(!rounded)
 	}
 	
-	if (rounded) {
+	if (style) {
 		return (
 			<div className="fixed bottom-0 z-20 right-0 mb-6 mr-6">
 				<button
-					onClick={handleClick}
+					// onClick={handleClick}
 					style={{background: "#075E54"}}
-					className="grid grid-cols-1 py-3 shadow w-16 h-16 items-center rounded-full">
+					className="grid grid-cols-1 py-3 shadow-2xl w-16 h-16 items-center rounded-full">
 					<div className="col-span-1 text-center flex justify-center items-center">
 						<FaWhatsapp
 							size={30}
@@ -43,9 +43,10 @@ export default function WhatsAppButton() {
 	}
 	
 	return (
-		<button
-			onClick={handleClick}
-			className="grid grid-cols-1 z-20 py-3 items-center rounded shadow fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0"
+		<a
+			href={`https://wa.me/${number}?text=${message}`}
+			// onClick={handleClick}
+			className="grid grid-cols-1 z-20 py-3 items-center rounded shadow-2xl fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0"
 			style={{
 				background: "#075E54"
 			}}
@@ -59,6 +60,6 @@ export default function WhatsAppButton() {
 				</div>
 				<p className="text-white font-bold">Contactar por whatsapp</p>
 			</div>
-		</button>
+		</a>
 	)
 }

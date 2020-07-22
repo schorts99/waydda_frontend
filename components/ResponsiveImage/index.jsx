@@ -15,11 +15,12 @@
 import GetImageUrl from "../../lib";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
-export default function ResponsiveImage({srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 2000, height = 100, fit = "outside", bgColor = null, wrapperClass = ""}) {
-
+export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 2000, height = 100, fit = "outside", bgColor = null, wrapperClass = ""}) {
+	
 	
 	return (
 		<LazyLoadImage
+			scrollPosition={scrollPosition}
 			alt={alt}
 			className={`${className}`}
 			wrapperClassName={wrapperClass}
