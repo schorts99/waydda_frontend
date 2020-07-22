@@ -23,11 +23,11 @@ export default function PlacePage() {
 		<LayoutUnAuthenticated
 			moreSpaceInFooter
 			withHeader={false}
-			head={{title: "Demo", description: "Conoce el menú de Demo en Waydda",theme: "#000"}}>
+			head={{title: "Demo", description: "Conoce el menú de Demo en Waydda", theme: "#000"}}>
 			<PlacePresentation
 				data={{...demo}}
 			>
-				<ListAllProducts/>
+				<ListAllProducts data={demo.food}/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>
 	)

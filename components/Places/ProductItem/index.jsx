@@ -15,28 +15,41 @@
 import PropTypes from 'prop-types'
 import ResponsiveImage from "../../ResponsiveImage";
 
-export default function ProductItem({views}) {
+export default function ProductItem({views, name, description, price, image}) {
 	return (
-		<div className={`grid grid-cols-12 gap-4 mx-2 pb-6 mb-6 border-b ${views ? "items-center" : "items-center"}`}>
-			<div className="col-span-4 items-center flex">
+		<div className="flex pb-6 mt-6 border-b items-start px-3">
+			<div className="w-4/12">
 				<ResponsiveImage
-					publicId={"fresh-and-delicious.jpg"}
+					publicId={image}
 					height={500}
-					className="rounded shadow"
-					wrapperClass="h-full"
+					bgColor="#fafafa"
+					fit={"cover"}
+					className="rounded shadow h-24 w-24"
+					wrapperClass="h-full rounded bg-orange-100"
 				/>
 			</div>
-			<div className="col-span-8">
-				<h4 className="font-bold">Carne sabrosa sin sangre</h4>
-				{!views &&
-				<h5 className="text-xs text-gray-700 my-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
-				}
-				<h6
-					className={`text-sm mt-1 ${views ? "" : "font-bold"}`}>{views ? `${views} ${views > 1 ? "visitas" : "visita"}` : "MXN 45.00"}</h6>
-				{views &&
-				<h5 className="text-gray-700 text-xs my-1">Última actualización: <span className="font-bold">Hace 5 horas</span>
-				</h5>
-				}
+			<div className="w-9/12 h-24">
+				<div className="flex flex-wrap content-between h-full">
+					<div className="w-full">
+						<h4 className="font-bold text-lg">{name}</h4>
+						{description &&
+						<h5 className="text-xs text-gray-700 mt-1">{description}</h5>
+						}
+					</div>
+					{!views &&
+					<div className="w-full">
+						<h6
+							className={`text-xs mt-1 ${views ? "" : "font-bold"}`}>{views ? `${views} ${views > 1 ? "visitas" : "visita"}` : `MXN ${price.toFixed(2)}`}</h6>
+					</div>
+					}
+					{views &&
+					<div className="w-full">
+						<h5 className="text-gray-700 text-xs my-1">Última actualización: <span
+							className="font-bold">Hace 5 horas</span>
+						</h5>
+					</div>
+					}
+				</div>
 			</div>
 		</div>
 	)

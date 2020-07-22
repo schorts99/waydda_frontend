@@ -15,39 +15,30 @@
 import {Link} from 'react-scroll';
 import {useState} from "react";
 
-export default function PlaceMenu({handleSendItem}) {
+export default function PlaceMenu({handleSendItem, items}) {
 	const onHandleChange = (e) => {
 		handleSendItem(e);
 	}
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
-			
-			<MenuItem
-				handleChange={onHandleChange}
-				keyValue={"index"}
-				index
-				label={"Sopas"}/>
-			<MenuItem
-				handleChange={onHandleChange}
-				keyValue={"products"}
-				label={"Carnes"}/>
-			<MenuItem
-				handleChange={onHandleChange}
-				keyValue={"reviews"}
-				label={"Vegetariana"}/>
-			<MenuItem
-				handleChange={onHandleChange}
-				keyValue={"reviews"}
-				label={"Italiana"}/>
-			<MenuItem
-				handleChange={onHandleChange}
-				keyValue={"reviews"}
-				label={"Italiana"}/>
+			{items.map((item, i) => {
+				if (item.items.length > 0) {
+					return (
+						<MenuItem
+							key={i}
+							handleChange={onHandleChange}
+							keyValue={item.name}
+							label={item.label}/>
+					)
+				} else {
+					return null;
+				}
+			})}
 		</div>
 	)
 }
 
-const MenuItem = ({label, keyValue,handleChange}) => {
+const MenuItem = ({label, keyValue, handleChange}) => {
 	const [active, setActive] = useState(false);
 	return (
 		<Link

@@ -18,7 +18,7 @@ import PlaceMenu from "../../PlaceMenu";
 import {useState} from "react";
 import WhatsAppButton from "../../WhatsAppButton";
 
-export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews}}) {
+export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews, food}}) {
 	const [activeItem, setActiveItem] = useState("")
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
@@ -40,6 +40,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			{withSticky &&
 			<div className={`col-span-12 z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>
 				<PlaceMenu
+					items={food.categories}
 					handleSendItem={onHandleReceive}
 				/>
 			</div>

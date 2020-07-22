@@ -14,7 +14,7 @@
 
 import CategoryList from "../CategoryList";
 
-export default function ListAllProducts() {
+export default function ListAllProducts({data}) {
 	return (
 		<div className="grid grid-cols-12 items-center bg-background">
 			<div className="col-span-12 z-10 px-4 bg-white border-b">
@@ -24,13 +24,26 @@ export default function ListAllProducts() {
 					</div>
 					<div className="col-span-1 text-right">
 						<span className="text-sm text-gray-600">
-							18 en total
+							{data.total} en total
 						</span>
 					</div>
 				</div>
 			</div>
-			<CategoryList name={"index"} count={12} label={"Carnes el mencho"}/>
-			<CategoryList name={"products"} count={12} label={"Carnes el mencho"}/>
+			{data.categories.map((category, i) => {
+				if (category.items.length > 0) {
+					return (
+						<CategoryList
+							key={i}
+							name={category.name}
+							products={category.items}
+							count={category.total}
+							label={category.label}
+						/>
+					)
+				} else {
+					return null
+				}
+			})}
 		</div>
 	)
 }

@@ -16,18 +16,16 @@ import Category from "../Category";
 import {Element} from "react-scroll";
 import ProductItem from "../ProductItem";
 
-export default function CategoryList({count, label, name}) {
+export default function CategoryList({count, label, name, products}) {
 	return (
 		<>
 			<Element name={name} className="col-span-12">
 				<div className="col-span-12 mt-6 mx-2">
-					<Category count={12} label={"Carnes del mencho"}/>
+					<Category count={count} label={label}/>
 				</div>
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
-				<ProductItem/>
+				{products.map((product, i) => (
+					<ProductItem name={product.name} description={product.description} price={product.price} image={product.image} />
+				))}
 			</Element>
 		</>
 	)
