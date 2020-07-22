@@ -15,7 +15,7 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-function LinkComponent({label, className, href, isExternal}) {
+function LinkComponent({label, className, href, isExternal, prefetch}) {
 	if (isExternal) {
 		return (
 			<a data-type={"external"} href={href} className={`${className ? ` ${className}` : ""}`}
@@ -23,7 +23,7 @@ function LinkComponent({label, className, href, isExternal}) {
 		)
 	}
 	return (
-		<Link href={href}>
+		<Link href={href} prefetch={prefetch}>
 			<a data-type={"normal"} className={`${className ? ` ${className}` : ""}`}>{label}</a>
 		</Link>
 	);
@@ -41,7 +41,8 @@ LinkComponent.defaultProps = {
 	label: "",
 	className: "",
 	href: "/",
-	isExternal: false
+	isExternal: false,
+	prefetch: true
 }
 
 export default LinkComponent;

@@ -20,6 +20,7 @@ function SidebarItem({label, href, isExternal, featured}) {
 			<div className="grid grid-cols-12 m-0 justify-content-center">
 				<div className="col-span-10 col-start-2 p-0">
 					<LinkComponent
+						prefetch={false}
 						label={label}
 						href={href}
 						className={`${featured ? "font-bold" : ""}`}

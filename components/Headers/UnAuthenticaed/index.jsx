@@ -39,7 +39,9 @@ export default function UnAuthenticatedHeader({elements, isSidebarOpen, toggleSi
 				<div className="flex justify-end">
 					{elements.map((item, k) => (
 						<div key={k} className="w-2/12 text-center">
-							<Link href={item.href}>
+							<Link
+								prefetch={false}
+								href={item.href}>
 								<a
 									className={`text-gray-900 font-semibold ${item.featured ? "text-red-principal" : ""}`}>{item.title}</a>
 							</Link>
