@@ -57,9 +57,9 @@ export default function Pricing({onHandleClickPrice}) {
 			</div>
 			
 			<div className="col-span-12 px-6 md:mt-10">
-				<div className="grid grid-cols-12 md:gap-12">
+				<div className="flex flex-wrap justify-center">
 					{features.slice(0, 1).map((item, k) => (
-						<div key={k} className="col-span-12 md:col-span-4">
+						<div key={k} className="md:w-4/12 w-full">
 							<PricingItem
 								handleClickPrice={onHandleClickPrice}
 								monthly={monthly}

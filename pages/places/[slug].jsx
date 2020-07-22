@@ -15,9 +15,11 @@
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
-import ListAllProducts from "../../components/Places/ListAllProducts";
 import demo from '../../demo/index.json'
-import ContactForm from "../../components/Places/ContactForm";
+import dynamic from 'next/dynamic'
+
+const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
+const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
 
 export default function PlacePage() {
 	return (
@@ -30,7 +32,7 @@ export default function PlacePage() {
 			>
 				<ListAllProducts data={demo.food}/>
 			</PlacePresentation>
-			<ContactForm />
+			<ContactForm/>
 		</LayoutUnAuthenticated>
 	)
 }

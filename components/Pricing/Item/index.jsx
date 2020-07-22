@@ -72,8 +72,8 @@ const Feature = ({title, included, coming}) => (
 
 PricingItem.propTypes = {
 	button: PropTypes.string.isRequired,
-	coming: PropTypes.any,
-	description: PropTypes.string.isRequired,
+	coming: PropTypes.bool,
+	description: PropTypes.string,
 	features: PropTypes.any,
 	important: PropTypes.bool.isRequired,
 	monthly: PropTypes.bool.isRequired,

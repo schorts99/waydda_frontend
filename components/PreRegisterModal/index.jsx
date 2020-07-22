@@ -219,8 +219,8 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 										placeholder={"selecciona un estado"}
 										className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full bg-white">
 										<option value={""}>Selecciona un estado</option>
-										{states.map((state) => (
-											<option className="capitalize" value={state.clave}>{state.label}</option>
+										{states.map((state,i) => (
+											<option className="capitalize" key={i} value={state.clave}>{state.label}</option>
 										))}
 									</select>
 								</div>

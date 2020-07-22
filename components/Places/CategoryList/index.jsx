@@ -26,6 +26,7 @@ function CategoryList({count, label, name, products, scrollPosition}) {
 				</div>
 				{products.map((product, i) => (
 					<ProductItem
+						key={i}
 						scrollPosition={scrollPosition}
 						name={product.name} description={product.description} price={product.price}
 						image={product.image}/>
