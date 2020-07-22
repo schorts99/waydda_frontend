@@ -179,7 +179,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								}}
 								label={"Tu nombre"}
 								placeholder={"Armando Pérez"}
-								minLength={6}
+								minLength={4}
 								maxLength={50}
 								value={fields.name}
 							/>
@@ -189,7 +189,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								}}
 								label={"Correo Electrónico"}
 								placeholder={"armandoperez@gmail.com"}
-								minLength={10}
+								minLength={5}
 								maxLength={50}
 								value={fields.email}
 								type={"email"}
@@ -200,7 +200,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								}}
 								label={"Nombre de tu restaurante"}
 								placeholder={"Tacos los primos"}
-								minLength={5}
+								minLength={4}
 								maxLength={50}
 								value={fields.place_name}
 							/>

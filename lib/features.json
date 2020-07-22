@@ -12,7 +12,8 @@
     "features": [
       {
         "title": "Código QR",
-        "included": true
+        "included": true,
+        "quantity": 3
       },
       {
         "title": "Categorías",
@@ -33,6 +34,11 @@
       {
         "title": "Favicon propio",
         "included": true
+      },
+      {
+        "title": "Formulario de contacto",
+        "included": true,
+        "coming": true
       },
       {
         "title": "Almacenamiento gratuito",
@@ -110,11 +116,7 @@
         "included": false,
         "coming": true
       },
-      {
-        "title": "Formulario de contacto",
-        "included": false,
-        "coming": true
-      },
+
       {
         "title": "Reseñas",
         "included": false,
@@ -125,11 +127,7 @@
         "included": false,
         "coming": true
       },
-      {
-        "title": "Dividir cuenta",
-        "included": false,
-        "coming": true
-      },
+
       {
         "title": "Gestión de inventario",
         "included": false,
@@ -237,11 +235,7 @@
         "included": false,
         "coming": true
       },
-      {
-        "title": "Dividir cuenta",
-        "included": false,
-        "coming": true
-      },
+
       {
         "title": "Gestión de inventario",
         "included": false,
@@ -312,11 +306,6 @@
       },
       {
         "title": "Pagos desde la mesa",
-        "included": true,
-        "coming": true
-      },
-      {
-        "title": "Dividir cuenta",
         "included": true,
         "coming": true
       },

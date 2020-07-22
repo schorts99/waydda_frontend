@@ -58,7 +58,7 @@ export default function Pricing({onHandleClickPrice}) {
 			
 			<div className="col-span-12 px-6 md:mt-10">
 				<div className="grid grid-cols-12 md:gap-12">
-					{features.map((item, k) => (
+					{features.slice(0, 1).map((item, k) => (
 						<div key={k} className="col-span-12 md:col-span-4">
 							<PricingItem
 								handleClickPrice={onHandleClickPrice}
