@@ -14,17 +14,19 @@
 
 import LayoutUnAuthenticated from "../../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../../components/Places/Presentation";
-import ListReviews from "../../../components/Places/ListReviews";
 import demo from '../../../demo/index.json'
+import dynamic from 'next/dynamic'
+const ListReviews = dynamic(() => import('../../../components/Places/ListReviews'))
 
 export default function Reviews() {
 	return (
-		<LayoutUnAuthenticated moreSpaceInFooter={true} withHeader={false}
-		                       head={{
-			                       title: "Reseñas de Demo",
-			                       description: "Reseñas del servicio de Demo en Waydda",
-			                       theme: "#000"
-		                       }}>
+		<LayoutUnAuthenticated
+			moreSpaceInFooter={true} withHeader={false}
+			head={{
+				title: "Reseñas de Demo",
+				description: "Reseñas del servicio de Demo en Waydda",
+				theme: "#000"
+			}}>
 			<PlacePresentation
 				withSticky={false}
 				data={{...demo}}

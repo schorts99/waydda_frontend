@@ -32,6 +32,8 @@ export default function ListReviews({withTitle, reviews}) {
 				</div>
 			</div>
 			}
+			{
+				reviews.items &&
 			<div className="col-span-2 px-4">
 				{reviews.items.map((review, i) => (
 					<Review
@@ -43,14 +45,17 @@ export default function ListReviews({withTitle, reviews}) {
 					/>
 				))}
 			</div>
+			}
 		</div>
 	)
 }
 
 ListReviews.propTypes = {
-	withTitle: PropTypes.bool
+  reviews: PropTypes.any,
+  withTitle: PropTypes.bool
 }
 
 ListReviews.defaultProps = {
-	withTitle: true
+  reviews: [],
+  withTitle: true
 }

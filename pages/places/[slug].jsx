@@ -31,8 +31,8 @@ export default function PlacePage() {
 				data={{...demo}}
 			>
 				<ListAllProducts data={demo.food}/>
+				<ContactForm/>
 			</PlacePresentation>
-			<ContactForm/>
 		</LayoutUnAuthenticated>
 	)
 }

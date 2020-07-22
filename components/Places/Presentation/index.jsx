@@ -16,7 +16,11 @@ import PropTypes from 'prop-types'
 import PlaceCover from "../Cover";
 import PlaceMenu from "../../PlaceMenu";
 import {useState} from "react";
-import WhatsAppButton from "../../WhatsAppButton";
+import dynamic from "next/dynamic";
+
+const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
+	ssr: false
+})
 
 export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews, food, whatsapp}}) {
 	const [activeItem, setActiveItem] = useState("")
