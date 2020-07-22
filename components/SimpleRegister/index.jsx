@@ -14,6 +14,7 @@
 
 import ResponsiveImage from "../ResponsiveImage";
 import {useState} from "react";
+import Link from "next/link";
 
 export default function SimpleRegister({handleSubmit}) {
 	
@@ -54,10 +55,16 @@ export default function SimpleRegister({handleSubmit}) {
 							RESERVAR MI LUGAR
 						</button>
 					</div>
-					{/*<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">*/}
-					{/*	<button className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">VER DEMOSTRACIÓN*/}
-					{/*	</button>*/}
-					{/*</div>*/}
+					<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">
+						<Link
+							href={"/places/[slug]"}
+							as={"/places/demo"}>
+							<a
+								className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">
+								VER DEMOSTRACIÓN
+							</a>
+						</Link>
+					</div>
 				</div>
 			</form>
 			<div className="col-span-3 hidden md:block mx-auto">
@@ -67,36 +74,49 @@ export default function SimpleRegister({handleSubmit}) {
 					height={1000}
 				/>
 			</div>
-			<div className="col-span-12 block md:hidden mt-12 mx-auto">
-				<ResponsiveImage
-					publicId={"kingdom-4.svg"}
-					className="h-56 mx-auto md:h-56"
-					height={1000}
-				/>
+			{/*<div className="col-span-12 block md:hidden mt-12 mx-auto">*/
+			}
+			{/*	<ResponsiveImage*/
+			}
+			{/*		publicId={"kingdom-4.svg"}*/
+			}
+			{/*		className="h-56 mx-auto md:h-56"*/
+			}
+			{/*		height={1000}*/
+			}
+			{/*	/>*/
+			}
+			{/*</div>*/
+			}
+			<div className="col-span-12 block md:hidden mt-12 ">
+				<div className="grid grid-cols-12 items-center gap-4 justify-around">
+					<div className="col-span-3 mx-auto">
+						<ResponsiveImage
+							publicId={"kingdom-4.svg"}
+							className="h-auto md:h-56"
+							height={1000}
+						/>
+					</div>
+					<div className="col-span-6 mx-auto">
+						<Link
+							href={"/places/[slug]"}
+							as={"/places/demo"}
+						>
+							<a
+								className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">
+								VER DEMO
+							</a>
+						</Link>
+					</div>
+					<div className="col-span-3 mx-auto">
+						<ResponsiveImage
+							publicId={"kingdom-744.svg"}
+							className="h-auto md:h-56"
+							height={1000}
+						/>
+					</div>
+				</div>
 			</div>
-			{/*<div className="col-span-12 block md:hidden mt-12 ">*/}
-			{/*	<div className="grid grid-cols-12 items-center gap-4 justify-around">*/}
-			{/*		<div className="col-span-3 mx-auto">*/}
-			{/*			<ResponsiveImage*/}
-			{/*				publicId={"kingdom-4.svg"}*/}
-			{/*				className="h-auto md:h-56"*/}
-			{/*				height={1000}*/}
-			{/*			/>*/}
-			{/*		</div>*/}
-			{/*		<div className="col-span-6 mx-auto">*/}
-			{/*			<button className="bg-red-principal rounded shadow font-bold text-sm py-4 px-4 text-white">VER*/}
-			{/*				DEMOSTRACIÓN*/}
-			{/*			</button>*/}
-			{/*		</div>*/}
-			{/*		<div className="col-span-3 mx-auto">*/}
-			{/*			<ResponsiveImage*/}
-			{/*				publicId={"kingdom-744.svg"}*/}
-			{/*				className="h-auto md:h-56"*/}
-			{/*				height={1000}*/}
-			{/*			/>*/}
-			{/*		</div>*/}
-			{/*	</div>*/}
-			{/*</div>*/}
 		</div>
 	)
 }
