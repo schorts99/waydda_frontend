@@ -1,5 +1,7 @@
 {
   "head": {
-    "title": "Waydda"
+    "title": "Waydda",
+    "description": "Menú QR gratis para tu restaurante",
+    "theme": "#fff"
   }
 }

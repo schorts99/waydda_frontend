@@ -6,6 +6,7 @@ module.exports = {
 		]
 	},
 	theme: {
+		
 		borderRadius: {
 			'none': '0',
 			'sm': '0.125rem',
@@ -20,6 +21,9 @@ module.exports = {
 				"red-principal": "#ff441f",
 				"purple-principal": "#5B3093",
 				background: "#fafafa"
+			},
+			height: {
+				"xxl": "24em"
 			},
 		},
 	},

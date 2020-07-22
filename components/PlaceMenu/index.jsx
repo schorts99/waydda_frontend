@@ -42,7 +42,7 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 	const [active, setActive] = useState(false);
 	return (
 		<Link
-			className={`py-3 px-5 text-center z-20`}
+			className={`py-3 px-5 md:py-5 md:px-8 text-center z-20`}
 			activeClass="border-black border-b-2 z-20"
 			to={keyValue}
 			spy={true}
@@ -57,7 +57,7 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 				setActive(true);
 			}}
 		>
-			<span className={`select-none text-sm uppercase ${active ? "text-black" : "text-gray-500"}`}>{label}</span>
+			<span className={`select-none text-sm md:text-base uppercase cursor-pointer ${active ? "text-black" : "text-gray-500"}`}>{label}</span>
 		</Link>
 	)
 }

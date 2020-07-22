@@ -42,7 +42,7 @@ export default function ContactForm() {
 		<div className="grid grid-cols-12 bg-black px-3 py-5">
 			<div className="col-span-12 text-center mb-5">
 				<h3 className="text-2xl text-white font-bold">
-					Ponte en contacto con nosotros
+					Ponte en contacto con Moose
 				</h3>
 			
 			</div>

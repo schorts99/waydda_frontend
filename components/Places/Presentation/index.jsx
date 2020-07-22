@@ -17,6 +17,7 @@ import PlaceCover from "../Cover";
 import PlaceMenu from "../../PlaceMenu";
 import {useState} from "react";
 import dynamic from "next/dynamic";
+import PlaceHeader from "../../Headers/PlaceHeader";
 
 const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 	ssr: false
@@ -29,9 +30,10 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 	}
 	return (
 		<div className="grid grid-cols-12 ">
-			{whatsapp &&
-			<WhatsAppButton data={whatsapp}/>
-			}
+			<div className="col-span-12">
+				<PlaceHeader/>
+			</div>
+			
 			<div className="col-span-12">
 				<PlaceCover
 					name={name}
@@ -54,6 +56,9 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			<div className="col-span-12">
 				{children}
 			</div>
+			{whatsapp &&
+			<WhatsAppButton data={whatsapp}/>
+			}
 		</div>
 	)
 }

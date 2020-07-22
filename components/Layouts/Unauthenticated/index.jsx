@@ -19,9 +19,11 @@ import UnAuthenticatedHeader from "../../Headers/UnAuthenticaed";
 import Footer from "../../Footer";
 import {useEffect, useState} from "react";
 import Sidebar from "../../SideBar";
+import {useRouter} from 'next/router';
+import GetImageUrl from "../../../lib";
 
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter}) {
-	
+	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);
 	
 	useEffect(() => {
@@ -41,9 +43,27 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 	return (
 		<>
 			<Head>
-				<title>{head.title ? `${head.title} | ${es.head.title}` : es.head.title}</title>
 				<link rel="icon" href="/favicon.ico"/>
 				<meta name={"theme-color"} content={head.theme || "#fff"}/>
+				
+				<title>{head.title ? `${head.title} | ${es.head.title}` : es.head.title}</title>
+				<meta name="description" content={head.description || es.head.description}/>
+				<meta name="abstract" content={head.description || es.head.description}/>
+				<meta name="keywords" content={`${es.keywords}${head.keywords && `, ${head.keywords}`}`}/>
+				<meta name="author" content={head.author || 'Azachii'}/>
+				<meta property="og:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
+				<meta property="og:description" content={head.description || es.description}/>
+				<meta property="og:url" content={`https://www.azachii.dev/${router.asPath}`}/>
+				<meta property="og:image" content={head.image || es.image}/>
+				<meta name="twitter:description" content={head.description || es.description}/>
+				<meta name="twitter:url" content={`https://www.azachii.dev/${router.asPath}`}/>
+				<meta name="twitter:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
+				<meta name="theme-color" content={head.theme || "#603eff"}/>
+				<meta name="twitter:description" content={head.description || es.description}/>
+				<meta name="twitter:image" content={head.image || GetImageUrl({publicId: es.image})}/>
+				<link rel="canonical" content={`https://waydda.azachii.dev/${router.asPath}`}/>
+			
+			
 			</Head>
 			<main>
 				{withHeader &&
