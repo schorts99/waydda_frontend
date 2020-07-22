@@ -31,7 +31,7 @@ export default function PricingItem({name, description, pricing, monthly, button
 			<div className="col-span-12 text-center mt-4">
 				{pricing.before &&
 				<h2
-					className="text-4xl my-4 font-extrabold line-through text-black">MXN {monthly ? pricing.before : pricing.before * 12}</h2>
+					className="text-4xl my-4 font-extrabold line-through text-black">MXN {monthly ? pricing.before : pricing.before * 10}</h2>
 				}
 				<h3 className="font-extrabold text-2xl">MXN {monthly ? pricing.monthly : pricing.annual * 12} <span
 					className="text-sm ml-1 text-gray-700 font-normal">{monthly ? "/ mes" : "/ año"}</span></h3>

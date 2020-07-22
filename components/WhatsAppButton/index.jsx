@@ -20,10 +20,6 @@ export default function WhatsAppButton({data: {number, message, style}}) {
 	const [rounded, setRounded] = useState(false);
 	
 	
-	const handleClick = () => {
-		setRounded(!rounded)
-	}
-	
 	if (style) {
 		return (
 			<div className="fixed bottom-0 z-20 right-0 mb-6 mr-6">
@@ -44,6 +40,7 @@ export default function WhatsAppButton({data: {number, message, style}}) {
 	
 	return (
 		<a
+			target={"_blank"}
 			href={`https://wa.me/${number}?text=${message}`}
 			// onClick={handleClick}
 			className="grid grid-cols-1 z-20 py-3 items-center rounded shadow-2xl fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0"
