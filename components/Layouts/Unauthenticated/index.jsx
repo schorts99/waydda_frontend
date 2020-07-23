@@ -76,7 +76,7 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 				<meta name="twitter:image" content={head.image || GetImageUrl({publicId: es.image})}/>
 				<meta property={"fb:app_id"} content={"641527279645625"}/>
 				<link rel="canonical" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
-			
+				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx" />
 			</Head>
 			<main>
 				{withHeader &&
