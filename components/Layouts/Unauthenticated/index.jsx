@@ -21,8 +21,7 @@ import {useEffect, useState} from "react";
 import Sidebar from "../../SideBar";
 import {useRouter} from 'next/router';
 import GetImageUrl from "../../../lib";
-import ReactPixel from '@zsajjad/react-facebook-pixel';
-
+import ReactPixel from 'react-facebook-pixel';
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);

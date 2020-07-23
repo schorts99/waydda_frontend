@@ -1,5 +1,5 @@
 {
-  "name": "waydda",
+  "name": "waydda-frontend",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -56,7 +56,8 @@
     "react-modal": "^3.11.2",
     "react-rating": "^2.0.5",
     "react-scroll": "^1.8.0",
-    "react-tooltip": "^4.2.7"
+    "react-tooltip": "^4.2.7",
+    "react-facebook-pixel": "1.0.3"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
