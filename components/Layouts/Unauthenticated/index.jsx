@@ -22,6 +22,7 @@ import Sidebar from "../../SideBar";
 import {useRouter} from 'next/router';
 import GetImageUrl from "../../../lib";
 import ReactPixel from 'react-facebook-pixel';
+import ReactGA from 'react-ga';
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);
@@ -31,6 +32,9 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 			ReactPixel.init(pixel);
 			ReactPixel.pageView();
 		}
+		
+		ReactGA.initialize('AW-740799893');
+		ReactGA.pageview(window.location.pathname + window.location.search);
 		
 		if (withHeader) {
 			const element = document.getElementById("sidebar");

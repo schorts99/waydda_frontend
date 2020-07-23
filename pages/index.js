@@ -17,7 +17,7 @@ export default function Home() {
 	const [defaultEmail, setDefaultEmail] = useState("")
 	return (
 		<LayoutUnAuthenticated
-			head={head}
+			head={{...head}}
 			pixel={"689265355254424"}
 		>
 			<PreRegisterModal
