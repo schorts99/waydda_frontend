@@ -63,20 +63,21 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 				<meta name="abstract" content={head.description || es.head.description}/>
 				<meta name="keywords" content={`${es.keywords}${head.keywords && `, ${head.keywords}`}`}/>
 				<meta name="author" content={head.author || 'Azachii'}/>
+				<meta name="theme-color" content={head.theme || "#603eff"}/>
+				
 				<meta property="og:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
 				<meta property="og:description" content={head.description || es.description}/>
 				<meta property="og:url"
 				      content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
 				<meta property="og:image" content={head.image || GetImageUrl({publicId: es.image})}/>
-				<meta name="twitter:description" content={head.description || es.description}/>
-				<meta name="twitter:url" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
-				<meta name="twitter:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
-				<meta name="theme-color" content={head.theme || "#603eff"}/>
-				<meta name="twitter:description" content={head.description || es.description}/>
-				<meta name="twitter:image" content={head.image || GetImageUrl({publicId: es.image})}/>
+				<meta property="twitter:description" content={head.description || es.description}/>
+				<meta property="twitter:url" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
+				<meta property="twitter:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
+				<meta property="twitter:description" content={head.description || es.description}/>
+				<meta property="twitter:image" content={head.image || GetImageUrl({publicId: es.image})}/>
 				<meta property={"fb:app_id"} content={"641527279645625"}/>
 				<link rel="canonical" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
-				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx" />
+				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx"/>
 			</Head>
 			<main>
 				{withHeader &&
