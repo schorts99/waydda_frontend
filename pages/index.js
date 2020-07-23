@@ -5,6 +5,8 @@ import BannerWelcome from "../components/BannerWelcome";
 import SimpleRegister from "../components/SimpleRegister";
 import dynamic from 'next/dynamic'
 import {useState} from "react";
+import {NextSeo} from 'next-seo'
+import GetImageUrl from "../lib";
 
 const RetailBanner = dynamic(() => import('../components/RetailBanner'))
 const HowItWork = dynamic(() => import('../components/HowItWork'))
@@ -20,6 +22,26 @@ export default function Home() {
 			head={{...head}}
 			pixel={"689265355254424"}
 		>
+			<NextSeo
+				title={"Waydda QR"}
+				facebook={{
+					appId: "641527279645625"
+				}}
+				canonical={"https://waydda.vercel.app"}
+				openGraph={{
+					type: 'website',
+					url: 'https://waydda.vercel.app/',
+					title: "Waydda QR - Menú Digital",
+					description: "Crea gratis un menú digital para tu restaurante.",
+					site_name: "Waydda",
+					images: [
+						{
+							url: GetImageUrl({publicId: "Logo.png"}),
+							alt: "Waydda Logo",
+						}
+					]
+				}}
+			/>
 			<PreRegisterModal
 				isOpen={openRegister}
 				handleClose={() => {
