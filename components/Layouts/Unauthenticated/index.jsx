@@ -21,12 +21,18 @@ import {useEffect, useState} from "react";
 import Sidebar from "../../SideBar";
 import {useRouter} from 'next/router';
 import GetImageUrl from "../../../lib";
+import ReactPixel from '@zsajjad/react-facebook-pixel';
 
-export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter}) {
+export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);
 	
 	useEffect(() => {
+		if (pixel) {
+			ReactPixel.init(pixel);
+			ReactPixel.pageView();
+		}
+		
 		if (withHeader) {
 			const element = document.getElementById("sidebar");
 			if (element.firstChild) {

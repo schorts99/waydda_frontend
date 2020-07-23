@@ -16,12 +16,14 @@ import LayoutUnAuthenticated from "../../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../../components/Places/Presentation";
 import demo from '../../../demo/index.json'
 import dynamic from 'next/dynamic'
+
 const ListReviews = dynamic(() => import('../../../components/Places/ListReviews'))
 const ContactForm = dynamic(() => import('../../../components/Places/ContactForm'))
 
 export default function Reviews() {
 	return (
 		<LayoutUnAuthenticated
+			pixel={"689265355254424"}
 			moreSpaceInFooter={true} withHeader={false}
 			head={{
 				title: "Reseñas de Demo",

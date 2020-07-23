@@ -18,6 +18,7 @@ export default function Home() {
 	return (
 		<LayoutUnAuthenticated
 			head={head}
+			pixel={"689265355254424"}
 		>
 			<PreRegisterModal
 				isOpen={openRegister}

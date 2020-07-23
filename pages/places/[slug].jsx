@@ -24,6 +24,7 @@ const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
 export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
+			pixel={"689265355254424"}
 			moreSpaceInFooter
 			withHeader={false}
 			head={{title: "Moose", description: "Conoce el menú de Moose en Waydda", theme: "#000"}}>
