@@ -24,6 +24,9 @@ import GetImageUrl from "../../../lib";
 import ReactPixel from 'react-facebook-pixel';
 import ReactGA from 'react-ga';
 
+const domain = "https://waydaa.vercel.app/";
+
+
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);
@@ -63,16 +66,16 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 				<meta property="og:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
 				<meta property="og:description" content={head.description || es.description}/>
 				<meta property="og:url"
-				      content={`https://www.waydda.azachii.dev/${router.asPath === "/" ? "" : router.asPath}`}/>
+				      content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
 				<meta property="og:image" content={head.image || GetImageUrl({publicId: es.image})}/>
 				<meta name="twitter:description" content={head.description || es.description}/>
-				<meta name="twitter:url" content={`https://www.waydaa.azachii.dev/${router.asPath === "/" ? "" : router.asPath}`}/>
+				<meta name="twitter:url" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
 				<meta name="twitter:title" content={head.title ? `${head.title} | ${es.title}` : es.title}/>
 				<meta name="theme-color" content={head.theme || "#603eff"}/>
 				<meta name="twitter:description" content={head.description || es.description}/>
 				<meta name="twitter:image" content={head.image || GetImageUrl({publicId: es.image})}/>
 				<meta property={"fb:app_id"} content={"641527279645625"}/>
-				<link rel="canonical" content={`https://waydda.azachii.dev/${router.asPath === "/" ? "" : router.asPath}`}/>
+				<link rel="canonical" content={`${domain}${router.asPath === "/" ? "" : router.asPath}`}/>
 			
 			</Head>
 			<main>
