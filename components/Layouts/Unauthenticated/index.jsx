@@ -57,11 +57,8 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 			<Head>
 				<link rel="icon" href="/favicon.ico"/>
 				<meta name={"theme-color"} content={head.theme || "#fff"}/>
-				<title>{head.title ? `${head.title} | ${es.head.title}` : es.head.title}</title>
-				<meta name="description" content={head.description || es.head.description}/>
 				<meta name="abstract" content={head.description || es.head.description}/>
 				<meta name="keywords" content={`${es.keywords}${head.keywords && `, ${head.keywords}`}`}/>
-				<meta name="theme-color" content={head.theme || "#603eff"}/>
 				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx"/>
 			</Head>
 			<main>
