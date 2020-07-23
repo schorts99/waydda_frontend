@@ -17,7 +17,7 @@ import CategoryList from "../CategoryList";
 export default function ListAllProducts({data}) {
 	return (
 		<div className="grid grid-cols-12 items-center bg-background">
-			<div className="col-span-12 z-10 px-4 bg-white border-b">
+			<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">
 				<div className="grid grid-cols-3 items-center py-4">
 					<div className="col-span-2">
 						<h1 className="text-lg font-bold uppercase">Todos los productos</h1>

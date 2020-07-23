@@ -20,7 +20,7 @@ export default function Category({count, label}) {
 		return null;
 	}
 	return (
-		<div className="grid grid-cols-2 mb-6 border-b pb-4 px-2">
+		<div className="grid grid-cols-2 mb-6 border-b pb-4 px-2 md:px-0">
 			<div className="col-span-1">
 				<h3 className="font-bold text-gray-700">{label}</h3>
 			</div>

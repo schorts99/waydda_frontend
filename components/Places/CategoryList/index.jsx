@@ -21,7 +21,7 @@ function CategoryList({count, label, name, products, scrollPosition}) {
 	return (
 		<>
 			<Element name={name} className="col-span-12">
-				<div className="col-span-12 mt-6 mx-2">
+				<div className="col-span-12 mt-6 mx-2 md:mx-0">
 					<Category count={count} label={label}/>
 				</div>
 				{products.map((product, i) => (
