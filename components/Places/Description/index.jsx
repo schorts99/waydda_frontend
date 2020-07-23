@@ -28,13 +28,12 @@ export default function PlaceDescription({reviews, address, city, name}) {
 								<a>{name}</a>
 							</Link>
 						</h2>
-						<h4 className="text-gray-700 mt-2 text-sm md:text-base">{city}&#160;&bull;&#160;{address}</h4>
+						<h4 className="text-gray-700 mt-2 text-sm md:text-base md:font-bold md:text-black">{city}<span className="md:block md:font-normal md:mt-1" ><span className="md:hidden md:font-normal" >&#160;&bull;&#160;</span>{address}</span></h4>
 					</div>
 					<div className="col-span-12 mt-5">
 						<div className="grid grid-cols-2 md:grid-cols-6 gap-2 items-end">
 							<Item
 								text={`${reviews.total} (${reviews.count} reseñas)`}
-								// text={"3.6 (10 reseñas)"}
 							>
 								<Rating
 									size={10}
@@ -47,7 +46,7 @@ export default function PlaceDescription({reviews, address, city, name}) {
 									readonly
 								/>
 							</Item>
-							<div className="col-span-1 md:hidden text-right">
+							<div className="col-span-1 md:col-span-6 text-right md:text-left">
 								<Link href="/places/[slug]/reviews" as={"/places/demo/reviews"}>
 									<a className="font-bold text-xs pt-2 md:text-sm">Ver reseñas</a>
 								</Link>
@@ -61,7 +60,7 @@ export default function PlaceDescription({reviews, address, city, name}) {
 }
 
 const Item = ({children, text}) => (
-	<div className="col-span-1 md:col-span-2">
+	<div className="col-span-1 md:col-span-6">
 		<div className="grid grid-cols-1">
 			<div className="col-span-1 h-6 items-center flex">
 				{children}

@@ -17,6 +17,7 @@ import PlacePresentation from "../../../components/Places/Presentation";
 import demo from '../../../demo/index.json'
 import dynamic from 'next/dynamic'
 const ListReviews = dynamic(() => import('../../../components/Places/ListReviews'))
+const ContactForm = dynamic(() => import('../../../components/Places/ContactForm'))
 
 export default function Reviews() {
 	return (
@@ -34,6 +35,7 @@ export default function Reviews() {
 				<ListReviews
 					reviews={demo.reviews}
 				/>
+				<ContactForm/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>
 	)

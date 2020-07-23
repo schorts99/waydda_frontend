@@ -57,8 +57,8 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			}
 		
 			<div className="col-span-12 md:col-span-10 md:col-start-2">
-				<div className="grid grid-cols-12 md:gap-4">
-					<div className="col-span-4 hidden md:block">
+				<div className="grid grid-cols-12 md:gap-8">
+					<div className="col-span-3 hidden md:block">
 						<div className="sticky top-0 z-20">
 							<PlaceDescription
 								reviews={reviews}
@@ -68,7 +68,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 							/>
 						</div>
 					</div>
-					<div className="col-span-12 md:col-span-8">
+					<div className="col-span-12 md:col-span-9">
 						{children}
 					</div>
 				</div>

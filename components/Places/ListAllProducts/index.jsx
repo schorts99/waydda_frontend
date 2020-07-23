@@ -23,7 +23,7 @@ export default function ListAllProducts({data}) {
 						<h1 className="text-lg font-bold uppercase">Todos los productos</h1>
 					</div>
 					<div className="col-span-1 text-right">
-						<span className="text-sm text-gray-600">
+						<span className="text-sm text-gray-600 md:font-bold md:text-gray-700">
 							{data.total} en total
 						</span>
 					</div>

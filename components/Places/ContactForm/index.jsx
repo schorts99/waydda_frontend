@@ -39,14 +39,18 @@ export default function ContactForm() {
 	}
 	
 	return (
-		<div className="grid grid-cols-12 bg-black px-3 py-5">
-			<div className="col-span-12 text-center mb-5">
-				<h3 className="text-2xl text-white font-bold">
+		<div
+			style={{
+				backgroundColor: "rgba(184,180,180,.25)"
+			}}
+			className="grid grid-cols-12 px-3 py-5 md:py-10 md:px-0 my-8 md:rounded">
+			<div className="col-span-12 text-center mb-5 md:mb-10">
+				<h3 className="text-black md:text-3xl text-2xl font-bold">
 					Ponte en contacto con Moose
 				</h3>
 			
 			</div>
-			<div className="col-span-12 bg-white px-4 py-4">
+			<div className="col-span-12 md:col-span-6 md:col-start-4 bg-white px-4 py-6 md:px-6 rounded">
 				<form
 					onSubmit={(e) => {
 						// e.preventDefault();
@@ -60,7 +64,7 @@ export default function ContactForm() {
 						</div>
 					</div>
 					}
-					<div className="col-span-12">
+					<div className="col-span-12 md:col-span-12">
 						<SimpleInput
 							label={"Nombre"}
 							placeholder={"Ej. Luis"}
@@ -69,6 +73,8 @@ export default function ContactForm() {
 							type={"text"}
 							name={"name"}
 						/>
+					</div>
+					<div className="col-span-12 md:col-span-12">
 						<SimpleInput
 							label={"Correo Electrónico"}
 							value={fields.email}
@@ -77,6 +83,8 @@ export default function ContactForm() {
 							type={"email"}
 							name={"email"}
 						/>
+					</div>
+					<div className="col-span-12">
 						<SimpleInput
 							name={"comment"}
 							label={"Comentarios"}
@@ -86,7 +94,7 @@ export default function ContactForm() {
 							type={"textarea"}
 						/>
 					</div>
-					<div className="col-span-12">
+					<div className="col-span-12 md:col-span-5">
 						<SimpleButton
 							// handleClick={onHandleClick}
 							type={"submit"}

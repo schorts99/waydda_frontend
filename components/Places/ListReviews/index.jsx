@@ -25,7 +25,7 @@ export default function ListReviews({withTitle, reviews}) {
 						<h1 className="text-lg font-bold uppercase">Reseñas</h1>
 					</div>
 					<div className="col-span-1 text-right">
-						<span className="text-sm text-gray-600">
+						<span className="text-sm text-gray-600 md:font-bold md:text-gray-700">
 							{reviews.count} en total
 						</span>
 					</div>
@@ -34,28 +34,28 @@ export default function ListReviews({withTitle, reviews}) {
 			}
 			{
 				reviews.items &&
-			<div className="col-span-2 px-4">
-				{reviews.items.map((review, i) => (
-					<Review
-						key={i}
-						comment={review.comment}
-						date={review.date}
-						stars={review.stars}
-						user={review.user}
-					/>
-				))}
-			</div>
+				<div className="col-span-2 px-4 md:px-0">
+					{reviews.items.map((review, i) => (
+						<Review
+							key={i}
+							comment={review.comment}
+							date={review.date}
+							stars={review.stars}
+							user={review.user}
+						/>
+					))}
+				</div>
 			}
 		</div>
 	)
 }
 
 ListReviews.propTypes = {
-  reviews: PropTypes.any,
-  withTitle: PropTypes.bool
+	reviews: PropTypes.any,
+	withTitle: PropTypes.bool
 }
 
 ListReviews.defaultProps = {
-  reviews: [],
-  withTitle: true
+	reviews: [],
+	withTitle: true
 }
