@@ -36,7 +36,7 @@ export default function Home() {
 					site_name: "Waydda",
 					images: [
 						{
-							url: GetImageUrl({publicId: "Logo.png"}),
+							url: GetImageUrl({publicId: "waydda.png"}),
 							alt: "Waydda Logo",
 						}
 					]

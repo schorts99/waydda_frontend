@@ -12,7 +12,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
 import demo from '../../demo/index.json'
