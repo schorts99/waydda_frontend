@@ -30,7 +30,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 		setActiveItem(e);
 	}
 	return (
-		<div className="grid grid-cols-12 ">
+		<div className="grid grid-cols-12">
 			<div className="col-span-12">
 				<PlaceHeader/>
 			</div>

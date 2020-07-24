@@ -21,6 +21,7 @@ import states from '../../lib/states.json'
 import ResponsiveImage from "../ResponsiveImage";
 import {CREATE_PRE_REGISTER_USER} from "../../lib/graohql/mutations";
 import {useMutation} from "@apollo/react-hooks";
+import ReactPixel from 'react-facebook-pixel';
 
 const customStyles = {
 	content: {
@@ -50,11 +51,10 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 	})
 	
 	const [createPreRegister, {data, loading, error}] = useMutation(CREATE_PRE_REGISTER_USER, {
-		onCompleted: () => {
+		onCompleted: (title, data) => {
 			setSuccess(true);
 		},
 		onError: () => {
-		
 		},
 		variables: {
 			input: {
@@ -158,6 +158,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 					<form
 						onSubmit={(e) => {
 							e.preventDefault();
+							ReactPixel.track("CompleteRegistration", {form: true});
 							createPreRegister()
 						}} className={"col-span-12"}>
 						<div className="col-span-12 mb-6 text-center">
@@ -219,7 +220,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 										placeholder={"selecciona un estado"}
 										className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full bg-white">
 										<option value={""}>Selecciona un estado</option>
-										{states.map((state,i) => (
+										{states.map((state, i) => (
 											<option className="capitalize" key={i} value={state.clave}>{state.label}</option>
 										))}
 									</select>

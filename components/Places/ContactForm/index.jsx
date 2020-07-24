@@ -41,9 +41,9 @@ export default function ContactForm() {
 	return (
 		<div
 			style={{
-				backgroundColor: "rgba(184,180,180,.25)"
+				backgroundColor: "#fafafa"
 			}}
-			className="grid grid-cols-12 px-3 py-5 md:py-10 md:px-0 my-8 md:rounded">
+			className="grid grid-cols-12 px-3 py-5 md:py-10 md:px-0 mt-8 md:rounded">
 			<div className="col-span-12 text-center mb-5 md:mb-10">
 				<h3 className="text-black md:text-3xl text-2xl font-bold">
 					Ponte en contacto con Moose

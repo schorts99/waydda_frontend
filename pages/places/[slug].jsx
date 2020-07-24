@@ -19,9 +19,11 @@ import demo from '../../demo/index.json'
 import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
+import Head from "next/head";
 
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
 const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
+const Map = dynamic(() => import('../../components/Map'))
 
 export default function PlacePage() {
 	return (
@@ -33,6 +35,9 @@ export default function PlacePage() {
 				theme: "#000"
 			}}
 		>
+			<Head>
+				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
+			</Head>
 			<NextSeo
 				title={"Moose en Waydda"}
 				description={"Menú digital de Moose en Waydda"}
@@ -88,6 +93,10 @@ export default function PlacePage() {
 				data={{...demo}}
 			>
 				<ListAllProducts data={demo.food}/>
+				<Map
+					marker={[-99.133432, 19.511556]}
+					center={[-99.133432, 19.511556]}
+					address={demo.address} city={demo.city}/>
 				<ContactForm/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>

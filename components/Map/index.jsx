@@ -12,33 +12,47 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {useEffect, useState} from "react";
-import mapboxgl from 'mapbox-gl';
+import PropTypes from 'prop-types'
+import {useEffect, useRef, useState} from "react";
+import BackgroundImageResponsive from "../BackgroundImageResponsive";
+import GetImageUrl from "../../lib";
+import mapboxgl from 'mapbox-gl'
 
-export default function Map() {
-
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
+export default function Map({center, address, city, marker}) {
+	
+	const mapRef = useRef();
+	
 	useEffect(() => {
-		mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
-		var map = new mapboxgl.Map({
-			container: 'map_id',
+		let map = new mapboxgl.Map({
+			container: mapRef.current,
 			style: 'mapbox://styles/mapbox/streets-v11',
-			center: [-99.212036, 19.456583],
+			center: center,
 			zoom: 14
 		});
-		var marker = new mapboxgl.Marker({draggable: true})
-		.setLngLat([-99.212036, 19.456583])
+		new mapboxgl.Marker()
+		.setLngLat(marker)
 		.addTo(map);
-		map.on("click", (e) => {
-			if(e.lngLat){
-			marker.setLngLat([e.lngLat.lng,e.lngLat.lat])
-			}
-		})
-	}, [])
+	}, [center])
 	
 	return (
-		<div className="grid grid-cols-12 z-0">
-			<div className="col-span-12 h-64" id={"map_id"}>
+		<div className="grid grid-cols-12 my-6 relative z-0">
+			<div className="col-span-12 px-3 md:px-0 mb-4">
+				<h4 className="text-2xl font-bold">
+					Ubicación
+				</h4>
+				<p className="font-bold my-2">{city}</p>
+				<p className="text-sm md:text-base text-gray-700">{address}</p>
+			</div>
+			<div className="col-span-12 h-56 md:h-xxl m-0 p-0 relative overflow-hidden">
+				<div className="h-full bg-gray-400 absolute w-full top-0 left-0 right-0 bottom-0" ref={mapRef}></div>
 			</div>
 		</div>
 	)
 }
+
+Map.propTypes = {
+	center: PropTypes.array.isRequired,
+	marker: PropTypes.array.isRequired,
+}
+

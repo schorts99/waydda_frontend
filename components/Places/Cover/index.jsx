@@ -28,7 +28,7 @@ export default function PlaceCover({image, name, city, address, reviews}) {
 				<BackgroundImageResponsive
 					src={GetImageUrl({publicId: image.src})}
 					placeholder={GetImageUrl({publicId: image.src, width: 50, height: 50})}
-					imageClassName={"md:rounded-b h-full rounded-none"}
+					imageClassName={"md:rounded-b rounded-none"}
 					className={"col-span-12 md:col-span-10 md:col-start-2 h-56 md:h-64 bg-orange-200 w-full rounded-none md:rounded-b"}
 				/>
 				<div className="col-span-12 md:hidden">

@@ -18,9 +18,11 @@ import demo from '../../../demo/index.json'
 import dynamic from 'next/dynamic'
 import GetImageUrl from "../../../lib";
 import {NextSeo} from "next-seo";
+import Head from "next/head";
 
 const ListReviews = dynamic(() => import('../../../components/Places/ListReviews'))
 const ContactForm = dynamic(() => import('../../../components/Places/ContactForm'))
+const Map = dynamic(() => import('../../../components/Map'))
 
 export default function Reviews() {
 	return (
@@ -30,6 +32,9 @@ export default function Reviews() {
 			head={{
 				theme: "#000"
 			}}>
+			<Head>
+				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
+			</Head>
 			<NextSeo
 				title={"Reseñas de Moose en Waydda"}
 				description={"Reseñas del servicio de Moose en Waydda"}
@@ -88,6 +93,10 @@ export default function Reviews() {
 				<ListReviews
 					reviews={demo.reviews}
 				/>
+				<Map
+					marker={[-99.133432, 19.511556]}
+					center={[-99.133432, 19.511556]}
+					address={demo.address} city={demo.city}/>
 				<ContactForm/>
 			</PlacePresentation>
 		</LayoutUnAuthenticated>

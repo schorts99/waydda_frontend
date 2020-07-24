@@ -24,6 +24,10 @@
         "included": true
       },
       {
+        "title": "Promociones",
+        "included": true
+      },
+      {
         "title": "Mapa de ubicación",
         "included": true
       },
@@ -58,89 +62,87 @@
       },
       {
         "title": "Agregar los ingredientes",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Agregar contenido calorico",
-        "included": false,
-        "coming": true
-      },
-      {
-        "title": "Sitckers de tu código QR",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Feed de instagram",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Cupones de descuento",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Pagos desde la página",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Múltiples divisas",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Pago con Google Pay",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Pago con Apple Pay",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
-        "title": "Tarjeta de regalo",
-        "included": false,
+        "title": "Cupones de fidelización",
+        "included": true,
+        "coming": true
+      },
+      {
+        "title": "Tarjetas de regalo",
+        "included": true,
         "coming": true
       },
       {
         "title": "Múltiples idiomas",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Facebook Pixel",
-        "included": false,
+        "included": true,
         "coming": true
       },
-
       {
         "title": "Reseñas",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Pagos desde la mesa",
-        "included": false,
+        "included": true,
         "coming": true
       },
-
       {
         "title": "Gestión de inventario",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
         "title": "Reservaciones",
-        "included": false,
+        "included": true,
         "coming": true
       },
       {
-        "title": "Pedidos a domicilio",
-        "included": false,
+        "title": "Pedidos desde la plataforma",
+        "included": true,
         "coming": true
       }
     ]
@@ -235,7 +237,6 @@
         "included": false,
         "coming": true
       },
-
       {
         "title": "Gestión de inventario",
         "included": false,
