@@ -20,7 +20,7 @@ export default function Home() {
 	return (
 		<LayoutUnAuthenticated
 			head={{...head}}
-			pixel={"689265355254424"}
+			pixel={"1404734746583052"}
 		>
 			<NextSeo
 				title={"Waydda QR"}

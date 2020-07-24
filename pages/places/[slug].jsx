@@ -26,7 +26,7 @@ const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
 export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
-			pixel={"689265355254424"}
+			pixel={"1404734746583052"}
 			moreSpaceInFooter
 			withHeader={false}
 			head={{

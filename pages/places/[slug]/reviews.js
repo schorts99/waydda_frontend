@@ -25,7 +25,7 @@ const ContactForm = dynamic(() => import('../../../components/Places/ContactForm
 export default function Reviews() {
 	return (
 		<LayoutUnAuthenticated
-			pixel={"689265355254424"}
+			pixel={"1404734746583052"}
 			moreSpaceInFooter={true} withHeader={false}
 			head={{
 				theme: "#000"
