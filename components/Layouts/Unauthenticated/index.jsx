@@ -36,7 +36,7 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 			ReactPixel.pageView();
 		}
 		
-		ReactGA.initialize('AW-740799893');
+		ReactGA.initialize('UA-173429948-1');
 		ReactGA.pageview(window.location.pathname + window.location.search);
 		
 		if (withHeader) {
