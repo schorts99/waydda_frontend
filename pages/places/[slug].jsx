@@ -19,12 +19,34 @@ import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
 import Head from "next/head";
+import {useQuery} from "@apollo/react-hooks";
+import {useRouter} from "next/router";
+import GET_BUSINESS_QUERY from "../../lib/graohql/queries/getBusiness";
 
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
 const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
 const Map = dynamic(() => import('../../components/Map'))
 
 export default function PlacePage() {
+	const router = useRouter();
+	const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {
+		variables: {
+			slug: router.query.slug || ""
+		},
+		onCompleted: () => {
+		}
+	})
+	
+	if (loading) {
+		return (
+			<h1>Cargando...</h1>
+		)
+	}
+	
+	if (error) {
+		return (<h1>Ha ocurrido un error</h1>)
+	}
+	
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
@@ -34,32 +56,45 @@ export default function PlacePage() {
 				theme: "#000"
 			}}
 		>
+			
+			<Main
+				data={data.getBusiness}
+			/>
+		</LayoutUnAuthenticated>
+	)
+}
+
+
+const Main = ({data}) => {
+	const {address, name, slug, addressState} = data
+	return (
+		<>
 			<Head>
 				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
 			</Head>
 			<NextSeo
-				title={"Moose en Waydda"}
-				description={"Menú digital de Moose en Waydda"}
+				title={`${name} en Waydda`}
+				description={`Menú digital de ${name} en Waydda`}
 				facebook={{
 					appId: "641527279645625"
 				}}
-				canonical={`https://waydda.vercel.app/places/demo`}
+				canonical={`https://waydda.vercel.app/places/${slug}`}
 				additionalMetaTags={[
 					{
 						property: "restaurant:menu",
-						content: "https://waydda.vercel.app/places/demo"
+						content: `https://waydda.vercel.app/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:website",
-						content: "https://waydda.vercel.app/places/demo"
+						content: `https://waydda.vercel.app/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:street_address",
-						content: "Av. Instituto Politécnico Nacional"
+						content: address
 					},
 					{
 						property: "restaurant:contact_info:locality",
-						content: "Ciudad de México"
+						content: addressState
 					},
 					{
 						property: "restaurant:contact_info:region",
@@ -76,28 +111,28 @@ export default function PlacePage() {
 				]}
 				openGraph={{
 					type: 'restaurant.restaurant',
-					url: 'https://waydda.vercel.app/places/demo',
-					title: "Moose en Waydda",
-					description: "Menú digital de Moose en Waydda",
+					url: `https://waydda.vercel.app/places/${slug}`,
+					title: `${name} en Waydda`,
+					description: `Menú digital de ${name} en Waydda`,
 					site_name: "Waydda",
 					images: [
 						{
 							url: GetImageUrl({publicId: "cover_500.png"}),
-							alt: "Moose cover image",
+							alt: `${name} cover image`,
 						}
 					]
 				}}
 			/>
 			<PlacePresentation
-				data={{...demo}}
+				data={{...data}}
 			>
-				<ListAllProducts data={demo.food}/>
+				<ListAllProducts data={{...data}}/>
 				<Map
 					marker={[-99.133432, 19.511556]}
 					center={[-99.133432, 19.511556]}
-					address={demo.address} city={demo.city}/>
+					address={address} city={addressState}/>
 				<ContactForm/>
 			</PlacePresentation>
-		</LayoutUnAuthenticated>
+		</>
 	)
 }

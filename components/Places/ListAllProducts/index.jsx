@@ -29,14 +29,14 @@ export default function ListAllProducts({data}) {
 					</div>
 				</div>
 			</div>
-			{data.categories.map((category, i) => {
-				if (category.items.length > 0) {
+			{data.items.map((category, i) => {
+				if (category.products.length > 0) {
 					return (
 						<CategoryList
 							key={i}
 							name={category.name}
-							products={category.items}
-							count={category.total}
+							products={category.products}
+							count={category.total || 100}
 							label={category.label}
 						/>
 					)

@@ -24,7 +24,7 @@ const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 	ssr: false
 })
 
-export default function PlacePresentation({children, withSticky, data: {cover, name, city, address, reviews, food, whatsapp}}) {
+export default function PlacePresentation({children, withSticky, data: {cover, name, addressState, address, reviews, items, whatsapp}}) {
 	const [activeItem, setActiveItem] = useState("")
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
@@ -38,7 +38,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			<div className="col-span-12 md:mb-10">
 				<PlaceCover
 					name={name}
-					city={city}
+					addressState={addressState}
 					reviews={reviews}
 					address={address}
 					image={{
@@ -50,7 +50,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			<div
 				className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>
 				<PlaceMenu
-					items={food.categories}
+					items={items}
 					handleSendItem={onHandleReceive}
 				/>
 			</div>
@@ -64,7 +64,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 								reviews={reviews}
 								name={name}
 								address={address}
-								city={city}
+								addressState={addressState}
 							/>
 						</div>
 					</div>

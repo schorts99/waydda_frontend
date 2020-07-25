@@ -24,18 +24,16 @@ import withApollo from "../lib/withApollo"
 
 function WayddaApp({Component, pageProps, apolloClient}) {
 	return (
-		<>
-			<ApolloProvider client={apolloClient}>
-				<NextNprogress
-					color="#29D"
-					startPosition={0.3}
-					stopDelayMs={200}
-					height="3"
-					options={{showSpinner: false}}
-				/>
-				<Component {...pageProps} />
-			</ApolloProvider>
-		</>
+		<ApolloProvider client={apolloClient}>
+			<NextNprogress
+				color="#29D"
+				startPosition={0.3}
+				stopDelayMs={200}
+				height="3"
+				options={{showSpinner: false}}
+			/>
+			<Component {...pageProps} />
+		</ApolloProvider>
 	);
 }
 
