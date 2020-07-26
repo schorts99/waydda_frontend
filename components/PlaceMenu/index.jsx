@@ -16,13 +16,15 @@ import {Link} from 'react-scroll';
 import {useState} from "react";
 
 export default function PlaceMenu({handleSendItem, items}) {
+	console.log(items)
 	const onHandleChange = (e) => {
 		handleSendItem(e);
 	}
+
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
-			{items.map((item, i) => {
-				if (item.products.length > 0) {
+			{items.categories.map((item, i) => {
+				if (item.items.length > 0) {
 					return (
 						<MenuItem
 							key={i}

@@ -14,14 +14,14 @@
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
-import demo from '../../demo/index.json'
 import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
 import Head from "next/head";
 import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
-import GET_BUSINESS_QUERY from "../../lib/graohql/queries/getBusiness";
+import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
+import demoData from '../../demo/index.json';
 
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
 const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
@@ -31,22 +31,21 @@ export default function PlacePage() {
 	const router = useRouter();
 	const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {
 		variables: {
-			slug: router.query.slug || ""
+			slug: router.query.slug,
 		},
-		onCompleted: () => {
-		}
+		skip: router.query.slug === 'demo',
 	})
-	
+
 	if (loading) {
 		return (
 			<h1>Cargando...</h1>
 		)
 	}
-	
+
 	if (error) {
 		return (<h1>Ha ocurrido un error</h1>)
 	}
-	
+
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
@@ -56,9 +55,8 @@ export default function PlacePage() {
 				theme: "#000"
 			}}
 		>
-			
 			<Main
-				data={data.getBusiness}
+				data={router.query.slug === 'demo' ? demoData : data.getBusiness}
 			/>
 		</LayoutUnAuthenticated>
 	)
@@ -66,11 +64,12 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState} = data
+	const {address, name, slug, addressState} = data;
+
 	return (
 		<>
 			<Head>
-				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
+				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
 			</Head>
 			<NextSeo
 				title={`${name} en Waydda`}
@@ -123,14 +122,14 @@ const Main = ({data}) => {
 					]
 				}}
 			/>
-			<PlacePresentation
-				data={{...data}}
-			>
-				<ListAllProducts data={{...data}}/>
+			<PlacePresentation data={data}>
+				<ListAllProducts data={data}/>
 				<Map
 					marker={[-99.133432, 19.511556]}
 					center={[-99.133432, 19.511556]}
-					address={address} city={addressState}/>
+					address={address}
+					city={addressState}
+				/>
 				<ContactForm/>
 			</PlacePresentation>
 		</>

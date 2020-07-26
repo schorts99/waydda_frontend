@@ -19,7 +19,7 @@ import {IoLogoWhatsapp} from 'react-icons/io'
 import {AiFillFacebook, AiOutlineTwitter} from 'react-icons/ai'
 import states from '../../lib/states.json'
 import ResponsiveImage from "../ResponsiveImage";
-import {CREATE_PRE_REGISTER_USER} from "../../lib/graohql/mutations";
+import {CREATE_PRE_REGISTER_USER} from "../../lib/graphql/mutations";
 import {useMutation} from "@apollo/react-hooks";
 import ReactPixel from 'react-facebook-pixel';
 
