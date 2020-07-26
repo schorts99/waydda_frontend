@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -26,9 +26,8 @@ function CategoryList({count, label, name, products, scrollPosition}) {
 						<Category count={count} label={label}/>
 					</div>
 					{products.map((product, i) => (
-						<div className="col-span-12 md:col-span-6">
+						<div className="col-span-12 md:col-span-6" key={i}>
 							<ProductItem
-								key={i}
 								scrollPosition={scrollPosition}
 								name={product.name} description={product.description} price={product.price}
 								image={product.image}/>

@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -33,7 +33,7 @@ export default function HowItWork() {
 								className={"bg-red-principal uppercase text-white px-5 py-4 font-bold text-sm rounded shadow-xl"}>
 								VER PRECIOS
 							</Link>
-							
+
 							// <button className="">VER PRECIOS</button>
 						)}
 					/>

@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -15,9 +15,9 @@
 import {useEffect, useRef} from "react";
 
 export default function BackgroundImageResponsive({placeholder, src, className, children, imageClassName}) {
-	
+
 	const hdImage = useRef();
-	
+
 	useEffect(() => {
 		const newImage = document.createElement("img");
 		const hdImageRef = hdImage.current;
@@ -29,9 +29,9 @@ export default function BackgroundImageResponsive({placeholder, src, className, 
 			);
 			hdImageRef.classList.add(`opacity-100`);
 		};
-		
+
 	}, [])
-	
+
 	return (
 		<div
 			className={`relative overflow-hidden ${

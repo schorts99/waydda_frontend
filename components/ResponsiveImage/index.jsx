@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -16,8 +16,8 @@ import GetImageUrl from "../../lib";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
 export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 2000, height = 100, fit = "outside", bgColor = null, wrapperClass = ""}) {
-	
-	
+
+
 	return (
 		<LazyLoadImage
 			scrollPosition={scrollPosition}

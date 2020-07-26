@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -49,7 +49,7 @@ export default function UnAuthenticatedHeader({elements, isSidebarOpen, toggleSi
 					))}
 				</div>
 			</div>
-			
+
 			{/*<div className="col-span-6 hidden md:block">*/}
 			{/*	<div className="grid grid-cols-12 items-center ">*/}
 			{/*		<div className="col-span-3 col-start-3 text-center">*/}

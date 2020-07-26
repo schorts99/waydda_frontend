@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -37,7 +37,7 @@ const customStyles = {
 	}
 };
 export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
-	
+
 	const [modalIsOpen, setModalIsOpen] = useState(isOpen);
 	const [success, setSuccess] = useState(false);
 	const [fields, setFields] = useState({
@@ -49,7 +49,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 		city: "",
 		state: ""
 	})
-	
+
 	const [createPreRegister, {data, loading, error}] = useMutation(CREATE_PRE_REGISTER_USER, {
 		onCompleted: (title, data) => {
 			setSuccess(true);
@@ -69,20 +69,20 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 			}
 		}
 	})
-	
-	
+
+
 	useEffect(() => {
 		setModalIsOpen(isOpen);
 	}, [isOpen])
 	useEffect(() => {
 		setFields({...fields, email: defaultEmail})
 	}, [defaultEmail])
-	
-	
+
+
 	const handleClick = () => {
 		setSuccess(true);
 	}
-	
+
 	return (
 		<Modal
 			isOpen={modalIsOpen}
@@ -171,7 +171,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 								}
 							</p>
 							}
-						
+
 						</div>
 						<div className="col-span-12">
 							<SimpleInput

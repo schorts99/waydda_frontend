@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -34,7 +34,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 			<div className="col-span-12">
 				<PlaceHeader/>
 			</div>
-			
+
 			<div className="col-span-12 md:mb-10">
 				<PlaceCover
 					name={name}
@@ -55,7 +55,7 @@ export default function PlacePresentation({children, withSticky, data: {cover, n
 				/>
 			</div>
 			}
-		
+
 			<div className="col-span-12 md:col-span-10 md:col-start-2">
 				<div className="grid grid-cols-12 md:gap-8">
 					<div className="col-span-3 hidden md:block">

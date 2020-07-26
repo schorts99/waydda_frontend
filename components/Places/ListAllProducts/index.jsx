@@ -5,14 +5,15 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
 
 import CategoryList from "../CategoryList";
+import Modal from '../../Modal'
 
 export default function ListAllProducts({data}) {
 	return (
@@ -29,21 +30,29 @@ export default function ListAllProducts({data}) {
 					</div>
 				</div>
 			</div>
-			{data.categories.map((category, i) => {
-				if (category.items.length > 0) {
-					return (
-						<CategoryList
-							key={i}
-							name={category.name}
-							products={category.items}
-							count={category.total}
-							label={category.label}
-						/>
-					)
-				} else {
-					return null
-				}
-			})}
+			{data.categories.length > 0 && (
+				<>
+					<Modal>
+
+					</Modal>
+					{data.categories.map((category, i) => {
+						if (category.items.length > 0) {
+							return (
+								<CategoryList
+									key={i}
+									name={category.name}
+									products={category.items}
+									count={category.total}
+									label={category.label}
+								/>
+							)
+						} else {
+							return null
+						}
+					})}
+				</>
+			)}
+
 		</div>
 	)
 }

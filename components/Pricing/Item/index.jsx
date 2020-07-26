@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -35,14 +35,14 @@ export default function PricingItem({name, description, pricing, monthly, button
 				}
 				<h3 className="font-extrabold text-2xl">MXN {monthly ? pricing.monthly : pricing.annual * 12} <span
 					className="text-sm ml-1 text-gray-700 font-normal">{monthly ? "/ mes" : "/ año"}</span></h3>
-			
+
 			</div>
 			<div className="col-span-12 mt-5">
 				<button
 					onClick={handleClickPrice}
 					className="bg-black text-white shadow-2xl px-4 w-full py-4 font-bold text-sm">{button}</button>
 			</div>
-			
+
 			<div className="col-span-12 mt-10 py-4 border-b-2 border-t-2">
 				<h3 className="font-bold text-xl">Caracteristicas</h3>
 			</div>

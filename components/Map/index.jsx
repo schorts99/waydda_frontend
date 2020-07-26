@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -20,9 +20,9 @@ import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
 export default function Map({center, address, city, marker}) {
-	
+
 	const mapRef = useRef();
-	
+
 	useEffect(() => {
 		let map = new mapboxgl.Map({
 			container: mapRef.current,
@@ -34,7 +34,7 @@ export default function Map({center, address, city, marker}) {
 		.setLngLat(marker)
 		.addTo(map);
 	}, [center])
-	
+
 	return (
 		<div className="grid grid-cols-12 my-6 relative z-0">
 			<div className="col-span-12 px-3 md:px-0 mb-4">

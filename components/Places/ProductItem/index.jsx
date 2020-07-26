@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -17,7 +17,7 @@ import ResponsiveImage from "../../ResponsiveImage";
 
 export default function ProductItem({views, name, description, price, image, scrollPosition}) {
 	return (
-		<div className="flex pb-6 mt-6 border-b flex-wrap items-start px-3 md:px-0">
+		<div className="flex pb-6 mt-6 border-b flex-wrap items-start px-3 md:px-0 cursor-pointer">
 			<div className="w-4/12 ">
 				<ResponsiveImage
 					scrollPosition={scrollPosition}

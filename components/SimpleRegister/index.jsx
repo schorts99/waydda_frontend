@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -17,9 +17,9 @@ import {useState} from "react";
 import Link from "next/link";
 
 export default function SimpleRegister({handleSubmit}) {
-	
+
 	const [email, setEmail] = useState("");
-	
+
 	return (
 		<div className="grid grid-cols-12 justify-center gap-4 mb-16">
 			<div className="col-span-3 hidden md:block mx-auto">

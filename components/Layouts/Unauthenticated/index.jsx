@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -29,16 +29,16 @@ const domain = "https://waydaa.vercel.app/";
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const router = useRouter();
 	const [openSidebar, setOpenSidebar] = useState(false);
-	
+
 	useEffect(() => {
 		if (pixel) {
 			ReactPixel.init(pixel);
 			ReactPixel.pageView();
 		}
-		
+
 		ReactGA.initialize('UA-173429948-1');
 		ReactGA.pageview(window.location.pathname + window.location.search);
-		
+
 		if (withHeader) {
 			const element = document.getElementById("sidebar");
 			if (element.firstChild) {
@@ -47,11 +47,11 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 			return () => document.removeEventListener("click", handleClick)
 		}
 	}, [withHeader])
-	
+
 	const handleClick = () => {
 		setOpenSidebar(false)
 	}
-	
+
 	return (
 		<>
 			<Head>

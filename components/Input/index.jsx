@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -40,7 +40,7 @@ export default function SimpleInput({label, type, placeholder, maxLength, minLen
 					       className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full"
 					       placeholder={placeholder}/>
 				}
-			
+
 			</div>
 		</div>
 	)

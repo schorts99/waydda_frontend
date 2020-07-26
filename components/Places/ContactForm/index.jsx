@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -18,13 +18,13 @@ import {useState} from "react";
 
 export default function ContactForm() {
 	const [success, setSuccess] = useState(false);
-	
+
 	const [fields, setFields] = useState({
 		name: "",
 		email: "",
 		comment: ""
 	})
-	
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setFields({name: "", email: "", comment: ""});
@@ -33,11 +33,11 @@ export default function ContactForm() {
 			setSuccess(false);
 		}, 5000)
 	}
-	
+
 	const onHandleChange = (e) => {
 		setFields({...fields, [e.target.name]: e.target.value})
 	}
-	
+
 	return (
 		<div
 			style={{
@@ -48,7 +48,7 @@ export default function ContactForm() {
 				<h3 className="text-black md:text-3xl text-2xl font-bold">
 					Ponte en contacto con Moose
 				</h3>
-			
+
 			</div>
 			<div className="col-span-12 md:col-span-6 md:col-start-4 bg-white px-4 py-6 md:px-6 rounded">
 				<form

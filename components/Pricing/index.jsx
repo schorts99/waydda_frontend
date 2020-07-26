@@ -5,9 +5,9 @@
  *
  * Proprietary and confidential
  *
- * Written by Angel Mendez <hello@azachii.dev>, Jun 2020
+ * Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev
+ * https://azachii.dev/
  *
  * LICENSE file in the root directory of this source tree.
  */
@@ -19,9 +19,9 @@ import {useState} from "react";
 import {Element} from 'react-scroll'
 
 export default function Pricing({onHandleClickPrice}) {
-	
+
 	const [monthly, setmonthly] = useState(false);
-	
+
 	return (
 		<Element
 			name={"pricing"}
@@ -34,7 +34,7 @@ export default function Pricing({onHandleClickPrice}) {
 					<i className="text-xs font-bold"><br/>No se requiere tarjeta de
 						crédito</i></h4>
 			</div>
-			
+
 			<div className="col-span-6 col-start-4 md:col-span-2 md:col-start-6 mt-12">
 				<div className="grid grid-cols-3 items-center">
 					<div className="col-span-1">
@@ -55,7 +55,7 @@ export default function Pricing({onHandleClickPrice}) {
 					</div>
 				</div>
 			</div>
-			
+
 			<div className="col-span-12 px-6 md:mt-10">
 				<div className="flex flex-wrap justify-center">
 					{features.slice(0, 1).map((item, k) => (
