@@ -22,7 +22,7 @@ export default function PlaceMenu({handleSendItem, items}) {
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
 			{items.map((item, i) => {
-				if (item.items.length > 0) {
+				if (item.products.length > 0) {
 					return (
 						<MenuItem
 							key={i}

@@ -16,7 +16,7 @@ import Link from "next/link";
 import Rating from "react-rating";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 
-export default function PlaceDescription({reviews, address, city, name}) {
+export default function PlaceDescription({reviews, address, addressState, name}) {
 	return (
 		<div className="grid grid-cols-12">
 			<div
@@ -28,8 +28,14 @@ export default function PlaceDescription({reviews, address, city, name}) {
 								<a>{name}</a>
 							</Link>
 						</h2>
-						<h4 className="text-gray-700 mt-2 text-sm md:text-base md:font-bold md:text-black">{city}<span className="md:block md:font-normal md:mt-1" ><span className="md:hidden md:font-normal" >&#160;&bull;&#160;</span>{address}</span></h4>
+						<h4 className="text-gray-700 mt-2 text-sm md:text-base md:font-bold md:text-black">{addressState}<span
+							className="md:block md:font-normal md:mt-1"><span
+							className="md:hidden md:font-normal">
+							{addressState && <>&#160;&bull;&#160;</>}
+						</span>{address}</span></h4>
 					</div>
+					
+					{reviews &&
 					<div className="col-span-12 mt-5">
 						<div className="grid grid-cols-2 md:grid-cols-6 gap-2 items-end">
 							<Item
@@ -53,6 +59,8 @@ export default function PlaceDescription({reviews, address, city, name}) {
 							</div>
 						</div>
 					</div>
+					}
+				
 				</div>
 			</div>
 		</div>

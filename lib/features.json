@@ -40,6 +40,10 @@
         "included": true
       },
       {
+        "title": "Boletín de noticias",
+        "included": true
+      },
+      {
         "title": "Formulario de contacto",
         "included": true,
         "coming": true
