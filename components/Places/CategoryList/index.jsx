@@ -17,7 +17,7 @@ import {Element} from "react-scroll";
 import ProductItem from "../ProductItem";
 import {trackWindowScroll} from "react-lazy-load-image-component";
 
-function CategoryList({count, label, name, products, scrollPosition}) {
+function CategoryList({count, label, name, products, scrollPosition, setModalData}) {
 	return (
 		<>
 			<Element name={name} className="col-span-12">
@@ -28,6 +28,7 @@ function CategoryList({count, label, name, products, scrollPosition}) {
 					{products.map((product, i) => (
 						<div className="col-span-12 md:col-span-6" key={i}>
 							<ProductItem
+								setModalData={setModalData}
 								scrollPosition={scrollPosition}
 								name={product.name} description={product.description} price={product.price}
 								image={product.image}/>

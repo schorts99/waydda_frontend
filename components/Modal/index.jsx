@@ -22,13 +22,21 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-  }
+  },
+  overlay: {
+    zIndex: 20,
+  },
 };
 
-export default function Modal({children}) {
+ModalBase.setAppElement('#__next');
+
+export default function Modal({children, isOpen, onRequestClose, contentLabel}) {
   return (
     <ModalBase
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
       style={customStyles}
+      contentLabel={contentLabel}
     >
       {children}
     </ModalBase>

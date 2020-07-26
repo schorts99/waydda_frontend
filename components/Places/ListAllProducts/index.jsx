@@ -12,10 +12,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import {useState} from 'react';
 import CategoryList from "../CategoryList";
-import Modal from '../../Modal'
+import Modal from '../../Modal';
 
 export default function ListAllProducts({data}) {
+	const [isModalOpen, setIsModalOpen] = useState();
+	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
+
+	function customSetModalData(data) {
+		if (data.id) {
+			setModalData({
+				contentLabel: data.name,
+				data,
+			});
+		}
+		setIsModalOpen(true);
+	}
+
 	return (
 		<div className="grid grid-cols-12 items-center bg-background">
 			<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">
@@ -32,8 +46,11 @@ export default function ListAllProducts({data}) {
 			</div>
 			{data.categories.length > 0 && (
 				<>
-					<Modal>
-
+					<Modal
+						isOpen={isModalOpen}
+						onRequestClose={() => setIsModalOpen(false)}
+						contentLabel={modalData.contentLabel}
+					>
 					</Modal>
 					{data.categories.map((category, i) => {
 						if (category.items.length > 0) {
@@ -44,6 +61,7 @@ export default function ListAllProducts({data}) {
 									products={category.items}
 									count={category.total}
 									label={category.label}
+									setModalData={customSetModalData}
 								/>
 							)
 						} else {

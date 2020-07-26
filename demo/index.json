@@ -51,7 +51,8 @@
             "name": "Sandwich con papas",
             "price": 75.00,
             "image": "places/demo/sandwich-2709083_1280.jpg",
-            "description": "Sandwich con papas fritas"
+            "description": "Sandwich con papas fritas",
+            "id": 1
           }
         ]
       },
@@ -64,19 +65,22 @@
             "name": "Esparragos",
             "price": 250.00,
             "image": "places/demo/asparagus-2169305_1280.jpg",
-            "description": "Esparragos con carne y verduras"
+            "description": "Esparragos con carne y verduras",
+            "id": 2
           },
           {
             "name": "Parrila de carne",
             "price": 550.00,
             "image": "places/demo/meat-1155132_1280.jpg",
-            "description": "1kg de carne"
+            "description": "1kg de carne",
+            "id": 3
           },
           {
             "name": "Filete de Salmón",
             "price": 150.00,
             "image": "places/demo/salmon-518032_1280.jpg",
-            "description": "Filete de salón con verduras"
+            "description": "Filete de salón con verduras",
+            "id": 4
           }
         ]
       },
@@ -89,19 +93,22 @@
             "name": "Cóctel",
             "price": 45.50,
             "image": "places/demo/cocktail-2585270_1280.jpg",
-            "description": "Cóctel con frutas"
+            "description": "Cóctel con frutas",
+            "id": 5
           },
           {
             "name": "Café",
             "price": 55.50,
             "image": "places/demo/coffee-983955_1280.jpg",
-            "description": "Café sin azúzar (250ml)"
+            "description": "Café sin azúzar (250ml)",
+            "id": 6
           },
           {
             "name": "Té",
             "price": 15,
             "image": "places/demo/drink-1209002_1280.jpg",
-            "description": "Té verde frío (250ml)"
+            "description": "Té verde frío (250ml)",
+            "id": 7
           }
         ]
       }
