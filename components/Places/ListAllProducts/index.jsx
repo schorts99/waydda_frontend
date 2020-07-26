@@ -1,19 +1,20 @@
 /*
- * Copyright (c) AzaChii and its affiliates. All Rights Reserved.
+ *  Copyright (c) AzaChii and its affiliates. All Rights Reserved.
  *
- * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
  *
- * Proprietary and confidential
+ *  Proprietary and confidential
  *
- * Written by AzaChii <hello@azachii.dev>, July 2020
+ *  Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev/
+ *  https://azachii.dev/
  *
- * LICENSE file in the root directory of this source tree.
+ *  LICENSE file in the root directory of this source tree.
  */
 
 import {useState} from 'react';
 import CategoryList from "../CategoryList";
+import ShowProduct from '../../Product/Show';
 import Modal from '../../Modal';
 
 export default function ListAllProducts({data}) {
@@ -21,7 +22,14 @@ export default function ListAllProducts({data}) {
 	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
 
 	function customSetModalData(data) {
-		if (data.id) {
+		if (modalData.data) {
+			if (data.id !== modalData.data.id) {
+				setModalData({
+					contentLabel: data.name,
+					data,
+				});
+			}
+		} else {
 			setModalData({
 				contentLabel: data.name,
 				data,
@@ -51,6 +59,7 @@ export default function ListAllProducts({data}) {
 						onRequestClose={() => setIsModalOpen(false)}
 						contentLabel={modalData.contentLabel}
 					>
+						{modalData.data && <ShowProduct {...modalData.data} />}
 					</Modal>
 					{data.categories.map((category, i) => {
 						if (category.items.length > 0) {

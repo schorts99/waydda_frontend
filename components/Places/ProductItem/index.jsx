@@ -1,15 +1,15 @@
 /*
- * Copyright (c) AzaChii and its affiliates. All Rights Reserved.
+ *  Copyright (c) AzaChii and its affiliates. All Rights Reserved.
  *
- * Unauthorized copying of this file, via any medium is strictly prohibited
+ *  Unauthorized copying of this file, via any medium is strictly prohibited
  *
- * Proprietary and confidential
+ *  Proprietary and confidential
  *
- * Written by AzaChii <hello@azachii.dev>, July 2020
+ *  Written by AzaChii <hello@azachii.dev>, July 2020
  *
- * https://azachii.dev/
+ *  https://azachii.dev/
  *
- * LICENSE file in the root directory of this source tree.
+ *  LICENSE file in the root directory of this source tree.
  */
 
 import PropTypes from 'prop-types'
@@ -21,6 +21,7 @@ export default function ProductItem({
 	description,
 	price,
 	id,
+	aggregates,
 	image,
 	scrollPosition,
 	setModalData,
@@ -28,7 +29,7 @@ export default function ProductItem({
 	return (
 		<div
 			className="flex pb-6 mt-6 border-b flex-wrap items-start px-3 md:px-0 cursor-pointer"
-			onClick={() => setModalData({ id, name, description, price, image })}
+			onClick={() => setModalData({ id, name, description, price, image, aggregates })}
 		>
 			<div className="w-4/12 ">
 				<ResponsiveImage

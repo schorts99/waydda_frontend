@@ -52,7 +52,19 @@
             "price": 75.00,
             "image": "places/demo/sandwich-2709083_1280.jpg",
             "description": "Sandwich con papas fritas",
-            "id": 1
+            "id": 1,
+            "aggregates": [
+              {
+                "name": "Guacamole",
+                "description": "Porción de 10 gr de guacamole",
+                "price": 5
+              },
+              {
+                "name": "Oro rayado",
+                "description": "Porción de 1gr de oro rayado de 24 kilates",
+                "price": 100
+              }
+            ]
           }
         ]
       },
