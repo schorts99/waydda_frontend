@@ -58,6 +58,7 @@ export default function PlacePresentation({
 					address={address}
 					image={{src: cover}}
 					slug={slug}
+					logo={profile}
 				/>
 			</div>
 			{withSticky &&

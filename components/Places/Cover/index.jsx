@@ -11,17 +11,14 @@
  *
  *  LICENSE file in the root directory of this source tree.
  */
+
 // TODO: Add slider
 import PropTypes from 'prop-types'
-import ResponsiveImage from "../../ResponsiveImage";
-import Rating from 'react-rating';
-import {AiOutlineStar, AiFillStar} from 'react-icons/ai'
-import Link from "next/link";
 import GetImageUrl from "../../../lib";
 import BackgroundImageResponsive from "../../BackgroundImageResponsive";
 import PlaceDescription from "../Description";
 
-export default function PlaceCover({image, name, addressState, address, reviews, slug}) {
+export default function PlaceCover({image, name, addressState, address, reviews, slug, logo}) {
 	return (
 		<>
 			<div className="grid grid-cols-12">
@@ -38,6 +35,7 @@ export default function PlaceCover({image, name, addressState, address, reviews,
 						name={name}
 						address={address}
 						slug={slug}
+						logo={logo}
 					/>
 				</div>
 			</div>

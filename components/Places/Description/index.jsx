@@ -25,6 +25,7 @@ export default function PlaceDescription({
 	logo,
 	slug,
 }) {
+
 	return (
 		<div className="grid grid-cols-12">
 			<div
@@ -35,7 +36,7 @@ export default function PlaceDescription({
 						<ResponsiveImage
 							publicId={logo}
 							alt={name}
-							className="business_logo rounded-full w-32 md:w-10/12"
+							className="business_logo rounded-full"
 						/>
 						<h2 className="text-3xl font-bold md:text-4xl">
 							<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
