@@ -69,6 +69,7 @@ export default function ListAllProducts({data}) {
 						isOpen={isModalOpen}
 						onRequestClose={() => setIsModalOpen(false)}
 						contentLabel={modalData.contentLabel}
+				
 					>
 						{modalData.data && <ShowProduct {...modalData.data} />}
 					</Modal>

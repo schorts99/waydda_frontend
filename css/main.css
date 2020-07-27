@@ -41,23 +41,4 @@ html, body {
     min-height: 17em;
   }
 }
-.business_logo {
-  min-height: 8em;
-  margin-top: -6em;
-  height: -webkit-fill-available;
-}
-@media (min-width: 768px) {
-  .business_logo {
-    margin-top: 0;
-  }
-}
-@media (min-width: 1024px) {
-  .business_logo {
-    min-height: 9em;
-  }
-}
-@media (min-width: 1280px) {
-  .business_logo {
-    min-height: 11em;
-  }
-}
+

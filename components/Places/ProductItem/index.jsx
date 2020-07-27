@@ -47,13 +47,13 @@ export default function ProductItem({
 					<div className="w-full">
 						<h4 className="font-bold text-lg">{name}</h4>
 						{description &&
-						<h5 className="text-xs md:text-sm text-gray-700 mt-1">{description}</h5>
+						<h5 className="text-xs md:text-sm text-gray-700 mt-2 t_truncate">{description}</h5>
 						}
 					</div>
 					{!views &&
 					<div className="w-full">
 						<h6
-							className={`text-xs md:text-sm mt-1 ${views ? "" : "font-bold"}`}>{views ? `${views} ${views > 1 ? "visitas" : "visita"}` : `MXN ${price.toFixed(2)}`}</h6>
+							className={`text-xs md:text-sm mt-2 ${views ? "" : "font-bold"}`}>{views ? `${views} ${views > 1 ? "visitas" : "visita"}` : `MXN ${price.toFixed(2)}`}</h6>
 					</div>
 					}
 					{views &&

@@ -18,36 +18,52 @@ import {AiFillStar, AiOutlineStar} from "react-icons/ai";
 import ResponsiveImage from '../../ResponsiveImage';
 
 export default function PlaceDescription({
-	reviews,
-	address,
-	addressState,
-	name,
-	logo,
-	slug,
-}) {
-
+	                                         reviews,
+	                                         address,
+	                                         addressState,
+	                                         name,
+	                                         logo,
+	                                         slug,
+                                         }) {
+	
 	return (
 		<div className="grid grid-cols-12">
 			<div
-				className="col-span-12 md:px-0 md:pt-4 bg-white -mt-16 md:mt-0 md:pb-8 pb-4 pt-6 px-4 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
+				className="col-span-12 md:px-0 md:pt-4 -mt-16 md:mt-0 md:pb-8 pb-4 pt-6 px-4 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
 			>
 				<div className="grid grid-cols-12">
 					<div className="col-span-12">
-						<ResponsiveImage
-							publicId={logo}
-							alt={name}
-							className="business_logo rounded-full"
-						/>
-						<h2 className="text-3xl font-bold md:text-4xl">
-							<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
-								<a>{name}</a>
-							</Link>
-						</h2>
-						<h4 className="text-gray-700 mt-2 text-sm md:text-base md:font-bold md:text-black">{addressState}<span
-							className="md:block md:font-normal md:mt-1"><span
-							className="md:hidden md:font-normal">
-							{addressState && <>&#160;&bull;&#160;</>}
-						</span>{address}</span></h4>
+						<div className="grid grid-cols-12 bg-white z-20 p-6 rounded items-center md:gap-8">
+							<div className="col-span-2">
+								<ResponsiveImage
+									fit={"cover"}
+									bgColor={"#fff"}
+									publicId={logo}
+									alt={name}
+									width={400}
+									height={400}
+									wrapperClass="mb-4 rounded-full bg-gray-100"
+									className="h-40 w-40 rounded-full shadow-2xl"
+								/>
+							</div>
+							<div className="col-span-10">
+								<h2 className="text-3xl font-bold md:text-4xl">
+									<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
+										<a>{name}</a>
+									</Link>
+								</h2>
+								<h4 className="text-gray-700 my-2 text-sm md:text-base md:font-bold md:text-black">
+									{addressState}
+								</h4>
+								<h3>
+									<span
+										className="md:block md:font-normal md:mt-1">
+										{address}
+									</span>
+								</h3>
+							</div>
+						</div>
+					
 					</div>
 					{reviews &&
 					<div className="col-span-12 mt-5">

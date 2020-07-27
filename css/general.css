@@ -20,3 +20,14 @@
 .no_scrollbar::-webkit-scrollbar{
     display: none;
 }
+.image_blur{
+    filter: blur(4px);
+}
+
+.t_truncate{
+    word-break: break-word;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

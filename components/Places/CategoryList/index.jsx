@@ -26,7 +26,7 @@ function CategoryList({count, label, name, products, scrollPosition, setModalDat
 						<Category count={count} label={label} />
 					</div>
 					{products.map((product, i) => (
-						<div className="col-span-12 md:col-span-6" key={i}>
+						<div className="col-span-12 md:col-span-4" key={i}>
 							<ProductItem
 								setModalData={setModalData}
 								scrollPosition={scrollPosition}

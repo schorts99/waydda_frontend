@@ -25,30 +25,30 @@ const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 });
 
 export default function PlacePresentation({
-	children,
-	withSticky,
-	data: {
-		cover,
-		name,
-		addressState,
-		address,
-		reviews,
-		items,
-		whatsapp,
-		profile,
-		slug,
-	},
-}) {
+	                                          children,
+	                                          withSticky,
+	                                          data: {
+		                                          cover,
+		                                          name,
+		                                          addressState,
+		                                          address,
+		                                          reviews,
+		                                          items,
+		                                          whatsapp,
+		                                          profile,
+		                                          slug,
+	                                          },
+                                          }) {
 	const [activeItem, setActiveItem] = useState("");
-
+	
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
 	};
-
+	
 	return (
 		<div className="grid grid-cols-12">
 			<div className="col-span-12">
-				<PlaceHeader />
+				<PlaceHeader/>
 			</div>
 			<div className="col-span-12 md:mb-10">
 				<PlaceCover
@@ -70,26 +70,28 @@ export default function PlacePresentation({
 				/>
 			</div>
 			}
-			<div className="col-span-12 md:col-span-10 md:col-start-2">
-				<div className="grid grid-cols-12 md:gap-8">
-					<div className="col-span-3 hidden md:block">
-						<div className="sticky top-0 z-20">
-							<PlaceDescription
-								reviews={reviews}
-								name={name}
-								address={address}
-								addressState={addressState}
-								logo={profile}
-								slug={slug}
-							/>
+			<div className="col-span-12 z-20">
+				<div className="flex w-11/12 mx-auto z-20 ">
+					<div className="grid grid-cols-12 -mt-32">
+						<div className="col-span-12 hidden md:block">
+							<div className="sticky top-0 z-20">
+								<PlaceDescription
+									reviews={reviews}
+									name={name}
+									address={address}
+									addressState={addressState}
+									logo={profile}
+									slug={slug}
+								/>
+							</div>
 						</div>
-					</div>
-					<div className="col-span-12 md:col-span-9">
-						{children}
+						<div className="col-span-12  bg-white rounded">
+							{children}
+						</div>
 					</div>
 				</div>
 			</div>
-			{whatsapp && <WhatsAppButton data={whatsapp} />}
+			{whatsapp && <WhatsAppButton data={whatsapp}/>}
 		</div>
 	)
 }
