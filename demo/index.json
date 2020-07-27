@@ -1,7 +1,8 @@
 {
   "name": "Moose",
   "theme": "#000",
-  "cover": "cover_500.png",
+  "cover": "waydda.png",
+  "profile": "places/default.png",
   "address": "Av Instituto Politécnico Nacional 2508",
   "city": "CDMX",
   "coordinates": "-99.133432, 19.511556",

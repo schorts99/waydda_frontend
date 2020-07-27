@@ -21,7 +21,7 @@ import GetImageUrl from "../../../lib";
 import BackgroundImageResponsive from "../../BackgroundImageResponsive";
 import PlaceDescription from "../Description";
 
-export default function PlaceCover({image, name, addressState, address, reviews}) {
+export default function PlaceCover({image, name, addressState, address, reviews, slug}) {
 	return (
 		<>
 			<div className="grid grid-cols-12">
@@ -37,6 +37,7 @@ export default function PlaceCover({image, name, addressState, address, reviews}
 						addressState={addressState}
 						name={name}
 						address={address}
+						slug={slug}
 					/>
 				</div>
 			</div>

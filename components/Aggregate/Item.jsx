@@ -24,7 +24,7 @@ export default function AggregateItem({name, price, description}) {
         </p>
       </div>
       <p className="ml-4">
-        ${price}
+        + ${price}
       </p>
     </div>
   );

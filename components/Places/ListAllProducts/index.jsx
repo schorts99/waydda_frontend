@@ -12,14 +12,21 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import CategoryList from "../CategoryList";
 import ShowProduct from '../../Product/Show';
 import Modal from '../../Modal';
 
 export default function ListAllProducts({data}) {
 	const [isModalOpen, setIsModalOpen] = useState();
+	const [productsTotal, setProductsTotal] = useState(0);
 	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
+
+	useEffect(() => {
+		setProductsTotal(data.items.reduce((accumulator, currentValue) => (
+			typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
+		)));
+	}, []);
 
 	function customSetModalData(data) {
 		if (modalData.data) {
@@ -47,7 +54,7 @@ export default function ListAllProducts({data}) {
 					</div>
 					<div className="col-span-1 text-right">
 						<span className="text-sm text-gray-600 md:font-bold md:text-gray-700">
-							{data.total} en total
+							{productsTotal} en total
 						</span>
 					</div>
 				</div>

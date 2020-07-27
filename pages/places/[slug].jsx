@@ -51,9 +51,7 @@ export default function PlacePage() {
 			pixel={"1404734746583052"}
 			moreSpaceInFooter
 			withHeader={false}
-			head={{
-				theme: "#000"
-			}}
+			head={{theme: "#000"}}
 		>
 			<Main
 				data={router.query.slug === 'demo' ? demoData : data.getBusiness}
@@ -77,15 +75,15 @@ const Main = ({data}) => {
 				facebook={{
 					appId: "641527279645625"
 				}}
-				canonical={`https://waydda.vercel.app/places/${slug}`}
+				canonical={`https://waydda.azachii.dev/places/${slug}`}
 				additionalMetaTags={[
 					{
 						property: "restaurant:menu",
-						content: `https://waydda.vercel.app/places/${slug}`
+						content: `https://waydda.azachii.dev/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:website",
-						content: `https://waydda.vercel.app/places/${slug}`
+						content: `https://waydda.azachii.dev/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:street_address",
@@ -110,7 +108,7 @@ const Main = ({data}) => {
 				]}
 				openGraph={{
 					type: 'restaurant.restaurant',
-					url: `https://waydda.vercel.app/places/${slug}`,
+					url: `https://waydda.azachii.dev/places/${slug}`,
 					title: `${name} en Waydda`,
 					description: `Menú digital de ${name} en Waydda`,
 					site_name: "Waydda",

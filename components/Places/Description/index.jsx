@@ -15,16 +15,30 @@
 import Link from "next/link";
 import Rating from "react-rating";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
+import ResponsiveImage from '../../ResponsiveImage';
 
-export default function PlaceDescription({reviews, address, addressState, name}) {
+export default function PlaceDescription({
+	reviews,
+	address,
+	addressState,
+	name,
+	logo,
+	slug,
+}) {
 	return (
 		<div className="grid grid-cols-12">
 			<div
-				className="col-span-12 md:px-0 md:pt-4 bg-white -mt-16 md:mt-0 md:pb-8 pb-4 pt-6 px-4 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg">
+				className="col-span-12 md:px-0 md:pt-4 bg-white -mt-16 md:mt-0 md:pb-8 pb-4 pt-6 px-4 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
+			>
 				<div className="grid grid-cols-12">
 					<div className="col-span-12">
+						<ResponsiveImage
+							publicId={logo}
+							alt={name}
+							className="business_logo rounded-full w-32 md:w-10/12"
+						/>
 						<h2 className="text-3xl font-bold md:text-4xl">
-							<Link href={"/places/[slug]"} as={"/places/demo"}>
+							<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
 								<a>{name}</a>
 							</Link>
 						</h2>
@@ -34,7 +48,6 @@ export default function PlaceDescription({reviews, address, addressState, name})
 							{addressState && <>&#160;&bull;&#160;</>}
 						</span>{address}</span></h4>
 					</div>
-					
 					{reviews &&
 					<div className="col-span-12 mt-5">
 						<div className="grid grid-cols-2 md:grid-cols-6 gap-2 items-end">
@@ -60,7 +73,6 @@ export default function PlaceDescription({reviews, address, addressState, name})
 						</div>
 					</div>
 					}
-				
 				</div>
 			</div>
 		</div>

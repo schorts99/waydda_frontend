@@ -26,7 +26,6 @@ export default function Map({center, address, city, marker}) {
 			style: 'mapbox://styles/mapbox/streets-v11',
 			center: center,
 			zoom: 14,
-			interactive: false,
 		});
 		new mapboxgl.Marker()
 		.setLngLat(marker)

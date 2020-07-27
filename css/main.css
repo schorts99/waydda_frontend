@@ -41,3 +41,12 @@ html, body {
     min-height: 17em;
   }
 }
+.business_logo {
+  min-height: 8em;
+  margin-top: -6em;
+}
+@media (min-width: 768px) {
+  .business_logo {
+    margin-top: 0;
+  }
+}

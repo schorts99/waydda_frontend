@@ -14,7 +14,7 @@
 
 import {Slide} from 'react-slideshow-image';
 import AggregateItem from '../Aggregate/Item';
-import getImageUrl from '../../lib';
+import ResponsiveImage from '../ResponsiveImage';
 
 /**
  * Detailed info of product, including its aggregates options
@@ -32,16 +32,16 @@ export default function ShowProduct({photo, description, name, price, aggregates
         <Slide infinite pauseOnHover arrows={false}>
           {[true].map((_, index) => (
             <div className="each-slide" key={index}>
-              <img
-                src={getImageUrl({publicId: photo})}
+              <ResponsiveImage
+                publicId={photo}
                 alt={name}
-                className="show_product_cover_image bg-gray-100"
+                className="show_product_cover_image"
               />
             </div>
           ))}
         </Slide>
       </div>
-      <div className="p-4">
+      <div className={`p-4${aggregates ? ' border-b border-gray-600' : ''}`}>
         <div className="flex justify-between items-center">
           <h4 className="font-bold text-lg md:text-xl mb-1">
             {name}

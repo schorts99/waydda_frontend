@@ -22,14 +22,25 @@ import PlaceDescription from "../Description";
 
 const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 	ssr: false
-})
+});
 
 export default function PlacePresentation({
 	children,
 	withSticky,
-	data: {cover, name, addressState, address, reviews, items, whatsapp},
+	data: {
+		cover,
+		name,
+		addressState,
+		address,
+		reviews,
+		items,
+		whatsapp,
+		profile,
+		slug,
+	},
 }) {
 	const [activeItem, setActiveItem] = useState("");
+
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
 	};
@@ -37,7 +48,7 @@ export default function PlacePresentation({
 	return (
 		<div className="grid grid-cols-12">
 			<div className="col-span-12">
-				<PlaceHeader/>
+				<PlaceHeader />
 			</div>
 			<div className="col-span-12 md:mb-10">
 				<PlaceCover
@@ -45,9 +56,8 @@ export default function PlacePresentation({
 					addressState={addressState}
 					reviews={reviews}
 					address={address}
-					image={{
-						src: cover
-					}}
+					image={{src: cover}}
+					slug={slug}
 				/>
 			</div>
 			{withSticky &&
@@ -68,6 +78,8 @@ export default function PlacePresentation({
 								name={name}
 								address={address}
 								addressState={addressState}
+								logo={profile}
+								slug={slug}
 							/>
 						</div>
 					</div>
@@ -76,7 +88,7 @@ export default function PlacePresentation({
 					</div>
 				</div>
 			</div>
-			{whatsapp && <WhatsAppButton data={whatsapp}/>}
+			{whatsapp && <WhatsAppButton data={whatsapp} />}
 		</div>
 	)
 }
