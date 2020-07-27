@@ -16,21 +16,21 @@ import {Link} from 'react-scroll';
 import {useState} from "react";
 
 export default function PlaceMenu({handleSendItem, items}) {
-	console.log(items)
 	const onHandleChange = (e) => {
 		handleSendItem(e);
 	}
 
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
-			{items.categories.map((item, i) => {
-				if (item.items.length > 0) {
+			{items.map((item, i) => {
+				if (item.products.length > 0) {
 					return (
 						<MenuItem
 							key={i}
 							handleChange={onHandleChange}
-							keyValue={item.name}
-							label={item.label}/>
+							keyValue={encodeURI(item.name.toLowerCase())}
+							label={item.name}
+						/>
 					)
 				} else {
 					return null;
@@ -42,6 +42,7 @@ export default function PlaceMenu({handleSendItem, items}) {
 
 const MenuItem = ({label, keyValue, handleChange}) => {
 	const [active, setActive] = useState(false);
+
 	return (
 		<Link
 			className={`py-3 px-5 md:py-5 md:px-8 text-center z-20`}
@@ -59,7 +60,9 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 				setActive(true);
 			}}
 		>
-			<span className={`select-none text-sm md:text-base uppercase cursor-pointer ${active ? "text-black" : "text-gray-500"}`}>{label}</span>
+			<span className={`select-none text-sm md:text-base uppercase cursor-pointer ${active ? "text-black" : "text-gray-500"}`}>
+				{label}
+			</span>
 		</Link>
 	)
 }

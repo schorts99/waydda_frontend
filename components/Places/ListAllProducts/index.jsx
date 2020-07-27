@@ -39,7 +39,7 @@ export default function ListAllProducts({data}) {
 	}
 
 	return (
-		<div className="grid grid-cols-12 items-center bg-background">
+		<div className="grid grid-cols-12 items-center bg-background md:bg-transparent">
 			<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">
 				<div className="grid grid-cols-3 items-center py-4">
 					<div className="col-span-2">
@@ -52,7 +52,7 @@ export default function ListAllProducts({data}) {
 					</div>
 				</div>
 			</div>
-			{data.categories.length > 0 && (
+			{data.items.length > 0 && (
 				<>
 					<Modal
 						isOpen={isModalOpen}
@@ -61,15 +61,15 @@ export default function ListAllProducts({data}) {
 					>
 						{modalData.data && <ShowProduct {...modalData.data} />}
 					</Modal>
-					{data.categories.map((category, i) => {
-						if (category.items.length > 0) {
+					{data.items.map((item, i) => {
+						if (item.products.length > 0) {
 							return (
 								<CategoryList
 									key={i}
-									name={category.name}
-									products={category.items}
-									count={category.total}
-									label={category.label}
+									name={encodeURI(item.name.toLowerCase())}
+									products={item.products}
+									count={item.products.length}
+									label={item.name}
 									setModalData={customSetModalData}
 								/>
 							)
@@ -79,7 +79,6 @@ export default function ListAllProducts({data}) {
 					})}
 				</>
 			)}
-
 		</div>
 	)
 }

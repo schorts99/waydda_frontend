@@ -30,8 +30,6 @@ export default function PlacePresentation({
 	data: {cover, name, addressState, address, reviews, items, whatsapp},
 }) {
 	const [activeItem, setActiveItem] = useState("");
-	console.log(items)
-
 	const onHandleReceive = (e) => {
 		setActiveItem(e);
 	};

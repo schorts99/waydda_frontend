@@ -64,7 +64,7 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState} = data;
+	const {address, name, slug, addressState, coordinates} = data;
 
 	return (
 		<>
@@ -124,12 +124,14 @@ const Main = ({data}) => {
 			/>
 			<PlacePresentation data={data}>
 				<ListAllProducts data={data}/>
-				<Map
-					marker={[-99.133432, 19.511556]}
-					center={[-99.133432, 19.511556]}
-					address={address}
-					city={addressState}
-				/>
+				{coordinates && (
+					<Map
+						marker={[parseFloat(coordinates.split(',')[0]), parseFloat(coordinates.split(',')[1])]}
+						center={[parseFloat(coordinates.split(',')[0]), parseFloat(coordinates.split(',')[1])]}
+						address={address}
+						city={addressState}
+					/>
+				)}
 				<ContactForm/>
 			</PlacePresentation>
 		</>

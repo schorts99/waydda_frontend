@@ -4,6 +4,7 @@
   "cover": "cover_500.png",
   "address": "Av Instituto Politécnico Nacional 2508",
   "city": "CDMX",
+  "coordinates": "-99.133432, 19.511556",
   "whatsapp": {
     "number": "+529516074586",
     "message": "Quiero un menú digital",
@@ -123,91 +124,88 @@
       ]
     }
   ],
-  "items": {
-    "total": 10,
-    "categories": [
-      {
-        "total": 1,
-        "name": "infantil",
-        "label": "Para los niños",
-        "items": [
-          {
-            "name": "Sandwich con papas",
-            "price": 75.00,
-            "image": "places/demo/sandwich-2709083_1280.jpg",
-            "description": "Sandwich con papas fritas",
-            "id": 1,
-            "aggregates": [
-              {
-                "name": "Guacamole",
-                "description": "Porción de 10 gr de guacamole",
-                "price": 5
-              },
-              {
-                "name": "Oro rayado",
-                "description": "Porción de 1gr de oro rayado de 24 kilates",
-                "price": 100
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "total": 3,
-        "name": "meat",
-        "label": "Carnes",
-        "items": [
-          {
-            "name": "Esparragos",
-            "price": 250.00,
-            "image": "places/demo/asparagus-2169305_1280.jpg",
-            "description": "Esparragos con carne y verduras",
-            "id": 2
-          },
-          {
-            "name": "Parrila de carne",
-            "price": 550.00,
-            "image": "places/demo/meat-1155132_1280.jpg",
-            "description": "1kg de carne",
-            "id": 3
-          },
-          {
-            "name": "Filete de Salmón",
-            "price": 150.00,
-            "image": "places/demo/salmon-518032_1280.jpg",
-            "description": "Filete de salón con verduras",
-            "id": 4
-          }
-        ]
-      },
-      {
-        "name": "sodas",
-        "label": "Sodas",
-        "total": 1,
-        "items": [
-          {
-            "name": "Cóctel",
-            "price": 45.50,
-            "image": "places/demo/cocktail-2585270_1280.jpg",
-            "description": "Cóctel con frutas",
-            "id": 5
-          },
-          {
-            "name": "Café",
-            "price": 55.50,
-            "image": "places/demo/coffee-983955_1280.jpg",
-            "description": "Café sin azúzar (250ml)",
-            "id": 6
-          },
-          {
-            "name": "Té",
-            "price": 15,
-            "image": "places/demo/drink-1209002_1280.jpg",
-            "description": "Té verde frío (250ml)",
-            "id": 7
-          }
-        ]
-      }
-    ]
-  }
+  "items": [
+    {
+      "total": 1,
+      "name": "infantil",
+      "label": "Para los niños",
+      "products": [
+        {
+          "name": "Sandwich con papas",
+          "price": 75.00,
+          "image": "places/demo/sandwich-2709083_1280.jpg",
+          "description": "Sandwich con papas fritas",
+          "id": 1,
+          "aggregates": [
+            {
+              "name": "Guacamole",
+              "description": "Porción de 10 gr de guacamole",
+              "price": 5
+            },
+            {
+              "name": "Oro rayado",
+              "description": "Porción de 1gr de oro rayado de 24 kilates",
+              "price": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "total": 3,
+      "name": "meat",
+      "label": "Carnes",
+      "products": [
+        {
+          "name": "Esparragos",
+          "price": 250.00,
+          "image": "places/demo/asparagus-2169305_1280.jpg",
+          "description": "Esparragos con carne y verduras",
+          "id": 2
+        },
+        {
+          "name": "Parrila de carne",
+          "price": 550.00,
+          "image": "places/demo/meat-1155132_1280.jpg",
+          "description": "1kg de carne",
+          "id": 3
+        },
+        {
+          "name": "Filete de Salmón",
+          "price": 150.00,
+          "image": "places/demo/salmon-518032_1280.jpg",
+          "description": "Filete de salón con verduras",
+          "id": 4
+        }
+      ]
+    },
+    {
+      "name": "sodas",
+      "label": "Sodas",
+      "total": 1,
+      "products": [
+        {
+          "name": "Cóctel",
+          "price": 45.50,
+          "image": "places/demo/cocktail-2585270_1280.jpg",
+          "description": "Cóctel con frutas",
+          "id": 5
+        },
+        {
+          "name": "Café",
+          "price": 55.50,
+          "image": "places/demo/coffee-983955_1280.jpg",
+          "description": "Café sin azúzar (250ml)",
+          "id": 6
+        },
+        {
+          "name": "Té",
+          "price": 15,
+          "image": "places/demo/drink-1209002_1280.jpg",
+          "description": "Té verde frío (250ml)",
+          "id": 7
+        }
+      ]
+    }
+  ]
 }

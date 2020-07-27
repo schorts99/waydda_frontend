@@ -13,14 +13,11 @@
  */
 
 import PropTypes from 'prop-types'
-import {useEffect, useRef, useState} from "react";
-import BackgroundImageResponsive from "../BackgroundImageResponsive";
-import GetImageUrl from "../../lib";
+import {useEffect, useRef} from "react";
 import mapboxgl from 'mapbox-gl'
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
 export default function Map({center, address, city, marker}) {
-
 	const mapRef = useRef();
 
 	useEffect(() => {
@@ -28,7 +25,8 @@ export default function Map({center, address, city, marker}) {
 			container: mapRef.current,
 			style: 'mapbox://styles/mapbox/streets-v11',
 			center: center,
-			zoom: 14
+			zoom: 14,
+			interactive: false,
 		});
 		new mapboxgl.Marker()
 		.setLngLat(marker)
