@@ -25,7 +25,7 @@ import getImageUrl from '../../lib';
  * @param price Price of the product
  * @param aggregates Array of the aggregates options
  * */
-export default function ShowProduct({image, id, description, name, price, aggregates}) {
+export default function ShowProduct({photo, description, name, price, aggregates}) {
   return (
     <div className="show_product_cover">
       <div className="slide-container">
@@ -33,7 +33,7 @@ export default function ShowProduct({image, id, description, name, price, aggreg
           {[true].map((_, index) => (
             <div className="each-slide" key={index}>
               <img
-                src={getImageUrl({publicId: image})}
+                src={getImageUrl({publicId: photo})}
                 alt={name}
                 className="show_product_cover_image bg-gray-100"
               />

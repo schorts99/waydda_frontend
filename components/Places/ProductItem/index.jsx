@@ -22,19 +22,19 @@ export default function ProductItem({
 	price,
 	id,
 	aggregates,
-	image,
+	photo,
 	scrollPosition,
 	setModalData,
 }) {
 	return (
 		<div
 			className="flex pb-6 mt-6 border-b flex-wrap items-start px-3 md:px-0 cursor-pointer"
-			onClick={() => setModalData({ id, name, description, price, image, aggregates })}
+			onClick={() => setModalData({ id, name, description, price, photo, aggregates })}
 		>
 			<div className="w-4/12 ">
 				<ResponsiveImage
 					scrollPosition={scrollPosition}
-					publicId={image}
+					publicId={photo}
 					height={500}
 					bgColor="#fafafa"
 					fit={"cover"}
