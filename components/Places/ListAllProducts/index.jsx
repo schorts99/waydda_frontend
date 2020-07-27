@@ -23,9 +23,13 @@ export default function ListAllProducts({data}) {
 	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
 
 	useEffect(() => {
-		setProductsTotal(data.items.reduce((accumulator, currentValue) => (
-			typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
-		)));
+		if (data.items.length > 1) {
+      setProductsTotal(data.items.reduce((accumulator, currentValue) => (
+        typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
+      )));
+    } else {
+		  setProductsTotal(data.items[0].products.length);
+    }
 	}, []);
 
 	function customSetModalData(data) {
