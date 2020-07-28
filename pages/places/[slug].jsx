@@ -14,7 +14,7 @@
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
 import Head from "next/head";
@@ -123,7 +123,7 @@ const Main = ({data}) => {
 			{/*	}}*/}
 			{/*/>*/}
 			<PlacePresentation data={data}>
-				<ListAllProducts data={data}/>
+				{/*<ListAllProducts data={data}/>*/}
 				{/*{coordinates && (*/}
 				{/*	<Map*/}
 				{/*		marker={[parseFloat(coordinates.split(',')[0]), parseFloat(coordinates.split(',')[1])]}*/}
