@@ -97,8 +97,8 @@ export default function Reviews() {
 					marker={[-99.133432, 19.511556]}
 					center={[-99.133432, 19.511556]}
 					address={demo.address} city={demo.city}/>
-				<ContactForm/>
 			</PlacePresentation>
+			<ContactForm/>
 		</LayoutUnAuthenticated>
 	)
 }

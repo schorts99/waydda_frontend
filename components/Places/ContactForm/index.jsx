@@ -18,13 +18,13 @@ import {useState} from "react";
 
 export default function ContactForm() {
 	const [success, setSuccess] = useState(false);
-
+	
 	const [fields, setFields] = useState({
 		name: "",
 		email: "",
 		comment: ""
 	})
-
+	
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setFields({name: "", email: "", comment: ""});
@@ -33,24 +33,21 @@ export default function ContactForm() {
 			setSuccess(false);
 		}, 5000)
 	}
-
+	
 	const onHandleChange = (e) => {
 		setFields({...fields, [e.target.name]: e.target.value})
 	}
-
+	
 	return (
 		<div
-			style={{
-				backgroundColor: "#fafafa"
-			}}
-			className="grid grid-cols-12 px-3 py-5 md:py-10 md:px-0 mt-8 md:rounded">
+			className="grid grid-cols-12 py-5 md:py-10  mt-8 md:rounded">
 			<div className="col-span-12 text-center mb-5 md:mb-10">
-				<h3 className="text-black md:text-3xl text-2xl font-bold">
+				<h3 className="text-black md:text-3xl text-2xl font-bold md:text-center text-left">
 					Ponte en contacto con Moose
 				</h3>
-
+			
 			</div>
-			<div className="col-span-12 md:col-span-6 md:col-start-4 bg-white px-4 py-6 md:px-6 rounded">
+			<div className="col-span-12 md:col-span-6 md:col-start-4 bg-white md:py-6 md:px-6 rounded">
 				<form
 					onSubmit={(e) => {
 						// e.preventDefault();
