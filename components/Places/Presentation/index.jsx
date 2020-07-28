@@ -21,12 +21,12 @@ import PlaceHeader from "../../Headers/PlaceHeader";
 const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 	ssr: false
 });
-const PlaceDescription = dynamic(() => import('../Description'), {
-	ssr: true
-});
-const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
-	ssr: false
-});
+// const PlaceDescription = dynamic(() => import('../Description'), {
+// 	ssr: true
+// });
+// const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
+// 	ssr: false
+// });
 
 
 
@@ -68,47 +68,47 @@ export default function PlacePresentation({
 			{/*		logo={profile}*/}
 			{/*	/>*/}
 			{/*</div>*/}
-			{withSticky &&
-			<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
-				<div
-					className={`flex w-full mx-auto bg-white`}>
-					{/*className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>*/}
-					<div className="w-11/12 mx-auto">
-						<PlaceMenu
-							items={items}
-							handleSendItem={onHandleReceive}
-						/>
-					</div>
-				</div>
-			</div>
-			}
+			{/*{withSticky &&*/}
+			{/*<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>*/}
+			{/*	<div*/}
+			{/*		className={`flex w-full mx-auto bg-white`}>*/}
+			{/*		/!*className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>*!/*/}
+			{/*		<div className="w-11/12 mx-auto">*/}
+			{/*			<PlaceMenu*/}
+			{/*				items={items}*/}
+			{/*				handleSendItem={onHandleReceive}*/}
+			{/*			/>*/}
+			{/*		</div>*/}
+			{/*	</div>*/}
+			{/*</div>*/}
+			{/*}*/}
 			<div className="col-span-12">
 				<div className="flex w-11/12 mx-auto ">
 					<div className="grid grid-cols-12 md:-mt-40 w-full">
 						<div className="col-span-12 hidden md:block">
-							<PlaceDescription
-								reviews={reviews}
-								name={name}
-								address={address}
-								addressState={addressState}
-								logo={profile}
-								slug={slug}
-							/>
+							{/*<PlaceDescription*/}
+							{/*	reviews={reviews}*/}
+							{/*	name={name}*/}
+							{/*	address={address}*/}
+							{/*	addressState={addressState}*/}
+							{/*	logo={profile}*/}
+							{/*	slug={slug}*/}
+							{/*/>*/}
 						</div>
 					</div>
 				</div>
-				{
-					withSticky &&
-					<div
-						className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
-						<div className="w-11/12 mx-auto">
-							<PlaceMenu
-								items={items}
-								handleSendItem={onHandleReceive}
-							/>
-						</div>
-					</div>
-				}
+				{/*{*/}
+				{/*	withSticky &&*/}
+				{/*	<div*/}
+				{/*		className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>*/}
+				{/*		<div className="w-11/12 mx-auto">*/}
+				{/*			<PlaceMenu*/}
+				{/*				items={items}*/}
+				{/*				handleSendItem={onHandleReceive}*/}
+				{/*			/>*/}
+				{/*		</div>*/}
+				{/*	</div>*/}
+				{/*}*/}
 				<div className="flex w-11/12 mx-auto">
 					<div className="grid grid-cols-12 w-full">
 						<div className="col-span-12">
