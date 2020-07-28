@@ -20,13 +20,13 @@ export default function Category({count, label}) {
 	}
 
 	return (
-		<div className="grid grid-cols-2 mb-6 border-b pb-4 px-2 md:px-0">
-			<div className="col-span-1">
-				<h3 className="font-bold text-gray-700 md:text-black md:text-lg">
+		<div className="grid grid-cols-12 my-8 px-2 md:px-0 items-center md:gap-4">
+			<div className="col-span-6 md:col-auto">
+				<h3 className="font-bold text-gray-700 md:text-black md:text-2xl">
 					{label}
 				</h3>
 			</div>
-			<div className="col-span-1 text-right">
+			<div className="col-span-6 md:col-auto text-right md:text-left">
 				<span className="text-sm text-gray-500">({count})</span>
 			</div>
 		</div>

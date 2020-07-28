@@ -21,7 +21,7 @@ export default function PlaceMenu({handleSendItem, items}) {
 	}
 
 	return (
-		<div className="flex flex-grow overflow-x-scroll no_scrollbar">
+		<div className="flex flex-grow overflow-x-scroll no_scrollbar border-b border-gray-400">
 			{items.map((item, i) => {
 				if (item.products.length > 0) {
 					return (
@@ -41,11 +41,11 @@ export default function PlaceMenu({handleSendItem, items}) {
 }
 
 const MenuItem = ({label, keyValue, handleChange}) => {
-	const [active, setActive] = useState(false);
+	// const [active, setActive] = useState(false);
 
 	return (
 		<Link
-			className={`py-3 px-5 md:py-5 md:px-8 text-center z-20`}
+			className={`py-4 mr-5 md:py-6 md:mr-8 text-center z-20`}
 			activeClass="border-black border-b-2 z-20"
 			to={keyValue}
 			spy={true}
@@ -53,14 +53,14 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 			offset={-100}
 			onSetInactive={() => {
 				handleChange("")
-				setActive(false);
+				// setActive(false);
 			}}
 			onSetActive={() => {
 				handleChange(keyValue)
-				setActive(true);
+				// setActive(true);
 			}}
 		>
-			<span className={`select-none text-sm md:text-base uppercase cursor-pointer ${active ? "text-black" : "text-gray-500"}`}>
+			<span className="select-none text-sm uppercase cursor-pointer text-black">
 				{label}
 			</span>
 		</Link>

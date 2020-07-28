@@ -50,7 +50,7 @@ export default function PlacePresentation({
 			<div className="col-span-12">
 				<PlaceHeader/>
 			</div>
-			<div className="col-span-12 md:mb-10">
+			<div className="col-span-12">
 				<PlaceCover
 					name={name}
 					addressState={addressState}
@@ -72,24 +72,38 @@ export default function PlacePresentation({
 			}
 			<div className="col-span-12 z-20">
 				<div className="flex w-11/12 mx-auto z-20 ">
-					<div className="grid grid-cols-12 -mt-32">
+					<div className="grid grid-cols-12 -mt-40">
 						<div className="col-span-12 hidden md:block">
-							<div className="sticky top-0 z-20">
-								<PlaceDescription
-									reviews={reviews}
-									name={name}
-									address={address}
-									addressState={addressState}
-									logo={profile}
-									slug={slug}
-								/>
-							</div>
-						</div>
-						<div className="col-span-12  bg-white rounded">
-							{children}
+							<PlaceDescription
+								reviews={reviews}
+								name={name}
+								address={address}
+								addressState={addressState}
+								logo={profile}
+								slug={slug}
+							/>
 						</div>
 					</div>
 				</div>
+				<div
+					className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
+					<div className="w-11/12 mx-auto">
+						<PlaceMenu
+							items={items}
+							handleSendItem={onHandleReceive}
+						/>
+					</div>
+				</div>
+				<div className="flex w-11/12 mx-auto">
+					<div className="grid grid-cols-12">
+						<div className="col-span-12">
+							<div className="col-span-12  bg-white rounded">
+								{children}
+							</div>
+						</div>
+					</div>
+				</div>
+			
 			</div>
 			{whatsapp && <WhatsAppButton data={whatsapp}/>}
 		</div>

@@ -21,7 +21,7 @@ import PlaceDescription from "../Description";
 export default function PlaceCover({image, name, addressState, address, reviews, slug, logo}) {
 	return (
 		<>
-			<div className="grid grid-cols-12 bg-red-400">
+			<div className="grid grid-cols-12">
 				<BackgroundImageResponsive
 					src={GetImageUrl({publicId: image.src, width: 1200, height: 400, fit: "cover", bgColor: "#fafafa"})}
 					placeholder={GetImageUrl({publicId: image.src, width: 120, height: 20, fit: "cover", bgColor: "#fafafa"})}

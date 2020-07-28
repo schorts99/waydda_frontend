@@ -19,18 +19,18 @@ import Modal from '../../Modal';
 
 export default function ListAllProducts({data}) {
 	const [isModalOpen, setIsModalOpen] = useState();
-	const [productsTotal, setProductsTotal] = useState(0);
+	// const [productsTotal, setProductsTotal] = useState(0);
 	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
-
-	useEffect(() => {
-		if (data.items.length > 1) {
-      setProductsTotal(data.items.reduce((accumulator, currentValue) => (
-        typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
-      )));
-    } else {
-		  setProductsTotal(data.items[0].products.length);
-    }
-	}, []);
+	//
+	// useEffect(() => {
+	// 	if (data.items.length > 1) {
+  //     setProductsTotal(data.items.reduce((accumulator, currentValue) => (
+  //       typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
+  //     )));
+  //   } else {
+	// 	  setProductsTotal(data.items[0].products.length);
+  //   }
+	// }, []);
 
 	function customSetModalData(data) {
 		if (modalData.data) {
@@ -51,18 +51,18 @@ export default function ListAllProducts({data}) {
 
 	return (
 		<div className="grid grid-cols-12 items-center bg-background md:bg-transparent">
-			<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">
-				<div className="grid grid-cols-3 items-center py-4">
-					<div className="col-span-2">
-						<h1 className="text-lg font-bold uppercase">Todos los productos</h1>
-					</div>
-					<div className="col-span-1 text-right">
-						<span className="text-sm text-gray-600 md:font-bold md:text-gray-700">
-							{productsTotal} en total
-						</span>
-					</div>
-				</div>
-			</div>
+			{/*<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">*/}
+			{/*	<div className="grid grid-cols-3 items-center py-4">*/}
+			{/*		<div className="col-span-2">*/}
+			{/*			<h1 className="text-lg font-bold uppercase">Todos los productos</h1>*/}
+			{/*		</div>*/}
+			{/*		<div className="col-span-1 text-right">*/}
+			{/*			<span className="text-sm text-gray-600 md:font-bold md:text-gray-700">*/}
+			{/*				{productsTotal} en total*/}
+			{/*			</span>*/}
+			{/*		</div>*/}
+			{/*	</div>*/}
+			{/*</div>*/}
 			{data.items.length > 0 && (
 				<>
 					<Modal

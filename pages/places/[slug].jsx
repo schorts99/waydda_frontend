@@ -35,17 +35,17 @@ export default function PlacePage() {
 		},
 		skip: router.query.slug === 'demo',
 	})
-
+	
 	if (loading) {
 		return (
 			<h1>Cargando...</h1>
 		)
 	}
-
+	
 	if (error) {
 		return (<h1>Ha ocurrido un error</h1>)
 	}
-
+	
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
@@ -62,12 +62,12 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState, coordinates} = data;
-
+	const {address, name, slug, addressState, coordinates, cover} = data;
+	
 	return (
 		<>
 			<Head>
-				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+				<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>
 			</Head>
 			<NextSeo
 				title={`${name} en Waydda`}
@@ -114,7 +114,7 @@ const Main = ({data}) => {
 					site_name: "Waydda",
 					images: [
 						{
-							url: GetImageUrl({publicId: "cover_500.png"}),
+							url: GetImageUrl({publicId: cover}),
 							alt: `${name} cover image`,
 						}
 					]
