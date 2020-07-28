@@ -28,7 +28,7 @@ export default function PlaceCover({image, name, addressState, address, reviews,
 					imageClassName={"md:rounded-b rounded-none"}
 					className="col-span-12 h-56 md:h-64 bg-orange-200 w-full rounded-none md:rounded-b"
 				/>
-				<div className="col-span-12 md:hidden">
+				<div className="col-span-12 md:hidden -mt-32">
 					<PlaceDescription
 						reviews={reviews}
 						addressState={addressState}

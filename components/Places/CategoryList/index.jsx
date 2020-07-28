@@ -20,7 +20,7 @@ import {trackWindowScroll} from "react-lazy-load-image-component";
 function CategoryList({count, label, name, products, scrollPosition, setModalData}) {
 	return (
 		<>
-			<Element name={name} className="col-span-12">
+			<Element name={name} className="col-span-12 z-0">
 				<Category count={count} label={label}/>
 				<div className="grid grid-cols-12 md:gap-8 gap-4">
 					{products.map((product, i) => (

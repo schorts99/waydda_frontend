@@ -28,7 +28,7 @@ export default function ProductItem({
 }) {
 	return (
 		<div
-			className="flex pb-6 border-b flex-wrap items-start px-3 md:px-0 cursor-pointer"
+			className="flex pb-6 border-b flex-wrap items-start md:px-0 cursor-pointer"
 			onClick={() => setModalData({ id, name, description, price, photo, aggregates })}
 		>
 			<div className="w-4/12 ">

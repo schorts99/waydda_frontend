@@ -62,17 +62,22 @@ export default function PlacePresentation({
 				/>
 			</div>
 			{withSticky &&
-			<div
-				className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>
-				<PlaceMenu
-					items={items}
-					handleSendItem={onHandleReceive}
-				/>
+			<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
+				<div
+					className={`flex w-full mx-auto bg-white`}>
+					{/*className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>*/}
+					<div className="w-11/12 mx-auto">
+						<PlaceMenu
+							items={items}
+							handleSendItem={onHandleReceive}
+						/>
+					</div>
+				</div>
 			</div>
 			}
-			<div className="col-span-12 z-20">
-				<div className="flex w-11/12 mx-auto z-20 ">
-					<div className="grid grid-cols-12 -mt-40">
+			<div className="col-span-12">
+				<div className="flex w-11/12 mx-auto ">
+					<div className="grid grid-cols-12 md:-mt-40 w-full">
 						<div className="col-span-12 hidden md:block">
 							<PlaceDescription
 								reviews={reviews}
@@ -85,15 +90,18 @@ export default function PlacePresentation({
 						</div>
 					</div>
 				</div>
-				<div
-					className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
-					<div className="w-11/12 mx-auto">
-						<PlaceMenu
-							items={items}
-							handleSendItem={onHandleReceive}
-						/>
+				{
+					withSticky &&
+					<div
+						className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
+						<div className="w-11/12 mx-auto">
+							<PlaceMenu
+								items={items}
+								handleSendItem={onHandleReceive}
+							/>
+						</div>
 					</div>
-				</div>
+				}
 				<div className="flex w-11/12 mx-auto">
 					<div className="grid grid-cols-12">
 						<div className="col-span-12">

@@ -12,7 +12,7 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import CategoryList from "../CategoryList";
 import ShowProduct from '../../Product/Show';
 import Modal from '../../Modal';
@@ -50,7 +50,7 @@ export default function ListAllProducts({data}) {
 	}
 
 	return (
-		<div className="grid grid-cols-12 items-center bg-background md:bg-transparent">
+		<div className="grid grid-cols-12 items-center">
 			{/*<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">*/}
 			{/*	<div className="grid grid-cols-3 items-center py-4">*/}
 			{/*		<div className="col-span-2">*/}
