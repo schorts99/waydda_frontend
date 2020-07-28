@@ -13,7 +13,7 @@
  */
 
 import PropTypes from 'prop-types'
-// import PlaceCover from "../Cover";
+import PlaceCover from "../Cover";
 import {useState} from "react";
 import dynamic from "next/dynamic";
 import PlaceHeader from "../../Headers/PlaceHeader";
@@ -27,9 +27,6 @@ const PlaceDescription = dynamic(() => import('../Description'), {
 const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
 	ssr: false
 });
-
-
-
 
 export default function PlacePresentation({
 	                                          children,
@@ -72,7 +69,6 @@ export default function PlacePresentation({
 			<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
 				<div
 					className={`flex w-full mx-auto bg-white`}>
-					{/*className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>*/}
 					<div className="w-11/12 mx-auto">
 						<PlaceMenu
 							items={items}
