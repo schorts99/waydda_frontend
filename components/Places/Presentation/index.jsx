@@ -57,17 +57,17 @@ export default function PlacePresentation({
 			<div className="col-span-12">
 				<PlaceHeader/>
 			</div>
-			{/*<div className="col-span-12">*/}
-			{/*	<PlaceCover*/}
-			{/*		name={name}*/}
-			{/*		addressState={addressState}*/}
-			{/*		reviews={reviews}*/}
-			{/*		address={address}*/}
-			{/*		image={{src: cover}}*/}
-			{/*		slug={slug}*/}
-			{/*		logo={profile}*/}
-			{/*	/>*/}
-			{/*</div>*/}
+			<div className="col-span-12">
+				<PlaceCover
+					name={name}
+					addressState={addressState}
+					reviews={reviews}
+					address={address}
+					image={{src: cover}}
+					slug={slug}
+					logo={profile}
+				/>
+			</div>
 			{withSticky &&
 			<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
 				<div
