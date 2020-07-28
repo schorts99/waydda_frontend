@@ -23,7 +23,7 @@ import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import demoData from '../../demo/index.json';
 
-const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
+// const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
 // const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
 // const Map = dynamic(() => import('../../components/Map'), {
 // 	ssr: false
