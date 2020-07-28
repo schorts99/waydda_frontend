@@ -16,22 +16,23 @@ import {useState} from 'react';
 import CategoryList from "../CategoryList";
 import ShowProduct from '../../Product/Show';
 import Modal from '../../Modal';
+import {trackWindowScroll} from "react-lazy-load-image-component";
 
-export default function ListAllProducts({data}) {
+function ListAllProducts({data, scrollPosition}) {
 	const [isModalOpen, setIsModalOpen] = useState();
 	// const [productsTotal, setProductsTotal] = useState(0);
 	const [modalData, setModalData] = useState({contentLabel: 'Moose'});
 	//
 	// useEffect(() => {
 	// 	if (data.items.length > 1) {
-  //     setProductsTotal(data.items.reduce((accumulator, currentValue) => (
-  //       typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
-  //     )));
-  //   } else {
+	//     setProductsTotal(data.items.reduce((accumulator, currentValue) => (
+	//       typeof accumulator === 'object' ? accumulator.products.length + currentValue.products.length : accumulator + currentValue.products.length
+	//     )));
+	//   } else {
 	// 	  setProductsTotal(data.items[0].products.length);
-  //   }
+	//   }
 	// }, []);
-
+	
 	function customSetModalData(data) {
 		if (modalData.data) {
 			if (data.id !== modalData.data.id) {
@@ -48,7 +49,7 @@ export default function ListAllProducts({data}) {
 		}
 		setIsModalOpen(true);
 	}
-
+	
 	return (
 		<div className="grid grid-cols-12 items-center">
 			{/*<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">*/}
@@ -69,7 +70,7 @@ export default function ListAllProducts({data}) {
 						isOpen={isModalOpen}
 						onRequestClose={() => setIsModalOpen(false)}
 						contentLabel={modalData.contentLabel}
-				
+					
 					>
 						{modalData.data && <ShowProduct {...modalData.data} />}
 					</Modal>
@@ -82,6 +83,7 @@ export default function ListAllProducts({data}) {
 									products={item.products}
 									count={item.products.length}
 									label={item.name}
+									scrollPosition={scrollPosition}
 									setModalData={customSetModalData}
 								/>
 							)
@@ -94,3 +96,5 @@ export default function ListAllProducts({data}) {
 		</div>
 	)
 }
+
+export default trackWindowScroll(ListAllProducts)

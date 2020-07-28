@@ -19,7 +19,7 @@ export default function PlaceMenu({handleSendItem, items}) {
 	const onHandleChange = (e) => {
 		handleSendItem(e);
 	}
-
+	
 	return (
 		<div className="flex flex-grow overflow-x-scroll no_scrollbar border-b border-gray-400">
 			{items.map((item, i) => {
@@ -42,10 +42,13 @@ export default function PlaceMenu({handleSendItem, items}) {
 
 const MenuItem = ({label, keyValue, handleChange}) => {
 	// const [active, setActive] = useState(false);
-
+	
 	return (
 		<Link
-			className={`py-4 mr-5 md:py-6 md:mr-8 text-center z-20`}
+			style={{
+				flex: "0 0 auto"
+			}}
+			className={`py-4 flex mr-5 md:py-6 md:mr-8 text-center z-20`}
 			activeClass="border-black border-b-2 z-20"
 			to={keyValue}
 			spy={true}

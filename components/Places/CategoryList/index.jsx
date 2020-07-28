@@ -15,7 +15,7 @@
 import Category from "../Category";
 import {Element} from "react-scroll";
 import ProductItem from "../ProductItem";
-import {trackWindowScroll} from "react-lazy-load-image-component";
+// import {trackWindowScroll} from "react-lazy-load-image-component";
 
 function CategoryList({count, label, name, products, scrollPosition, setModalData}) {
 	return (
@@ -38,4 +38,4 @@ function CategoryList({count, label, name, products, scrollPosition, setModalDat
 	)
 }
 
-export default trackWindowScroll(CategoryList)
+export default CategoryList

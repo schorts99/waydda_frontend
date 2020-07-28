@@ -16,20 +16,21 @@ import PropTypes from 'prop-types'
 import ResponsiveImage from "../../ResponsiveImage";
 
 export default function ProductItem({
-	views,
-	name,
-	description,
-	price,
-	id,
-	aggregates,
-	photo,
-	scrollPosition,
-	setModalData,
-}) {
+	                                    views,
+	                                    name,
+	                                    description,
+	                                    price,
+	                                    id,
+	                                    aggregates,
+	                                    photo,
+	                                    scrollPosition,
+	                                    setModalData,
+	                                    total_quantity
+                                    }) {
 	return (
 		<div
 			className="flex pb-6 border-b flex-wrap items-start md:px-0 cursor-pointer"
-			onClick={() => setModalData({ id, name, description, price, photo, aggregates })}
+			onClick={() => setModalData({id, name, description, price, photo, aggregates, total_quantity})}
 		>
 			<div className="w-4/12 ">
 				<ResponsiveImage
@@ -48,6 +49,9 @@ export default function ProductItem({
 						<h4 className="font-bold text-lg">{name}</h4>
 						{description &&
 						<h5 className="text-xs md:text-sm text-gray-700 mt-2 t_truncate">{description}</h5>
+						}
+						{total_quantity &&
+						<h4 className="text-xs font-bold mt-2">{total_quantity}</h4>
 						}
 					</div>
 					{!views &&

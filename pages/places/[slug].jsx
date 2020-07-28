@@ -62,7 +62,7 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState, coordinates, cover} = data;
+	const {address, name, slug, addressState, coordinates, cover, total_quantity} = data;
 	
 	return (
 		<>
