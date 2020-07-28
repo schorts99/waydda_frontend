@@ -103,11 +103,9 @@ export default function PlacePresentation({
 					</div>
 				}
 				<div className="flex w-11/12 mx-auto">
-					<div className="grid grid-cols-12">
+					<div className="grid grid-cols-12 w-full">
 						<div className="col-span-12">
-							<div className="col-span-12  bg-white rounded">
-								{children}
-							</div>
+							{children}
 						</div>
 					</div>
 				</div>
