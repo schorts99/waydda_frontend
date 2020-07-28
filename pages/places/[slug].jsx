@@ -25,7 +25,9 @@ import demoData from '../../demo/index.json';
 
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
 const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
-const Map = dynamic(() => import('../../components/Map'))
+const Map = dynamic(() => import('../../components/Map'), {
+	ssr: false
+})
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -62,7 +64,7 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState, coordinates, cover, total_quantity} = data;
+	const {address, name, slug, addressState, coordinates, cover} = data;
 	
 	return (
 		<>

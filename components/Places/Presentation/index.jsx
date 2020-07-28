@@ -14,15 +14,22 @@
 
 import PropTypes from 'prop-types'
 import PlaceCover from "../Cover";
-import PlaceMenu from "../../PlaceMenu";
 import {useState} from "react";
 import dynamic from "next/dynamic";
 import PlaceHeader from "../../Headers/PlaceHeader";
-import PlaceDescription from "../Description";
 
 const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
 	ssr: false
 });
+const PlaceDescription = dynamic(() => import('../Description'), {
+	ssr: true
+});
+const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
+	ssr: false
+});
+
+
+
 
 export default function PlacePresentation({
 	                                          children,
