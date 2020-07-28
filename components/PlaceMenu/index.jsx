@@ -13,7 +13,7 @@
  */
 
 import {Link} from 'react-scroll';
-import {useState} from "react";
+// import {useState} from "react";
 
 export default function PlaceMenu({handleSendItem, items}) {
 	const onHandleChange = (e) => {
@@ -50,7 +50,7 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 			to={keyValue}
 			spy={true}
 			smooth={true}
-			offset={-100}
+			offset={-50}
 			onSetInactive={() => {
 				handleChange("")
 				// setActive(false);
