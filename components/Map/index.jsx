@@ -34,13 +34,14 @@ export default function Map({center, address, city, marker}) {
 			.addTo(map);
 			setError(false);
 		} catch (e) {
+			console.log("ERROR MAP", e)
 			setError(true);
 		}
 	}, [center])
 	
 	if (error) {
 		return (
-			<h4 className="font-bold text-3xl">Ha ocurrido un error</h4>
+			<h4 className="font-bold text-xs">Ha ocurrido un error cargando el mapa</h4>
 		)
 	}
 	
