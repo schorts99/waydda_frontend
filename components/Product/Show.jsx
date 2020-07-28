@@ -42,7 +42,7 @@ export default function ShowProduct({photo, description, name, price, aggregates
 					))}
 				</Slide>
 			</div>
-			<div className={`p-4${aggregates.length > 0 ? ' border-b border-gray-600' : ''}`}>
+			<div className={`p-4 ${aggregates.length > 0 ? 'border-b border-gray-600' : ''}`}>
 				<div className="flex justify-between items-center">
 					<h4 className="font-bold text-lg md:text-xl mb-1">
 						{name}
