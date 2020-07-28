@@ -53,6 +53,7 @@
           "image": "places/demo/sandwich-2709083_1280.jpg",
           "description": "Sandwich con papas fritas",
           "id": 1,
+          "total_quantity": "250ml",
           "aggregates": [
             {
               "name": "Guacamole",
