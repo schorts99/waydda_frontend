@@ -129,14 +129,14 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 									<h4 className="text-lg font-bold">¡Comparte con tus amigos!</h4>
 								</div>
 								<div className="col-span-1 text-center flex justify-center mt-3">
-									<a href="https://www.facebook.com/sharer/sharer.php?u=https://waydda.azachii.dev" target="_blank"
+									<a href="https://www.facebook.com/sharer/sharer.php?u=https://waydda.vercel.app" target="_blank"
 									   className="px-3"
 									>
 										<AiFillFacebook size={35}/>
 									</a>
 								</div>
 								<div className="col-span-1 text-center flex justify-center mt-3">
-									<a href="https://twitter.com/home?status=https://waydda.azachii.dev He apartado mi lugar en Waydda!"
+									<a href="https://twitter.com/home?status=https://waydda.vercel.app He apartado mi lugar en Waydda!"
 									   target="_blank"
 									   className="px-3"
 									>
@@ -144,7 +144,7 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 									</a>
 								</div>
 								<div className="col-span-1 text-center flex justify-center mt-3">
-									<a href="https://wa.me/?text=https://waydda.azachii.dev He apartado mi lugar en Waydda!"
+									<a href="https://wa.me/?text=https://waydda.vercel.app He apartado mi lugar en Waydda!"
 									   target="_blank"
 									   className="px-3"
 									>

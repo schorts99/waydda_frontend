@@ -75,15 +75,15 @@ const Main = ({data}) => {
 				facebook={{
 					appId: "641527279645625"
 				}}
-				canonical={`https://waydda.azachii.dev/places/${slug}`}
+				canonical={`https://waydda.vercel.app/places/${slug}`}
 				additionalMetaTags={[
 					{
 						property: "restaurant:menu",
-						content: `https://waydda.azachii.dev/places/${slug}`
+						content: `https://waydda.vercel.app/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:website",
-						content: `https://waydda.azachii.dev/places/${slug}`
+						content: `https://waydda.vercel.app/places/${slug}`
 					},
 					{
 						property: "restaurant:contact_info:street_address",
@@ -108,7 +108,7 @@ const Main = ({data}) => {
 				]}
 				openGraph={{
 					type: 'restaurant.restaurant',
-					url: `https://waydda.azachii.dev/places/${slug}`,
+					url: `https://waydda.vercel.app/places/${slug}`,
 					title: `${name} en Waydda`,
 					description: `Menú digital de ${name} en Waydda`,
 					site_name: "Waydda",
