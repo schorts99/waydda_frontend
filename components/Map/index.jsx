@@ -19,7 +19,7 @@ import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
 export default function Map({center, address, city, marker}) {
 	const mapRef = useRef();
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(true);
 	
 	useEffect(() => {
 		try {
