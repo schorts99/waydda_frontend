@@ -21,17 +21,13 @@ import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import demoData from '../../demo/index.json';
-
 const PlacePresentation = dynamic(() => import("../../components/Places/Presentation"), {
 	ssr: true
 })
-
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'), {
 	ssr: false
 })
-const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
-	ssr: false
-})
+
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -131,7 +127,7 @@ const Main = ({data}) => {
 			/>
 			<PlacePresentation data={data}>
 				<ListAllProducts data={data}/>
-				<ContactPlace address={address} addressState={addressState} coordinates={coordinates}/>
+				{/*<ContactPlace address={address} addressState={addressState} coordinates={coordinates}/>*/}
 			</PlacePresentation>
 		</>
 	)

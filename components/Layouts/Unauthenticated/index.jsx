@@ -23,6 +23,8 @@ import dynamic from "next/dynamic";
 const Sidebar = dynamic(() => import('../../SideBar'), {
 	ssr: false
 });
+
+// TOTAL REQUEST - 66
 const Footer = dynamic(() => import('../../Footer'), {
 	ssr: false
 });
@@ -60,8 +62,6 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 			<Head>
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
 				<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
-				<link rel="preconnect" href="https://waydda-api.herokuapp.com" crossOrigin/>
-				<link rel="dns-prefetch" href="https://waydda-api.herokuapp.com"/>
 				<link rel="icon" href="/favicon.ico"/>
 				<meta name={"theme-color"} content={head.theme || "#fff"}/>
 				<meta name="abstract" content={head.description || es.head.description}/>

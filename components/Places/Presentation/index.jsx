@@ -19,6 +19,7 @@ import PlaceCover from "../Cover";
 import PlaceMenu from "../../PlaceMenu";
 import PlaceDescription from "../Description";
 import WhatsAppButton from "../../WhatsAppButton";
+import ContactPlace from "../Contact";
 
 export default function PlacePresentation({
 	                                          children,
@@ -107,6 +108,7 @@ export default function PlacePresentation({
 				</div>
 			
 			</div>
+			<ContactPlace addressState={addressState} address={address}/>
 			{whatsapp && <WhatsAppButton data={whatsapp}/>}
 		</div>
 	)
