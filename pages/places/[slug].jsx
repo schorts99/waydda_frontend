@@ -13,7 +13,6 @@
  */
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
-import PlacePresentation from "../../components/Places/Presentation";
 import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
@@ -22,6 +21,10 @@ import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import demoData from '../../demo/index.json';
+
+const PlacePresentation = dynamic(() => import("../../components/Places/Presentation"), {
+	ssr: true
+})
 
 const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'), {
 	ssr: false
