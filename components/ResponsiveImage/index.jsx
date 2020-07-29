@@ -15,7 +15,7 @@
 import GetImageUrl from "../../lib";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
-export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 1000, height = 500, fit = "outside", bgColor = null, wrapperClass = ""}) {
+export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 500, height = 500, fit = "outside", bgColor = null, wrapperClass = ""}) {
 
 
 	return (
