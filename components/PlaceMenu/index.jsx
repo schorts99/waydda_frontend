@@ -13,7 +13,7 @@
  */
 
 import {Link} from 'react-scroll';
-// import {useState} from "react";
+import {useState} from "react";
 
 export default function PlaceMenu({handleSendItem, items}) {
 	const onHandleChange = (e) => {
@@ -41,7 +41,7 @@ export default function PlaceMenu({handleSendItem, items}) {
 }
 
 const MenuItem = ({label, keyValue, handleChange}) => {
-	// const [active, setActive] = useState(false);
+	const [active, setActive] = useState(false);
 	
 	return (
 		<Link
@@ -56,14 +56,14 @@ const MenuItem = ({label, keyValue, handleChange}) => {
 			offset={-50}
 			onSetInactive={() => {
 				handleChange("")
-				// setActive(false);
+				setActive(false);
 			}}
 			onSetActive={() => {
 				handleChange(keyValue)
-				// setActive(true);
+				setActive(true);
 			}}
 		>
-			<span className="select-none text-sm uppercase cursor-pointer text-black">
+			<span className={`select-none text-sm uppercase cursor-pointer ${active ? "text-black" : "text-gray-600"}`}>
 				{label}
 			</span>
 		</Link>

@@ -19,7 +19,6 @@ import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW5keXJvaG0iLCJhIjoiY2p6NmRldzJjMGsyMzNpbjJ0YjZjZjV5NSJ9.SeHsvxUe4-pszVk0B4gRAQ';
 export default function Map({center, address, city, marker}) {
 	const mapRef = useRef();
-	const [error, setError] = useState(true);
 	
 	useEffect(() => {
 		try {
@@ -32,17 +31,11 @@ export default function Map({center, address, city, marker}) {
 			new mapboxgl.Marker()
 			.setLngLat(marker)
 			.addTo(map);
-			setError(false);
 		} catch (e) {
-			setError(true);
+			console.log("ERR", e)
 		}
 	}, [center])
 	
-	if (error) {
-		return (
-			<h4 className="font-bold text-3xl">Ha ocurrido un error</h4>
-		)
-	}
 	
 	return (
 		<div className="grid grid-cols-12 my-6 relative z-0">

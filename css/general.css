@@ -12,19 +12,19 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&display=swap');
-
 .font-title {
-    font-family: 'Playfair Display', serif !important;
+    font-family: serif, Arial, 'Playfair Display' !important;
 }
-.no_scrollbar::-webkit-scrollbar{
+
+.no_scrollbar::-webkit-scrollbar {
     display: none;
 }
-.image_blur{
+
+.image_blur {
     filter: blur(4px);
 }
 
-.t_truncate{
+.t_truncate {
     word-break: break-word;
     -webkit-box-orient: vertical;
     display: -webkit-box;

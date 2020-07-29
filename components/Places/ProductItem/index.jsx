@@ -41,6 +41,20 @@ export default function ProductItem({
 					fit={"cover"}
 					className="rounded shadow h-24 w-24 md:w-32 md:h-32 max-w-full max-h-full"
 					wrapperClass="h-full rounded bg-orange-100 max-w-full max-h-full"
+					srcsetSizes={{
+						w_480:{
+							height: 300,
+						},
+						w_1082:{
+							height: 400
+						},
+						w_1523:{
+							height: 500
+						},
+						w_1920:{
+							height: 550
+						}
+					}}
 				/>
 			</div>
 			<div className="w-8/12 h-24 md:h-32 md:pl-4">

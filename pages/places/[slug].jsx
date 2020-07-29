@@ -14,8 +14,8 @@
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import PlacePresentation from "../../components/Places/Presentation";
-// import dynamic from 'next/dynamic'
-// import {NextSeo} from "next-seo";
+import dynamic from 'next/dynamic'
+import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
 import Head from "next/head";
 import {useQuery} from "@apollo/react-hooks";
@@ -23,11 +23,12 @@ import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import demoData from '../../demo/index.json';
 
-// const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'))
-// const ContactForm = dynamic(() => import('../../components/Places/ContactForm'))
-// const Map = dynamic(() => import('../../components/Map'), {
-// 	ssr: false
-// })
+const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'), {
+	ssr: false
+})
+const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
+	ssr: false
+})
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -47,11 +48,10 @@ export default function PlacePage() {
 	if (error) {
 		return (<h1>Ha ocurrido un error</h1>)
 	}
-	
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
-			moreSpaceInFooter
+			moreSpaceInFooter={router.query.slug === "demo" ? demoData : data.getBusiness.social}
 			withHeader={false}
 			head={{theme: "#000"}}
 		>
@@ -60,6 +60,7 @@ export default function PlacePage() {
 			/>
 		</LayoutUnAuthenticated>
 	)
+	
 }
 
 
@@ -68,71 +69,66 @@ const Main = ({data}) => {
 	
 	return (
 		<>
-			{/*<Head>*/}
-			{/*	<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet"/>*/}
-			{/*</Head>*/}
-			{/*<NextSeo*/}
-			{/*	title={`${name} en Waydda`}*/}
-			{/*	description={`Menú digital de ${name} en Waydda`}*/}
-			{/*	facebook={{*/}
-			{/*		appId: "641527279645625"*/}
-			{/*	}}*/}
-			{/*	canonical={`https://waydda.vercel.app/places/${slug}`}*/}
-			{/*	additionalMetaTags={[*/}
-			{/*		{*/}
-			{/*			property: "restaurant:menu",*/}
-			{/*			content: `https://waydda.vercel.app/places/${slug}`*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:website",*/}
-			{/*			content: `https://waydda.vercel.app/places/${slug}`*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:street_address",*/}
-			{/*			content: address*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:locality",*/}
-			{/*			content: addressState*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:region",*/}
-			{/*			content: "mexico"*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:postal_code",*/}
-			{/*			content: "00810"*/}
-			{/*		},*/}
-			{/*		{*/}
-			{/*			property: "restaurant:contact_info:country_name",*/}
-			{/*			content: "Mexico"*/}
-			{/*		}*/}
-			{/*	]}*/}
-			{/*	openGraph={{*/}
-			{/*		type: 'restaurant.restaurant',*/}
-			{/*		url: `https://waydda.vercel.app/places/${slug}`,*/}
-			{/*		title: `${name} en Waydda`,*/}
-			{/*		description: `Menú digital de ${name} en Waydda`,*/}
-			{/*		site_name: "Waydda",*/}
-			{/*		images: [*/}
-			{/*			{*/}
-			{/*				url: GetImageUrl({publicId: cover}),*/}
-			{/*				alt: `${name} cover image`,*/}
-			{/*			}*/}
-			{/*		]*/}
-			{/*	}}*/}
-			{/*/>*/}
+			<Head>
+				<link rel="preconnect" href="https://mapbox.com" crossOrigin/>
+				<link rel="dns-prefetch" href="https://mapbox.com"/>
+				
+				<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
+			</Head>
+			<NextSeo
+				title={`${name} en Waydda`}
+				description={`Menú digital de ${name} en Waydda`}
+				facebook={{
+					appId: "641527279645625"
+				}}
+				canonical={`https://waydda.vercel.app/places/${slug}`}
+				additionalMetaTags={[
+					{
+						property: "restaurant:menu",
+						content: `https://waydda.vercel.app/places/${slug}`
+					},
+					{
+						property: "restaurant:contact_info:website",
+						content: `https://waydda.vercel.app/places/${slug}`
+					},
+					{
+						property: "restaurant:contact_info:street_address",
+						content: address
+					},
+					{
+						property: "restaurant:contact_info:locality",
+						content: addressState
+					},
+					{
+						property: "restaurant:contact_info:region",
+						content: "mexico"
+					},
+					{
+						property: "restaurant:contact_info:postal_code",
+						content: "00810"
+					},
+					{
+						property: "restaurant:contact_info:country_name",
+						content: "Mexico"
+					}
+				]}
+				openGraph={{
+					type: 'restaurant.restaurant',
+					url: `https://waydda.vercel.app/places/${slug}`,
+					title: `${name} en Waydda`,
+					description: `Menú digital de ${name} en Waydda`,
+					site_name: "Waydda",
+					images: [
+						{
+							url: GetImageUrl({publicId: cover}),
+							alt: `${name} cover image`,
+						}
+					]
+				}}
+			/>
 			<PlacePresentation data={data}>
-				{/*<ListAllProducts data={data}/>*/}
-				{/*{coordinates && (*/}
-				{/*	<Map*/}
-				{/*		marker={[parseFloat(coordinates.split(',')[0]), parseFloat(coordinates.split(',')[1])]}*/}
-				{/*		center={[parseFloat(coordinates.split(',')[0]), parseFloat(coordinates.split(',')[1])]}*/}
-				{/*		address={address}*/}
-				{/*		city={addressState}*/}
-				{/*	/>*/}
-				{/*)}*/}
-				{/*<ContactForm/>*/}
+				<ListAllProducts data={data}/>
+				<ContactPlace address={address} addressState={addressState} coordinates={coordinates}/>
 			</PlacePresentation>
 		</>
 	)

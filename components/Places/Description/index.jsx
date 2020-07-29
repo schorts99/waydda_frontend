@@ -29,10 +29,10 @@ export default function PlaceDescription({
 	return (
 		<div className="grid grid-cols-12">
 			<div
-				className="col-span-12 md:px-0 md:pt-4 md:mt-0 pt-6 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
+				className="col-span-12 md:px-0 md:pt-4 md:mt-0 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
 			>
 				<div className="grid grid-cols-12 bg-white z-20 p-6 rounded items-center md:gap-8">
-					<div className="md:col-span-2 col-span-4 -mt-32 md:mt-0">
+					<div className="md:col-span-2 col-span-4 md:mt-0 -mt-48">
 						<ResponsiveImage
 							fit={"cover"}
 							bgColor={"#fff"}
@@ -40,8 +40,8 @@ export default function PlaceDescription({
 							alt={name}
 							width={400}
 							height={400}
-							wrapperClass="mb-4 rounded-full bg-gray-100"
-							className="md:h-40 md:w-40 w-20 w-20 rounded-full shadow-2xl"
+							wrapperClass="mb-4 rounded-full bg-gray-100 md:h-40 md:w-40 w-20 h-20"
+							className="md:h-40 md:w-40 w-20 h-20 rounded-full shadow-2xl"
 						/>
 					</div>
 					<div className="md:col-span-10 col-span-12">

@@ -15,7 +15,7 @@
 import GetImageUrl from "../../lib";
 import {LazyLoadImage} from "react-lazy-load-image-component";
 
-export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 2000, height = 100, fit = "outside", bgColor = null, wrapperClass = ""}) {
+export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault = false, className = "", alt, publicId = "", width = 1000, height = 500, fit = "outside", bgColor = null, wrapperClass = ""}) {
 
 
 	return (
@@ -24,7 +24,6 @@ export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault 
 			alt={alt}
 			className={`${className}`}
 			wrapperClassName={wrapperClass}
-			effect="blur"
 			visibleByDefault={byDefault}
 			draggable={false}
 			placeholderSrc={GetImageUrl({publicId, width: 50, height: 50, fit, bgColor})}

@@ -20,7 +20,6 @@ module.exports = {
 		]
 	},
 	theme: {
-
 		borderRadius: {
 			'none': '0',
 			'sm': '0.125rem',

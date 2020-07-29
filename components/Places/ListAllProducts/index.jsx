@@ -51,7 +51,7 @@ function ListAllProducts({data, scrollPosition}) {
 	}
 	
 	return (
-		<div className="grid grid-cols-12 items-center">
+		<div className="grid grid-cols-12 items-center transform">
 			{/*<div className="col-span-12 z-10 px-4 md:px-0 bg-white border-b">*/}
 			{/*	<div className="grid grid-cols-3 items-center py-4">*/}
 			{/*		<div className="col-span-2">*/}

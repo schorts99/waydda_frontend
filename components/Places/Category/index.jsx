@@ -20,9 +20,9 @@ export default function Category({count, label}) {
 	}
 
 	return (
-		<div className="flex w-full my-8 px-2 md:px-0 items-center md:gap-4">
+		<div className="flex w-full my-8 items-center md:gap-4">
 			<div className="md:w-auto w-6/12 md:w-auto md:mr-2">
-				<h3 className="font-bold text-gray-700 md:text-black md:text-2xl">
+				<h3 className="font-bold text-lg md:text-2xl">
 					{label}
 				</h3>
 			</div>
