@@ -40,6 +40,25 @@ export default function PlaceDescription({
 							alt={name}
 							width={400}
 							height={400}
+							srcsetSizes={{
+								w_480: {
+									height: 300,
+									width: 300,
+								},
+								w_1082: {
+									height: 400,
+									width: 300,
+									
+								},
+								w_1523: {
+									width: 300,
+									height: 500
+								},
+								w_1920: {
+									width: 300,
+									height: 550
+								}
+							}}
 							wrapperClass="mb-4 rounded-full bg-gray-100 md:h-40 md:w-40 w-20 h-20"
 							className="md:h-40 md:w-40 w-20 h-20 rounded-full shadow-2xl"
 						/>
@@ -52,9 +71,9 @@ export default function PlaceDescription({
 						</h2>
 						<h4 className="text-gray-700 my-2 text-sm md:text-base font-bold text-black">
 							{addressState}
-							<span className="md:hidden font-normal" >&#160;&#8226;&#160;{address}</span>
+							<span className="md:hidden font-normal">&#160;&#8226;&#160;{address}</span>
 						</h4>
-						<h3 className="hidden md:block" >
+						<h3 className="hidden md:block">
 									<span
 										className="md:block md:text-base text-xs md:font-normal md:mt-1">
 										{address}

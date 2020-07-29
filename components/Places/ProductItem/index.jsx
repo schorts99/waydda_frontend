@@ -42,16 +42,20 @@ export default function ProductItem({
 					className="rounded shadow h-24 w-24 md:w-32 md:h-32 max-w-full max-h-full"
 					wrapperClass="h-full rounded bg-orange-100 max-w-full max-h-full"
 					srcsetSizes={{
-						w_480:{
+						w_480: {
 							height: 300,
+							width: 300,
 						},
-						w_1082:{
-							height: 400
+						w_1082: {
+							width: 300,
+							height: 300
 						},
-						w_1523:{
-							height: 500
+						w_1523: {
+							width: 300,
+							height: 300
 						},
-						w_1920:{
+						w_1920: {
+							width: 300,
 							height: 550
 						}
 					}}
