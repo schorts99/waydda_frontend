@@ -67,7 +67,10 @@ const Main = ({data}) => {
 			<Head>
 				{/*<link rel="preconnect" href="https://mapbox.com" crossOrigin/>*/}
 				{/*<link rel="dns-prefetch" href="https://mapbox.com"/>*/}
-				<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
+				<link
+					as="style"
+					href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='prefetch'
+				/>
 			</Head>
 			<NextSeo
 				title={`${name} en Waydda`}
