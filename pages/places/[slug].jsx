@@ -13,21 +13,17 @@
  */
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import {NextSeo} from "next-seo";
 import GetImageUrl from "../../lib";
 import Head from "next/head";
 import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
-import demoData from '../../demo/index.json';
-const PlacePresentation = dynamic(() => import("../../components/Places/Presentation"), {
-	ssr: true
-})
-const ListAllProducts = dynamic(() => import('../../components/Places/ListAllProducts'), {
-	ssr: false
-})
+// import demoData from '../../demo/index.json';
+import PlacePresentation from "../../components/Places/Presentation";
 
+// const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'))
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -35,7 +31,7 @@ export default function PlacePage() {
 		variables: {
 			slug: router.query.slug,
 		},
-		skip: router.query.slug === 'demo',
+		// skip: router.query.slug === 'demo',
 	})
 	
 	if (loading) {
@@ -50,12 +46,12 @@ export default function PlacePage() {
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
-			moreSpaceInFooter={router.query.slug === "demo" ? demoData : data.getBusiness.social}
+			moreSpaceInFooter={data.getBusiness.social}
 			withHeader={false}
 			head={{theme: "#000"}}
 		>
 			<Main
-				data={router.query.slug === 'demo' ? demoData : data.getBusiness}
+				data={data.getBusiness}
 			/>
 		</LayoutUnAuthenticated>
 	)
@@ -64,14 +60,13 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState, coordinates, cover} = data;
+	const {address, name, slug, addressState, cover} = data;
 	
 	return (
 		<>
 			<Head>
-				<link rel="preconnect" href="https://mapbox.com" crossOrigin/>
-				<link rel="dns-prefetch" href="https://mapbox.com"/>
-				
+				{/*<link rel="preconnect" href="https://mapbox.com" crossOrigin/>*/}
+				{/*<link rel="dns-prefetch" href="https://mapbox.com"/>*/}
 				<link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
 			</Head>
 			<NextSeo
@@ -126,8 +121,7 @@ const Main = ({data}) => {
 				}}
 			/>
 			<PlacePresentation data={data}>
-				<ListAllProducts data={data}/>
-				{/*<ContactPlace address={address} addressState={addressState} coordinates={coordinates}/>*/}
+				{/*<GetPlaceData/>*/}
 			</PlacePresentation>
 		</>
 	)

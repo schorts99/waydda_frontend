@@ -12,9 +12,7 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-
-export default (req, res) => {
-  res.statusCode = 200
-  res.json({ name: 'John Doe' })
-}
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+})
+module.exports = withBundleAnalyzer({})
