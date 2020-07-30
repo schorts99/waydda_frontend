@@ -42,20 +42,20 @@ export default function PlaceDescription({
 							height={400}
 							srcsetSizes={{
 								w_480: {
-									height: 300,
-									width: 300,
+									height: 160,
+									width: 160,
 								},
 								w_1082: {
-									height: 400,
+									height: 300,
 									width: 300,
 									
 								},
 								w_1523: {
 									width: 300,
-									height: 500
+									height: 300
 								},
 								w_1920: {
-									width: 300,
+									width: 550,
 									height: 550
 								}
 							}}
