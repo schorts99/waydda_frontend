@@ -12,14 +12,14 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
-import dynamic from 'next/dynamic'
+// import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
+// import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
-import Head from "next/head";
-// import {useQuery} from "@apollo/react-hooks";
-// import {useRouter} from "next/router";
-// import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
+// import Head from "next/head";
+import {useQuery} from "@apollo/react-hooks";
+import {useRouter} from "next/router";
+import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // import demoData from '../../demo/index.json';
 // import PlacePresentation from "../../components/Places/Presentation";
 // import GetPlaceData from "../../components/Places/GetPlaceData";
@@ -29,13 +29,13 @@ import Head from "next/head";
 // })
 
 export default function PlacePage() {
-	// const router = useRouter();
-	// const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {
-	// 	variables: {
-	// 		slug: router.query.slug,
-	// 	},
-	// 	// skip: router.query.slug === 'demo',
-	// })
+	const router = useRouter();
+	const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {
+		variables: {
+			slug: router.query.slug,
+		},
+		// skip: router.query.slug === 'demo',
+	})
 	
 	// if (loading) {
 	// 	return (
