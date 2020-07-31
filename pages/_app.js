@@ -21,7 +21,13 @@ import {ApolloProvider} from '@apollo/react-hooks'
 import withApollo from "../lib/withApollo"
 import NProgress from "../components/Nprogress";
 
+export function reportWebVitals(metrics) {
+	console.log("ID", metrics)
+}
+
 function WayddaApp({Component, pageProps, apolloClient}) {
+	
+	
 	return (
 		<ApolloProvider client={apolloClient}>
 			<NProgress
