@@ -20,7 +20,7 @@ import {AiFillFacebook, AiOutlineTwitter} from 'react-icons/ai'
 import states from '../../lib/states.json'
 import ResponsiveImage from "../ResponsiveImage";
 import {CREATE_PRE_REGISTER_USER} from "../../lib/graphql/mutations";
-import {useMutation} from "@apollo/react-hooks";
+// import {useMutation} from "@apollo/react-hooks";
 import ReactPixel from 'react-facebook-pixel';
 
 const customStyles = {
@@ -50,25 +50,25 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 		state: ""
 	})
 
-	const [createPreRegister, {data, loading, error}] = useMutation(CREATE_PRE_REGISTER_USER, {
-		onCompleted: (title, data) => {
-			setSuccess(true);
-		},
-		onError: () => {
-		},
-		variables: {
-			input: {
-				user: {
-					name: fields.name,
-					email: fields.email
-				},
-				business: {
-					name: fields.place_name,
-					state: fields.state
-				}
-			}
-		}
-	})
+	// const [createPreRegister, {data, loading, error}] = useMutation(CREATE_PRE_REGISTER_USER, {
+	// 	onCompleted: (title, data) => {
+	// 		setSuccess(true);
+	// 	},
+	// 	onError: () => {
+	// 	},
+	// 	variables: {
+	// 		input: {
+	// 			user: {
+	// 				name: fields.name,
+	// 				email: fields.email
+	// 			},
+	// 			business: {
+	// 				name: fields.place_name,
+	// 				state: fields.state
+	// 			}
+	// 		}
+	// 	}
+	// })
 
 
 	useEffect(() => {
@@ -164,13 +164,13 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 						<div className="col-span-12 mb-6 text-center">
 							<h2 className="text-2xl md:text-3xl font-bold uppercase">Reserva tu lugar ahora</h2>
 							<p className="text-sm font-bold my-2">Acceso gratuito a las primeras 300 personas</p>
-							{error &&
-							<p className="text-sm mt-3 rounded shadow-2xl bg-red-principal py-2 text-white font-bold">
-								{
-									error.graphQLErrors ? error.graphQLErrors.length > 0 ? error.graphQLErrors[0].message : "" : error.message
-								}
-							</p>
-							}
+							{/*{error &&*/}
+							{/*<p className="text-sm mt-3 rounded shadow-2xl bg-red-principal py-2 text-white font-bold">*/}
+							{/*	{*/}
+							{/*		error.graphQLErrors ? error.graphQLErrors.length > 0 ? error.graphQLErrors[0].message : "" : error.message*/}
+							{/*	}*/}
+							{/*</p>*/}
+							{/*}*/}
 
 						</div>
 						<div className="col-span-12">
@@ -230,9 +230,9 @@ export default function PreRegisterModal({isOpen, handleClose, defaultEmail}) {
 						<div className="col-span-12 mt-6 text-center">
 							<button
 								type={"submit"}
-								disabled={loading}
+								// disabled={loading}
 								// onClick={handleClick}
-								className={`bg-black mb-4 w-full py-4 text-white font-bold rounded shadow-2xl ${loading ? "cursor-not-allowed opacity-50" : ""}`}>Rerservar
+								className={`bg-black mb-4 w-full py-4 text-white font-bold rounded shadow-2xl ${true ? "cursor-not-allowed opacity-50" : ""}`}>Rerservar
 								mi lugar
 							</button>
 							<span

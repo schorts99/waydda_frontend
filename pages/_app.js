@@ -17,8 +17,8 @@
 
 import '../css/main.css';
 import 'react-slideshow-image/dist/styles.css';
-import {ApolloProvider} from '@apollo/react-hooks'
-import withApollo from "../lib/withApollo"
+// import {ApolloProvider} from '@apollo/react-hooks'
+// import withApollo from "../lib/withApollo"
 import NProgress from "../components/Nprogress";
 
 export function reportWebVitals(metrics) {
@@ -29,12 +29,17 @@ function WayddaApp({Component, pageProps, apolloClient}) {
 	
 	
 	return (
-		<ApolloProvider client={apolloClient}>
-			<NProgress
-			/>
-			<Component {...pageProps} />
-		</ApolloProvider>
+		<>
+			
+			{/*<ApolloProvider client={apolloClient}>*/}
+				<NProgress
+				/>
+				<Component {...pageProps} />
+			{/*</ApolloProvider>*/}
+		</>
 	);
 }
 
-export default withApollo(WayddaApp)
+export default WayddaApp
+// TODO: WITHAPOLLO
+// export default withApollo(WayddaApp)
