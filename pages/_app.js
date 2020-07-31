@@ -31,15 +31,13 @@ function WayddaApp({Component, pageProps, apolloClient}) {
 	return (
 		<>
 			
-			{/*<ApolloProvider client={apolloClient}>*/}
+			<ApolloProvider client={apolloClient}>
 				<NProgress
 				/>
 				<Component {...pageProps} />
-			{/*</ApolloProvider>*/}
+			</ApolloProvider>
 		</>
 	);
 }
 
-export default WayddaApp
-// TODO: WITHAPOLLO
-// export default withApollo(WayddaApp)
+export default withApollo(WayddaApp)
