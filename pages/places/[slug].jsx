@@ -17,8 +17,9 @@ import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
 // import Head from "next/head";
-import {useQuery} from "@apollo/react-hooks";
+// import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
+import {useQuery} from "@apollo/client";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // import demoData from '../../demo/index.json';
 // import PlacePresentation from "../../components/Places/Presentation";
@@ -27,6 +28,7 @@ import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
 // 	ssr: false
 // })
+import {initializeApollo} from "../../lib/apolloClient";
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -42,14 +44,14 @@ export default function PlacePage() {
 			<h1>Cargando...</h1>
 		)
 	}
-
+	
 	if (error) {
 		return (<h1>Ha ocurrido un error</h1>)
 	}
 	return (
 		<LayoutUnAuthenticated
 			pixel={"1404734746583052"}
-			moreSpaceInFooter={data.getBusiness.social}
+			// moreSpaceInFooter={data.getBusiness.social}
 			withHeader={false}
 			head={{theme: "#000"}}
 		>
@@ -59,7 +61,7 @@ export default function PlacePage() {
 			{/*/>*/}
 		</LayoutUnAuthenticated>
 	)
-
+	
 }
 
 
@@ -134,3 +136,30 @@ export default function PlacePage() {
 // 		</>
 // 	)
 // }
+
+export async function getStaticPaths() {
+	return {
+		paths: [
+			{params: {slug: 'aroma-383ee35182'}},
+		],
+		fallback: true,
+	}
+}
+
+export async function getStaticProps({params}) {
+	const apolloClient = initializeApollo()
+	
+	await apolloClient.query({
+		query: GET_BUSINESS_QUERY,
+		variables: {
+			slug: params.slug || "aroma-383ee35182"
+		},
+	})
+	
+	return {
+		props: {
+			initialApolloState: apolloClient.cache.extract(),
+		},
+		revalidate: 1,
+	}
+}

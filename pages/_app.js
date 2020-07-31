@@ -17,15 +17,18 @@
 
 import '../css/main.css';
 import 'react-slideshow-image/dist/styles.css';
-import {ApolloProvider} from '@apollo/react-hooks'
-import withApollo from "../lib/withApollo"
+// import {ApolloProvider} from '@apollo/react-hooks'
+// import withApollo from "../lib/withApollo"
 import NProgress from "../components/Nprogress";
+import {useApollo} from "../lib/apolloClient";
+import { ApolloProvider } from '@apollo/client';
 
 export function reportWebVitals(metrics) {
 	console.log("ID", metrics)
 }
 
-function WayddaApp({Component, pageProps, apolloClient}) {
+function WayddaApp({Component, pageProps}) {
+	const apolloClient = useApollo(pageProps.initialApolloState)
 	
 	
 	return (
@@ -39,4 +42,5 @@ function WayddaApp({Component, pageProps, apolloClient}) {
 	);
 }
 
-export default withApollo(WayddaApp)
+export default WayddaApp
+// export default withApollo(WayddaApp)
