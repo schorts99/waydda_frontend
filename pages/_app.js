@@ -30,7 +30,6 @@ function WayddaApp({Component, pageProps, apolloClient}) {
 	
 	return (
 		<>
-			
 			<ApolloProvider client={apolloClient}>
 				<NProgress
 				/>
