@@ -22,10 +22,11 @@ import {useRouter} from "next/router";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // import demoData from '../../demo/index.json';
 import PlacePresentation from "../../components/Places/Presentation";
+import GetPlaceData from "../../components/Places/GetPlaceData";
 
-const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
-	ssr: false
-})
+// const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
+// 	ssr: false
+// })
 
 export default function PlacePage() {
 	const router = useRouter();
