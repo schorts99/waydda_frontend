@@ -12,7 +12,7 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-// import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
+import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 // import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
@@ -37,31 +37,29 @@ export default function PlacePage() {
 		// skip: router.query.slug === 'demo',
 	})
 	
-	// if (loading) {
-	// 	return (
-	// 		<h1>Cargando...</h1>
-	// 	)
-	// }
-	//
-	// if (error) {
-	// 	return (<h1>Ha ocurrido un error</h1>)
-	// }
-	// return (
-	// 	<LayoutUnAuthenticated
-	// 		pixel={"1404734746583052"}
-	// 		moreSpaceInFooter={data.getBusiness.social}
-	// 		withHeader={false}
-	// 		head={{theme: "#000"}}
-	// 	>
-	// 		<Main
-	// 			data={data.getBusiness}
-	// 		/>
-	// 	</LayoutUnAuthenticated>
-	// )
-	//
+	if (loading) {
+		return (
+			<h1>Cargando...</h1>
+		)
+	}
+
+	if (error) {
+		return (<h1>Ha ocurrido un error</h1>)
+	}
 	return (
-		<h1>Hola</h1>
+		<LayoutUnAuthenticated
+			pixel={"1404734746583052"}
+			moreSpaceInFooter={data.getBusiness.social}
+			withHeader={false}
+			head={{theme: "#000"}}
+		>
+			<h1>HOLAAAAAA</h1>
+			{/*<Main*/}
+			{/*	data={data.getBusiness}*/}
+			{/*/>*/}
+		</LayoutUnAuthenticated>
 	)
+
 }
 
 

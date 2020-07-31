@@ -24,7 +24,6 @@ const Sidebar = dynamic(() => import('../../SideBar'), {
 	ssr: false
 });
 
-// TOTAL REQUEST - 66
 const Footer = dynamic(() => import('../../Footer'), {
 	ssr: false
 });
