@@ -23,7 +23,9 @@ import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // import demoData from '../../demo/index.json';
 import PlacePresentation from "../../components/Places/Presentation";
 
-const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'))
+const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
+	ssr: false
+})
 
 export default function PlacePage() {
 	const router = useRouter();
