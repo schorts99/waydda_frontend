@@ -137,16 +137,16 @@ export default function PlacePage() {
 // 	)
 // }
 
-export async function getStaticPaths() {
-	return {
-		paths: [
-			{params: {slug: 'aroma-383ee35182'}},
-		],
-		fallback: true,
-	}
-}
+// export async function getStaticPaths() {
+// 	return {
+// 		paths: [
+// 			{params: {slug: 'aroma-383ee35182'}},
+// 		],
+// 		fallback: true,
+// 	}
+// }
 
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
 	const apolloClient = initializeApollo()
 	
 	await apolloClient.query({
@@ -160,6 +160,6 @@ export async function getStaticProps({params}) {
 		props: {
 			initialApolloState: apolloClient.cache.extract(),
 		},
-		revalidate: 1,
+		// revalidate: 1,
 	}
 }

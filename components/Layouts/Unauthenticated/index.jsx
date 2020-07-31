@@ -28,6 +28,8 @@ const Footer = dynamic(() => import('../../Footer'), {
 	ssr: false
 });
 
+// TODO: Create place layout
+
 export default function LayoutUnAuthenticated({children, head, withHeader, moreSpaceInFooter, pixel}) {
 	const [openSidebar, setOpenSidebar] = useState(false);
 	

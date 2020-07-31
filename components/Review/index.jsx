@@ -15,7 +15,7 @@
 import ResponsiveImage from "../ResponsiveImage";
 import Rating from "react-rating";
 import {AiFillStar, AiOutlineStar} from "react-icons/ai";
-import moment from 'moment';
+// import moment from 'moment';
 
 export default function Review({stars, comment, date, user}) {
 	return (
@@ -28,8 +28,8 @@ export default function Review({stars, comment, date, user}) {
 				/>
 			</div>
 			<div className="col-span-10">
-				<h3 className="font-bold mb-1">{user.name} <span
-					className="text-xs text-gray-700 font-normal"> - {moment(date).fromNow()}</span></h3>
+				{/*<h3 className="font-bold mb-1">{user.name} <span*/}
+				{/*	className="text-xs text-gray-700 font-normal"> - {moment(date).fromNow()}</span></h3>*/}
 				{/*<p className="my-2 text-xs text-gray-700" >El 12/11/20</p>*/}
 				<Rating
 					size={10}
