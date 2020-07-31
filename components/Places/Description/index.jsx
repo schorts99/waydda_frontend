@@ -27,12 +27,12 @@ export default function PlaceDescription({
                                          }) {
 	
 	return (
-		<div className="grid grid-cols-12">
+		<div className="grid grid-cols-12 w-full h-full flex justify-center items-center">
 			<div
-				className="col-span-12 md:px-0 md:pt-4 md:mt-0 rounded-t-lg z-20 rounded-t-large md:rounded-t-lg"
+				className="col-span-12 md:px-0 md:pt-4 md:mt-0 rounded-t-lg rounded-t-large md:rounded-t-lg"
 			>
-				<div className="grid grid-cols-12 bg-white z-20 p-6 rounded items-center md:gap-8">
-					<div className="md:col-span-2 col-span-4 md:mt-0 -mt-48">
+				<div className="grid grid-cols-12 p-6 rounded items-center md:gap-4 w-full">
+					<div className="col-span-12 mx-auto">
 						<ResponsiveImage
 							fit={"cover"}
 							bgColor={"#fff"}
@@ -59,27 +59,26 @@ export default function PlaceDescription({
 									height: 550
 								}
 							}}
-							wrapperClass="mb-4 rounded-full bg-gray-100 md:h-40 md:w-40 w-20 h-20"
-							className="md:h-40 md:w-40 w-20 h-20 rounded-full shadow-2xl"
+							wrapperClass="rounded-lg bg-gray-100 w-20 h-20"
+							className="w-20 h-20 rounded-lg shadow-2xl"
 						/>
 					</div>
-					<div className="md:col-span-10 col-span-12">
-						<h2 className="text-2xl font-bold md:text-4xl">
+					<div className="col-span-12">
+						<h2 className="text-2xl font-bold md:text-4xl text-white text-center">
 							<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
 								<a>{name}</a>
 							</Link>
 						</h2>
-						<h4 className="text-gray-700 my-2 text-sm md:text-base font-bold text-black">
-							{addressState}
-							<span className="md:hidden font-normal">&#160;&#8226;&#160;{address}</span>
-						</h4>
-						<h3 className="hidden md:block">
+						{/*<h4 className="text-gray-700 my-2 text-sm md:text-base font-bold text-black">*/}
+						{/*	{addressState}*/}
+						{/*	<span className="md:hidden font-normal">&#160;&#8226;&#160;{address}</span>*/}
+						{/*</h4>*/}
+						<h3 className="hidden md:block text-center text-white opacity-75">
 									<span
 										className="md:block md:text-base text-xs md:font-normal md:mt-1">
 										{address}
 									</span>
 						</h3>
-					
 					</div>
 					{reviews &&
 					<div className="col-span-12 mt-5">

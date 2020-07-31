@@ -20,6 +20,7 @@ module.exports = {
 		]
 	},
 	theme: {
+		
 		borderRadius: {
 			'none': '0',
 			'sm': '0.125rem',
@@ -33,10 +34,17 @@ module.exports = {
 			colors: {
 				"red-principal": "#ff441f",
 				"purple-principal": "#5B3093",
-				background: "#fafafa"
+				background: "#fafafa",
+				"dark": "#2c2c2c",
+				"secondary-dark": "#1c1c1c"
 			},
 			height: {
-				"xxl": "24em"
+				"large": "20em",
+				"xxl": "24em",
+				"xxxl": "30em"
+			},
+			inset: {
+				"4": "1em"
 			},
 		},
 	},

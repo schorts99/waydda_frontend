@@ -13,20 +13,11 @@
  */
 
 import ListAllProducts from "../ListAllProducts";
-import dynamic from 'next/dynamic'
-const ContactPlace = dynamic(() => import('../Contact'), {
-	ssr: false
-})
-const WhatsAppButton = dynamic(() => import('../../WhatsAppButton'), {
-	ssr: false
-})
 
 export default function GetPlaceData({data}) {
 	return (
 		<>
 			<ListAllProducts data={data}/>
-			{data.whatsapp && <WhatsAppButton data={data.whatsapp}/>}
-			<ContactPlace addressState={data.adressState} address={data.address}/>
 		</>
 	)
 }

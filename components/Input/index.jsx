@@ -18,7 +18,7 @@ export default function SimpleInput({label, type, placeholder, maxLength, minLen
 	return (
 		<div className="grid grid-cols-1 mb-5">
 			<div className="col-span-1 mb-2">
-				<label className="text-xs text-gray-600 uppercase font-bold">{label}</label>
+				<label className="text-xs text-gray-700 uppercase font-semibold">{label}</label>
 			</div>
 			<div className="col-span-1">
 				{type === "textarea" ?
@@ -28,7 +28,7 @@ export default function SimpleInput({label, type, placeholder, maxLength, minLen
 						placeholder={placeholder}
 						rows={4}
 						name={name}
-						className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full"
+						className="rounded px-3 py-4 border-black text-lg border-2 w-full text-sm"
 					/>
 					:
 					<input type={type}
@@ -37,7 +37,7 @@ export default function SimpleInput({label, type, placeholder, maxLength, minLen
 					       onChange={handleChange}
 					       maxLength={maxLength}
 					       minLength={minLength}
-					       className="rounded px-3 py-4 font-bold border-black text-lg border-2 w-full"
+					       className="rounded px-3 py-4 border-black text-lg border-2 w-full text-sm"
 					       placeholder={placeholder}/>
 				}
 

@@ -17,7 +17,6 @@ import {useState} from "react";
 import PlaceHeader from "../../Headers/PlaceHeader";
 import PlaceCover from "../Cover";
 import PlaceMenu from "../../PlaceMenu";
-import PlaceDescription from "../Description";
 
 export default function PlacePresentation({
 	                                          children,
@@ -41,10 +40,10 @@ export default function PlacePresentation({
 	
 	return (
 		<div className="grid grid-cols-12">
-			<div className="col-span-12">
+			<div className="col-span-12 z-40">
 				<PlaceHeader/>
 			</div>
-			<div className="col-span-12">
+			<div className="col-span-12 top-0 h-64 md:h-large w-full">
 				<PlaceCover
 					name={name}
 					addressState={addressState}
@@ -55,55 +54,21 @@ export default function PlacePresentation({
 					logo={profile}
 				/>
 			</div>
-			{withSticky &&
-			<div className={`col-span-12 md:hidden z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
-				<div
-					className={`flex w-full mx-auto bg-white`}>
-					{/*className={`col-span-12 md:hidden z-20 ${activeItem ? "shadow" : ""} bg-white ${withSticky ? "sticky top-0" : ""}`}>*/}
-					<div className="w-11/12 mx-auto">
-						<PlaceMenu
-							items={items}
-							handleSendItem={onHandleReceive}
-						/>
-					</div>
-				</div>
-			</div>
-			}
-			<div className="col-span-12 z-10 md:z-20">
-				<div className="flex w-11/12 mx-auto md:-mt-32">
-					<div className="grid grid-cols-12  w-full">
-						<div className="col-span-12 hidden md:block">
-							<PlaceDescription
-								reviews={reviews}
-								name={name}
-								address={address}
-								addressState={addressState}
-								logo={profile}
-								slug={slug}
+			<div className="col-span-12 z-10 md:z-40 w-full mt-6">
+				<div className="flex">
+					<div className="w-11/12 mx-auto md:gap-6 flex" >
+						<div className="w-3/12">
+							<PlaceMenu items={items}
+							           handleSendItem={() => {
+							           }}
+							           size={"desktop"}
 							/>
 						</div>
-					</div>
-				</div>
-				{
-					withSticky &&
-					<div
-						className={`flex w-full hidden md:block mx-auto bg-white z-20 ${withSticky ? "sticky top-0" : ""} ${activeItem ? "shadow" : ""}`}>
-						<div className="w-11/12 mx-auto">
-							<PlaceMenu
-								items={items}
-								handleSendItem={onHandleReceive}
-							/>
-						</div>
-					</div>
-				}
-				<div className="flex w-11/12 mx-auto">
-					<div className="grid grid-cols-12 w-full">
-						<div className="col-span-12">
+						<div className="w-9/12">
 							{children}
 						</div>
 					</div>
 				</div>
-			
 			</div>
 		</div>
 	)

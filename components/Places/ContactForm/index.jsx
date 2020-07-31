@@ -40,14 +40,8 @@ export default function ContactForm() {
 	
 	return (
 		<div
-			className="grid grid-cols-12 py-5 md:py-10  mt-8 md:rounded">
-			<div className="col-span-12 text-center mb-5 md:mb-10">
-				<h3 className="text-black md:text-3xl text-2xl font-bold md:text-center text-left">
-					Ponte en contacto con Moose
-				</h3>
-			
-			</div>
-			<div className="col-span-12 md:col-span-6 md:col-start-4 bg-white md:py-6 md:px-6 rounded">
+			className="grid grid-cols-12 w-full rounded bg-white">
+			<div className="col-span-12 md:py-6 md:px-6">
 				<form
 					onSubmit={(e) => {
 						// e.preventDefault();
