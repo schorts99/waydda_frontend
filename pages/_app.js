@@ -17,8 +17,8 @@
 
 import '../css/main.css';
 import 'react-slideshow-image/dist/styles.css';
-// import {ApolloProvider} from '@apollo/react-hooks'
-// import withApollo from "../lib/withApollo"
+import {ApolloProvider} from '@apollo/react-hooks'
+import withApollo from "../lib/withApollo"
 import NProgress from "../components/Nprogress";
 
 export function reportWebVitals(metrics) {
