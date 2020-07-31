@@ -13,9 +13,9 @@
  */
 
 import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
-// import dynamic from 'next/dynamic'
-import {NextSeo} from "next-seo";
-import GetImageUrl from "../../lib";
+import dynamic from 'next/dynamic'
+// import {NextSeo} from "next-seo";
+// import GetImageUrl from "../../lib";
 import Head from "next/head";
 import {useQuery} from "@apollo/react-hooks";
 import {useRouter} from "next/router";
@@ -23,7 +23,7 @@ import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 // import demoData from '../../demo/index.json';
 import PlacePresentation from "../../components/Places/Presentation";
 
-// const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'))
+const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'))
 
 export default function PlacePage() {
 	const router = useRouter();
@@ -60,71 +60,72 @@ export default function PlacePage() {
 
 
 const Main = ({data}) => {
-	const {address, name, slug, addressState, cover} = data;
+	// const {address, name, slug, addressState, cover} = data;
 	
 	return (
 		<>
 			<Head>
-				{/*<link rel="preconnect" href="https://mapbox.com" crossOrigin/>*/}
-				{/*<link rel="dns-prefetch" href="https://mapbox.com"/>*/}
+				<link rel="preconnect" href="https://mapbox.com" crossOrigin="anonymous"/>
+				<link rel="dns-prefetch" href="https://mapbox.com"/>
 				<link
 					as="style"
-					href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='prefetch'
+					href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css'
+					rel='prefetch'
 				/>
 			</Head>
-			<NextSeo
-				title={`${name} en Waydda`}
-				description={`Menú digital de ${name} en Waydda`}
-				facebook={{
-					appId: "641527279645625"
-				}}
-				canonical={`https://waydda.vercel.app/places/${slug}`}
-				additionalMetaTags={[
-					{
-						property: "restaurant:menu",
-						content: `https://waydda.vercel.app/places/${slug}`
-					},
-					{
-						property: "restaurant:contact_info:website",
-						content: `https://waydda.vercel.app/places/${slug}`
-					},
-					{
-						property: "restaurant:contact_info:street_address",
-						content: address
-					},
-					{
-						property: "restaurant:contact_info:locality",
-						content: addressState
-					},
-					{
-						property: "restaurant:contact_info:region",
-						content: "mexico"
-					},
-					{
-						property: "restaurant:contact_info:postal_code",
-						content: "00810"
-					},
-					{
-						property: "restaurant:contact_info:country_name",
-						content: "Mexico"
-					}
-				]}
-				openGraph={{
-					type: 'restaurant.restaurant',
-					url: `https://waydda.vercel.app/places/${slug}`,
-					title: `${name} en Waydda`,
-					description: `Menú digital de ${name} en Waydda`,
-					site_name: "Waydda",
-					images: [
-						{
-							url: GetImageUrl({publicId: cover}),
-							alt: `${name} cover image`,
-						}
-					]
-				}}
-			/>
+			{/*<NextSeo*/}
+			{/*	title={`${name} en Waydda`}*/}
+			{/*	description={`Menú digital de ${name} en Waydda`}*/}
+			{/*	facebook={{*/}
+			{/*		appId: "641527279645625"*/}
+			{/*	}}*/}
+			{/*	canonical={`https://waydda.vercel.app/places/${slug}`}*/}
+			{/*	additionalMetaTags={[*/}
+			{/*		{*/}
+			{/*			property: "restaurant:menu",*/}
+			{/*			content: `https://waydda.vercel.app/places/${slug}`*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:website",*/}
+			{/*			content: `https://waydda.vercel.app/places/${slug}`*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:street_address",*/}
+			{/*			content: address*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:locality",*/}
+			{/*			content: addressState*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:region",*/}
+			{/*			content: "mexico"*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:postal_code",*/}
+			{/*			content: "00810"*/}
+			{/*		},*/}
+			{/*		{*/}
+			{/*			property: "restaurant:contact_info:country_name",*/}
+			{/*			content: "Mexico"*/}
+			{/*		}*/}
+			{/*	]}*/}
+			{/*	openGraph={{*/}
+			{/*		type: 'restaurant.restaurant',*/}
+			{/*		url: `https://waydda.vercel.app/places/${slug}`,*/}
+			{/*		title: `${name} en Waydda`,*/}
+			{/*		description: `Menú digital de ${name} en Waydda`,*/}
+			{/*		site_name: "Waydda",*/}
+			{/*		images: [*/}
+			{/*			{*/}
+			{/*				url: GetImageUrl({publicId: cover}),*/}
+			{/*				alt: `${name} cover image`,*/}
+			{/*			}*/}
+			{/*		]*/}
+			{/*	}}*/}
+			{/*/>*/}
 			<PlacePresentation data={data}>
-				{/*<GetPlaceData/>*/}
+				<GetPlaceData data={data}/>
 			</PlacePresentation>
 		</>
 	)

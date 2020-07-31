@@ -17,20 +17,14 @@
 
 import '../css/main.css';
 import 'react-slideshow-image/dist/styles.css';
-// import ReactPixel from 'react-facebook-pixel';
-import NextNprogress from 'nextjs-progressbar';
 import {ApolloProvider} from '@apollo/react-hooks'
 import withApollo from "../lib/withApollo"
+import NProgress from "../components/Nprogress";
 
 function WayddaApp({Component, pageProps, apolloClient}) {
 	return (
 		<ApolloProvider client={apolloClient}>
-			<NextNprogress
-				color="#29D"
-				startPosition={0.3}
-				stopDelayMs={200}
-				height="3"
-				options={{showSpinner: false}}
+			<NProgress
 			/>
 			<Component {...pageProps} />
 		</ApolloProvider>
