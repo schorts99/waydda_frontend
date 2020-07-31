@@ -59,19 +59,11 @@ export default function LayoutUnAuthenticated({children, head, withHeader, moreS
 	return (
 		<>
 			<Head>
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-				<link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
 				<link rel="icon" href="/favicon.ico"/>
 				<meta name={"theme-color"} content={head.theme || "#fff"}/>
 				<meta name="abstract" content={head.description || es.head.description}/>
 				<meta name="keywords" content={`${es.keywords}${head.keywords && `, ${head.keywords}`}`}/>
 				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx"/>
-				<link
-					crossOrigin
-					rel="prefetch"
-					type="font/woff2"
-					as="font"
-					href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;900&display=swap"/>
 			</Head>
 			<main>
 				{withHeader &&
