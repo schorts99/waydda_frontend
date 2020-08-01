@@ -15,10 +15,14 @@
 import PropTypes from 'prop-types'
 import {useState} from "react";
 import PlaceMenu from "../../PlaceMenu";
-import ListAllProducts from "../ListAllProducts";
-
+// import ListAllProducts from "../ListAllProducts";
+import dynamic from "next/dynamic";
+const ListAllProducts = dynamic(() => import('../ListAllProducts'), {
+	ssr: false,
+	loading: () => (<p>CARGANDOOOOOO.....</p>)
+});
 export default function PlacePresentation({data}) {
-	const [activeItem, setActiveItem] = useState("");
+	// const [activeItem, setActiveItem] = useState("");
 	// const onHandleReceive = (e) => {
 	// 	setActiveItem(e);
 	// };

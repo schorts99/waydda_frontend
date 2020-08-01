@@ -18,13 +18,14 @@ import GetImageUrl from "../../../lib";
 import BackgroundImageResponsive from "../../BackgroundImageResponsive";
 import PlaceDescription from "../Description";
 
-export default function PlaceCover({image, name, addressState, address, reviews, slug, logo, profile}) {
+export default function PlaceCover({data}) {
+	const {cover, name, addressState, address, reviews, slug,  profile} = data;
 	return (
 		<>
 			<div className="grid grid-cols-12 h-full relative">
 				<BackgroundImageResponsive
-					src={GetImageUrl({publicId: image.src, width: 1200, height: 400, fit: "cover", bgColor: "#fafafa"})}
-					placeholder={GetImageUrl({publicId: image.src, width: 100, height: 10, fit: "cover", bgColor: "#fafafa"})}
+					src={GetImageUrl({publicId: cover, width: 1200, height: 400, fit: "cover", bgColor: "#fafafa"})}
+					placeholder={GetImageUrl({publicId: cover, width: 100, height: 10, fit: "cover", bgColor: "#fafafa"})}
 					imageClassName={"md:rounded-b rounded-none"}
 					className="col-span-12 md:h-full bg-gray-700 w-full rounded-none md:rounded-b h-32"
 				/>
@@ -35,7 +36,7 @@ export default function PlaceCover({image, name, addressState, address, reviews,
 						name={name}
 						address={address}
 						addressState={addressState}
-						logo={logo}
+						logo={profile}
 						slug={slug}
 					/>
 				</div>
