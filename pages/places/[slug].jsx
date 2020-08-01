@@ -12,26 +12,28 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
 import {useQuery} from "@apollo/client";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import {initializeApollo} from "../../lib/apolloClient";
 import PlaceLayout from "../../components/Layouts/Place";
+import PlaceCover from "../../components/Places/Cover";
+import PlacePresentation from "../../components/Places/Presentation";
 
-const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
-	ssr: false,
-	loading: () => (<p>Cargando...</p>)
-})
-const PlaceCover = dynamic(() => import('../../components/Places/Cover'), {
-	ssr: true,
-	loading: () => (<p>Cargando...</p>)
-})
-const PlacePresentation = dynamic(() => import('../../components/Places/Presentation'), {
-	ssr: true,
-	loading: () => (<p>Cargando...</p>)
-})
+// const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
+// 	ssr: false,
+// 	loading: () => (<p>Cargando...</p>)
+// })
+// const PlaceCover = dynamic(() => import('../../components/Places/Cover'), {
+// 	ssr: true,
+// 	loading: () => (<p>Cargando...</p>)
+// })
+// const PlacePresentation = dynamic(() => import('../../components/Places/Presentation'), {
+// 	ssr: true,
+// 	loading: () => (<p>Cargando...</p>)
+// })
 
 export default function PlacePage({business, slug}) {
 	if (!business || !slug) { // Esto debe estar antes de cualquier cosa - de lo contrario se harán 2 queries
@@ -130,9 +132,9 @@ export default function PlacePage({business, slug}) {
 					</div>
 				</div>
 				<PlacePresentation data={data.getBusiness}/>
-				<ContactPlace
-					data={data.getBusiness}
-				/>
+				{/*<ContactPlace*/}
+				{/*	data={data.getBusiness}*/}
+				{/*/>*/}
 			</PlaceLayout>
 			<style jsx global>{`
 				body{

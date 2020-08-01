@@ -22,7 +22,7 @@ import 'react-slideshow-image/dist/styles.css';
 import NProgress from "../components/Nprogress";
 import {useApollo} from "../lib/apolloClient";
 import { ApolloProvider } from '@apollo/client';
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 export function reportWebVitals(metrics) {
 	console.log("ID", metrics)

@@ -55,7 +55,6 @@ export default function PlacePresentation({data}) {
 }
 
 PlacePresentation.propTypes = {
-	children: PropTypes.any.isRequired,
 	withSticky: PropTypes.bool.isRequired
 }
 
