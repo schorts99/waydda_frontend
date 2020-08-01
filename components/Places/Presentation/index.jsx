@@ -16,7 +16,6 @@ import PropTypes from 'prop-types'
 import {useState} from "react";
 import PlaceHeader from "../../Headers/PlaceHeader";
 import dynamic from "next/dynamic";
-
 const PlaceCover = dynamic(() => import('../Cover'), {
 	ssr: true,
 	loading: () => (<p>Cargando...</p>)
@@ -61,17 +60,17 @@ export default function PlacePresentation({
 					logo={profile}
 				/>
 			</div>
-			<div className="col-span-12 z-10 md:z-40 w-full mt-6">
+			<div className="col-span-12 z-10 md:z-40 w-full md:mt-6">
 				<div className="flex">
-					<div className="w-11/12 mx-auto md:gap-6 flex">
-						<div className="w-3/12">
+					<div className="md:w-11/12 w-full mx-auto md:gap-6 md:flex">
+						<div className="md:w-3/12 w-full sticky top-0 z-40 md:relative">
 							<PlaceMenu items={items}
 							           handleSendItem={() => {
 							           }}
 							           size={"desktop"}
 							/>
 						</div>
-						<div className="w-9/12">
+						<div className="md:w-9/12">
 							{children}
 						</div>
 					</div>

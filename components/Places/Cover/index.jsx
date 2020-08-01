@@ -22,7 +22,6 @@ export default function PlaceCover({image, name, addressState, address, reviews,
 	return (
 		<>
 			<div className="grid grid-cols-12 h-full relative">
-			
 				<BackgroundImageResponsive
 					src={GetImageUrl({publicId: image.src, width: 1200, height: 400, fit: "cover", bgColor: "#fafafa"})}
 					placeholder={GetImageUrl({publicId: image.src, width: 120, height: 20, fit: "cover", bgColor: "#fafafa"})}

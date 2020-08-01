@@ -21,16 +21,34 @@ export default function PlaceMenu({handleSendItem, items, size}) {
 		handleSendItem(e);
 	}
 	
-	if (size === "desktop") {
-		return (
-			<div className="grid grid-cols-12 bg-dark rounded sticky top-4">
+	return (
+		<>
+			<div
+				className="flex flex-grow overflow-x-scroll no_scrollbar sticky top-4 border-b border-gray-400 block md:hidden bg-dark">
+				{items.map((item, i) => {
+					if (item.products.length > 0) {
+						return (
+							<MenuItem
+								key={i}
+								handleChange={onHandleChange}
+								keyValue={encodeURI(item.name.toLowerCase())}
+								label={item.name}
+							/>
+						)
+					} else {
+						return null;
+					}
+				})}
+			</div>
+			<div
+				className="md:grid md:grid-cols-12 bg-dark md:rounded md:sticky md:top-4 hidden md:block">
 				<div className="col-span-12 px-3 py-4 rounded-t border-b border-white border-opacity-25">
 					<h3 className="font-semibold text-white text-lg">Menú</h3>
 				</div>
 				{items.map((item, i) => {
 					if (item.products.length > 0) {
 						return (
-							<div className="col-span-12" key={i}>
+							<div className="md:col-span-12 flex md:block" key={i}>
 								<MenuItem
 									size={size}
 									key={i}
@@ -45,26 +63,7 @@ export default function PlaceMenu({handleSendItem, items, size}) {
 					}
 				})}
 			</div>
-		)
-	}
-	
-	return (
-		<div className="flex flex-grow overflow-x-scroll no_scrollbar border-b border-gray-400">
-			{items.map((item, i) => {
-				if (item.products.length > 0) {
-					return (
-						<MenuItem
-							key={i}
-							handleChange={onHandleChange}
-							keyValue={encodeURI(item.name.toLowerCase())}
-							label={item.name}
-						/>
-					)
-				} else {
-					return null;
-				}
-			})}
-		</div>
+		</>
 	)
 }
 
@@ -77,10 +76,9 @@ const MenuItem = ({label, keyValue, handleChange, size}) => {
 				flex: "0 0 auto"
 			}}
 			className={`
-				md:mr-0 md:p-3 flex mr-5 text-center
+				md:mr-0 p-3 flex md:mr-0 text-center
 				z-20 bg-secondary-dark border-b border-white
-				border-opacity-25 cursor-pointer
-				hover:text-red-600 tracking-wide
+				border-opacity-25 cursor-pointer hover:text-red-600 md:tracking-wide
 				hover:opacity-100
 				${active ? "text-red-500" : "text-white opacity-50"}
 			`}
@@ -98,7 +96,7 @@ const MenuItem = ({label, keyValue, handleChange, size}) => {
 				setActive(true);
 			}}
 		>
-			<span className={`select-none capitalize `}>
+			<span className={`select-none capitalize`}>
 				{label}
 			</span>
 		</Link>

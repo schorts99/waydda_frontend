@@ -20,7 +20,6 @@ import {useRouter} from "next/router";
 import {useQuery} from "@apollo/client";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import PlacePresentation from "../../components/Places/Presentation";
-// import GetPlaceData from "../../components/Places/GetPlaceData";
 
 const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
 	ssr: false,
