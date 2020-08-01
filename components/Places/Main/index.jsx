@@ -12,9 +12,14 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import PlaceCover from "../Cover";
-import PlacePresentation from "../Presentation";
 
+import PlaceCover from "../Cover";
+import dynamic from "next/dynamic";
+
+const PlacePresentation = dynamic(() => import('../Presentation'), {
+	ssr: false,
+	loading: () => (<p>CARGANDOOOOOO.....</p>)
+});
 export default function MainPlace({data, slug}) {
 	return (
 		<>

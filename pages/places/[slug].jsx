@@ -18,12 +18,8 @@ import {useRouter} from "next/router";
 import PlaceLayout from "../../components/Layouts/Place";
 import {useQuery} from "@apollo/react-hooks";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
-import dynamic from "next/dynamic";
-// DYNAMIC
-const MainPlace = dynamic(() => import('../../components/Places/Main'), {
-	ssr: true,
-	loading: () => (<p>CARGANDOOOOOO.....</p>)
-});
+import MainPlace from "../../components/Places/Main";
+
 
 export default function PlacePage({}) {
 	const router = useRouter()
