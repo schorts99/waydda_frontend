@@ -14,7 +14,6 @@
 
 import PropTypes from 'prop-types'
 import {useState} from "react";
-import PlaceHeader from "../../Headers/PlaceHeader";
 import dynamic from "next/dynamic";
 const PlaceCover = dynamic(() => import('../Cover'), {
 	ssr: true,
@@ -46,9 +45,7 @@ export default function PlacePresentation({
 	
 	return (
 		<div className="grid grid-cols-12">
-			<div className="col-span-12 z-40">
-				<PlaceHeader/>
-			</div>
+			
 			<div className="col-span-12 top-0 h-64 md:h-large w-full">
 				<PlaceCover
 					name={name}

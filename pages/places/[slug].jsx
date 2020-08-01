@@ -12,11 +12,10 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
+// import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
-import {useRouter} from "next/router";
 import {useQuery} from "@apollo/client";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
 import PlacePresentation from "../../components/Places/Presentation";
@@ -30,15 +29,15 @@ const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
 	loading: () => (<p>Cargando...</p>)
 })
 import {initializeApollo} from "../../lib/apolloClient";
+import PlaceLayout from "../../components/Layouts/Place";
 
-export default function PlacePage({business}) {
-	if (!business) { // Esto debe estar antes de cualquier cosa - de lo contrario se harán 2 queries
+export default function PlacePage({business, slug}) {
+	if (!business || !slug) { // Esto debe estar antes de cualquier cosa - de lo contrario se harán 2 queries
 		return <h1>HA OCURRIDO UN ERROR</h1>
 	}
-	const router = useRouter();
 	const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {
 		variables: {
-			slug: router.query.slug,
+			slug: slug,
 		},
 		onCompleted: (d) => {
 			console.log(d)
@@ -58,7 +57,7 @@ export default function PlacePage({business}) {
 	}
 	return (
 		<>
-			<LayoutUnAuthenticated
+			<PlaceLayout
 				pixel={"1404734746583052"}
 				moreSpaceInFooter={!!data.getBusiness.social}
 				withHeader={false}
@@ -121,7 +120,7 @@ export default function PlacePage({business}) {
 				<ContactPlace
 					data={data.getBusiness}
 				/>
-			</LayoutUnAuthenticated>
+			</PlaceLayout>
 			<style jsx global>{`
 				body{
 					background-color: #000000;
@@ -166,7 +165,8 @@ export async function getServerSideProps({query}) {
 	return {
 		props: {
 			initialApolloState: apolloClient.cache.extract(),
-			business
+			business,
+			slug: query.slug
 		},
 	}
 }

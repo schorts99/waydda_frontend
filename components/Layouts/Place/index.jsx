@@ -13,17 +13,49 @@
  */
 
 import Head from "next/head";
+import es from "../../../locales/layouts/es.json";
+import dynamic from "next/dynamic";
+import {useEffect} from "react";
+import ReactPixel from "react-facebook-pixel";
+import ReactGA from "react-ga";
+import PlaceHeader from "../../Headers/PlaceHeader";
 // TODO: Add theme-color metatag
-export default function PlaceLayout({children,head}) {
+
+const Footer = dynamic(() => import('../../Footer'), {
+	ssr: false
+});
+
+export default function PlaceLayout({children, head, moreSpaceInFooter, pixel}) {
+	
+	
+	useEffect(() => {
+		if (pixel) {
+			ReactPixel.init(pixel);
+			ReactPixel.pageView();
+		}
+		
+		ReactGA.initialize('UA-173429948-1');
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}, [])
+	
 	return (
 		<>
 			<Head>
-				<title>{head.title ? `${head.title} | Waydda QR` : "Waydda QR"}</title>
 				<link rel="icon" href="/favicon.ico"/>
+				<meta name={"theme-color"} content={head.theme || "#fff"}/>
+				<meta name="abstract" content={head.description || es.head.description}/>
+				<meta name="keywords" content={`${es.keywords}${head.keywords && `, ${head.keywords}`}`}/>
+				<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx"/>
 			</Head>
-			<main>
-				{children}
-			</main>
+			<div className="grid grid-cols-1">
+				<div className="col-span-1 z-40">
+					<PlaceHeader/>
+				</div>
+				<main className="col-span-1" >
+					{children}
+					<Footer moreSpaceInFooter={moreSpaceInFooter} locales={es.footer}/>
+				</main>
+			</div>
 		</>
 	)
 }
