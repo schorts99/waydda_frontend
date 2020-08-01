@@ -14,18 +14,17 @@
 
 import Head from "next/head";
 import es from "../../../locales/layouts/es.json";
-import dynamic from "next/dynamic";
 import {useEffect} from "react";
 import ReactPixel from "react-facebook-pixel";
 import ReactGA from "react-ga";
 import PlaceHeader from "../../Headers/PlaceHeader";
 // TODO: Add theme-color metatag
 
-const Footer = dynamic(() => import('../../Footer'), {
-	ssr: false
-});
+// const Footer = dynamic(() => import('../../Footer'), {
+// 	ssr: false
+// });
 
-export default function PlaceLayout({children, head, moreSpaceInFooter, pixel}) {
+export default function PlaceLayout({children, head, pixel}) {
 	
 	
 	useEffect(() => {
@@ -53,7 +52,7 @@ export default function PlaceLayout({children, head, moreSpaceInFooter, pixel}) 
 				</div>
 				<main className="col-span-1" >
 					{children}
-					<Footer moreSpaceInFooter={moreSpaceInFooter} locales={es.footer}/>
+					{/*<Footer moreSpaceInFooter={moreSpaceInFooter} locales={es.footer}/>*/}
 				</main>
 			</div>
 		</>

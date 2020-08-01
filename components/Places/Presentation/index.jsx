@@ -14,49 +14,26 @@
 
 import PropTypes from 'prop-types'
 import {useState} from "react";
-import dynamic from "next/dynamic";
-const PlaceCover = dynamic(() => import('../Cover'), {
-	ssr: true,
-	loading: () => (<p>Cargando...</p>)
-})
-const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
-	ssr: false,
-	loading: () => (<p>Cargando...</p>)
-})
-export default function PlacePresentation({
-	                                          children,
-	                                          withSticky,
-	                                          data: {
-		                                          cover,
-		                                          name,
-		                                          addressState,
-		                                          address,
-		                                          reviews,
-		                                          items,
-		                                          profile,
-		                                          slug,
-	                                          },
-                                          }) {
+import PlaceMenu from "../../PlaceMenu";
+import ListAllProducts from "../ListAllProducts";
+
+export default function PlacePresentation({data}) {
 	const [activeItem, setActiveItem] = useState("");
-	
-	const onHandleReceive = (e) => {
-		setActiveItem(e);
-	};
-	
+	// const onHandleReceive = (e) => {
+	// 	setActiveItem(e);
+	// };
+	const {
+		// cover,
+		// name,
+		// addressState,
+		// address,
+		// reviews,
+		items,
+		// profile,
+		// slug,
+	} = data
 	return (
 		<div className="grid grid-cols-12">
-			
-			<div className="col-span-12 top-0 h-64 md:h-large w-full">
-				<PlaceCover
-					name={name}
-					addressState={addressState}
-					reviews={reviews}
-					address={address}
-					image={{src: cover}}
-					slug={slug}
-					logo={profile}
-				/>
-			</div>
 			<div className="col-span-12 z-10 md:z-40 w-full md:mt-6">
 				<div className="flex">
 					<div className="md:w-11/12 w-full mx-auto md:gap-6 md:flex">
@@ -68,7 +45,7 @@ export default function PlacePresentation({
 							/>
 						</div>
 						<div className="md:w-9/12">
-							{children}
+							<ListAllProducts data={data}/>
 						</div>
 					</div>
 				</div>

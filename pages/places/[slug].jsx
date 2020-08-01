@@ -18,18 +18,21 @@ import dynamic from 'next/dynamic'
 // import GetImageUrl from "../../lib";
 import {useQuery} from "@apollo/client";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
-import PlacePresentation from "../../components/Places/Presentation";
+import {initializeApollo} from "../../lib/apolloClient";
+import PlaceLayout from "../../components/Layouts/Place";
 
-const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
-	ssr: false,
-	loading: () => (<p>Cargando...</p>)
-})
 const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
 	ssr: false,
 	loading: () => (<p>Cargando...</p>)
 })
-import {initializeApollo} from "../../lib/apolloClient";
-import PlaceLayout from "../../components/Layouts/Place";
+const PlaceCover = dynamic(() => import('../../components/Places/Cover'), {
+	ssr: true,
+	loading: () => (<p>Cargando...</p>)
+})
+const PlacePresentation = dynamic(() => import('../../components/Places/Presentation'), {
+	ssr: true,
+	loading: () => (<p>Cargando...</p>)
+})
 
 export default function PlacePage({business, slug}) {
 	if (!business || !slug) { // Esto debe estar antes de cualquier cosa - de lo contrario se harán 2 queries
@@ -114,9 +117,20 @@ export default function PlacePage({business, slug}) {
 				{/*		]*/}
 				{/*	}}*/}
 				{/*/>*/}
-				<PlacePresentation data={data.getBusiness}>
-					<GetPlaceData data={data.getBusiness}/>
-				</PlacePresentation>
+				<div className={"grid grid-cols-12"}>
+					<div className="col-span-12 top-0 h-64 md:h-large w-full">
+						<PlaceCover
+							name={data.getBusiness.name}
+							addressState={data.getBusiness.addressState}
+							reviews={data.getBusiness.reviews}
+							address={data.getBusiness.address}
+							image={{src: data.getBusiness.cover}}
+							slug={slug}
+							logo={data.getBusiness.profile}
+						/>
+					</div>
+				</div>
+				<PlacePresentation data={data.getBusiness}/>
 				<ContactPlace
 					data={data.getBusiness}
 				/>
