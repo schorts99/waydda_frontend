@@ -17,11 +17,21 @@
 // import GetImageUrl from "../../lib";
 import {useRouter} from "next/router";
 import PlaceLayout from "../../components/Layouts/Place";
-import PlaceCover from "../../components/Places/Cover";
-import PlacePresentation from "../../components/Places/Presentation";
+
 import {useQuery} from "@apollo/react-hooks";
 import GET_BUSINESS_QUERY from "../../lib/graphql/queries/getBusiness";
+import dynamic from "next/dynamic";
 
+const PlaceCover = dynamic(() => import('../../components/Places/Cover'), {
+	ssr: false,
+	loading:()=>(<p>CARGANDOOOOOO.....</p>)
+});
+const PlacePresentation = dynamic(() => import('../../components/Places/Presentation'), {
+	ssr: false,
+	loading:()=>(<p>CARGANDOOOOOO.....</p>)
+});
+// import PlaceCover from "../../components/Places/Cover";
+// import PlacePresentation from "../../components/Places/Presentation";
 export default function PlacePage({}) {
 	const router = useRouter()
 	const {data, loading, error} = useQuery(GET_BUSINESS_QUERY, {

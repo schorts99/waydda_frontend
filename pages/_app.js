@@ -28,7 +28,7 @@ export function reportWebVitals(metrics) {
 	console.log("ID", metrics)
 }
 
-function WayddaApp({Component, pageProps, apolloClient}) {
+function WayddaApp({Component, pageProps,apolloClient}) {
 	// const apolloClient = useApollo(pageProps.initialApolloState)
 	
 	return (
