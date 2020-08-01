@@ -12,7 +12,6 @@
  *  LICENSE file in the root directory of this source tree.
  */
 
-// import LayoutUnAuthenticated from "../../components/Layouts/Unauthenticated";
 import dynamic from 'next/dynamic'
 // import {NextSeo} from "next-seo";
 // import GetImageUrl from "../../lib";
