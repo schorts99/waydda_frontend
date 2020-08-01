@@ -24,7 +24,7 @@ export default function PlaceMenu({handleSendItem, items, size}) {
 	return (
 		<>
 			<div
-				className="flex flex-grow overflow-x-scroll no_scrollbar sticky top-4 border-b border-gray-400 block md:hidden bg-dark">
+				className="flex flex-grow overflow-x-scroll no_scrollbar sticky top-4 border-b border-gray-400 block md:hidden bg-white">
 				{items.map((item, i) => {
 					if (item.products.length > 0) {
 						return (
@@ -41,9 +41,9 @@ export default function PlaceMenu({handleSendItem, items, size}) {
 				})}
 			</div>
 			<div
-				className="md:grid md:grid-cols-12 bg-dark md:rounded md:sticky md:top-4 hidden md:block">
-				<div className="col-span-12 px-3 py-4 rounded-t border-b border-white border-opacity-25">
-					<h3 className="font-semibold text-white text-lg">Menú</h3>
+				className="md:grid md:grid-cols-12  bg-white shadow-lg md:rounded md:sticky md:top-4 hidden md:block pb-4">
+				<div className="col-span-12 py-4 px-3  rounded-t border-b border-gray-400 bg-background border-opacity-25">
+					<h3 className="font-semibold text-lg">Menú</h3>
 				</div>
 				{items.map((item, i) => {
 					if (item.products.length > 0) {
@@ -71,35 +71,72 @@ const MenuItem = ({label, keyValue, handleChange, size}) => {
 	const [active, setActive] = useState(false);
 	
 	return (
-		<Link
-			style={{
-				flex: "0 0 auto"
-			}}
-			className={`
-				md:mr-0 p-3 flex md:mr-0 text-center
-				z-20 bg-secondary-dark border-b border-white
-				border-opacity-25 cursor-pointer hover:text-red-600 md:tracking-wide
-				hover:opacity-100
-				${active ? "text-red-500" : "text-white opacity-50"}
+		<>
+			<Link
+				style={{
+					flex: "0 0 auto"
+				}}
+				className={`
+				md:mr-0 p-3 flex md:mr-0 text-center z-20
+				border-opacity-25 cursor-pointer md:tracking-wide
+				hover:opacity-100 relative menu_item
+				${active ? `font-semibold active_item` : "opacity-50"}
 			`}
-			// activeClass="border-black border-b-2 z-20"
-			to={keyValue}
-			spy={true}
-			smooth={true}
-			offset={-50}
-			onSetInactive={() => {
-				handleChange("")
-				setActive(false);
-			}}
-			onSetActive={() => {
-				handleChange(keyValue)
-				setActive(true);
-			}}
-		>
+				// activeClass="border-black border-b-2 z-20"
+				to={keyValue}
+				spy={true}
+				smooth={true}
+				offset={-50}
+				onSetInactive={() => {
+					handleChange("")
+					setActive(false);
+				}}
+				onSetActive={() => {
+					handleChange(keyValue)
+					setActive(true);
+				}}
+			>
 			<span className={`select-none capitalize`}>
 				{label}
 			</span>
-		</Link>
+			</Link>
+			<style jsx global>{`
+				.active_item:after{
+					content: "";
+			    position: absolute;
+			    height: 80%;
+			    width: 2px;
+			    left: 0;
+			    margin: auto;
+			    top: 0;
+			    bottom: 0;
+			    background-color: #f15b40;
+				}
+				.menu_item:before{
+					content: "";
+			    position: absolute;
+			    height: 0%;
+			    width: 2px;
+			    left: 0;
+			    margin: auto;
+			    top: 0;
+			    bottom: 0;
+			    transition: all .3s;
+			    background-color: #f15b40;
+				}
+				.menu_item:hover:before{
+					content: "";
+			    position: absolute;
+			    height: 80%;
+			    width: 2px;
+			    left: 0;
+			    margin: auto;
+			    top: 0;
+			    bottom: 0;
+			    background-color: #f15b40;
+				}
+			`}</style>
+		</>
 	)
 }
 

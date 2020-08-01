@@ -28,6 +28,8 @@ export default function ResponsiveImage({scrollPosition, srcsetSizes, byDefault 
 			draggable={false}
 			placeholderSrc={GetImageUrl({publicId, width: 50, height: 50, fit, bgColor})}
 			src={GetImageUrl({publicId, height, width, fit, bgColor})}
+			style={{
+			}}
 			sources='(min-width:1920px) 1920w, 100vw'
 			srcSet={`
 			${GetImageUrl({

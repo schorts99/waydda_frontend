@@ -20,11 +20,11 @@ import ProductItem from "../ProductItem";
 function CategoryList({count, label, name, products, scrollPosition, setModalData}) {
 	return (
 		<>
-			<Element name={name} className="col-span-12 z-0 mb-8 bg-secondary-dark pb-8 rounded">
+			<Element name={name} className="col-span-12 z-0 mb-8 pb-8 rounded">
 				<Category count={count} label={label}/>
 				<div className="grid grid-cols-12 md:gap-8 gap-4 px-3">
 					{products.map((product, i) => (
-						<div className="col-span-12 md:col-span-4" key={i}>
+						<div className="col-span-12 md:col-span-6" key={i}>
 							<ProductItem
 								setModalData={setModalData}
 								scrollPosition={scrollPosition}

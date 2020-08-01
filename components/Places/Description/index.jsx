@@ -27,12 +27,12 @@ export default function PlaceDescription({
                                          }) {
 	
 	return (
-		<div className="grid grid-cols-12 w-full h-full flex justify-center items-center">
+		<div className="grid grid-cols-12 w-full h-full flex md:justify-center md:items-center bg-white md:bg-transparent">
 			<div
 				className="col-span-12 md:px-0 md:pt-4 md:mt-0 rounded-t-lg rounded-t-large md:rounded-t-lg"
 			>
-				<div className="grid grid-cols-12 p-6 rounded items-center md:gap-4 w-full">
-					<div className="col-span-12 mx-auto">
+				<div className="md:p-6 md:gap-4 grid grid-cols-12 p-3 rounded md:items-center w-full">
+					<div className="col-span-12 md:mx-auto transform -mt-24 md:-translate-y-0">
 						<ResponsiveImage
 							fit={"cover"}
 							bgColor={"#fff"}
@@ -59,12 +59,12 @@ export default function PlaceDescription({
 									height: 550
 								}
 							}}
-							wrapperClass="rounded-lg bg-gray-100 w-20 h-20"
-							className="w-20 h-20 rounded-lg shadow-2xl"
+							wrapperClass="rounded-lg bg-gray-100 md:w-20 md:h-20 h-16 w-16"
+							className="md:w-20 md:h-20 h-16 w-16 md:rounded-lg rounded-full shadow-2xl"
 						/>
 					</div>
 					<div className="col-span-12">
-						<h2 className="text-2xl font-bold md:text-4xl text-white text-center">
+						<h2 className="text-2xl font-bold md:text-4xl md:text-white md:text-center">
 							<Link href={"/places/[slug]"} as={`/places/${slug}/`}>
 								<a>{name}</a>
 							</Link>
@@ -73,7 +73,7 @@ export default function PlaceDescription({
 						{/*	{addressState}*/}
 						{/*	<span className="md:hidden font-normal">&#160;&#8226;&#160;{address}</span>*/}
 						{/*</h4>*/}
-						<h3 className="hidden md:block text-center text-white opacity-75">
+						<h3 className="md:text-center md:text-white opacity-75">
 									<span
 										className="md:block md:text-base text-xs md:font-normal md:mt-1">
 										{address}

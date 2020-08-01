@@ -58,7 +58,7 @@ export default function SimpleRegister({handleSubmit}) {
 					<div className="hidden md:block mx-auto col-span-12 justify-center mt-12">
 						<Link
 							href={"/places/[slug]"}
-							as={"/places/demo"}>
+							as={"/places/aroma-383ee35182"}>
 							<a
 								className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">
 								VER DEMOSTRACIÓN
@@ -100,7 +100,7 @@ export default function SimpleRegister({handleSubmit}) {
 					<div className="col-span-6 mx-auto">
 						<Link
 							href={"/places/[slug]"}
-							as={"/places/demo"}
+							as={"/places/aroma-383ee35182"}
 						>
 							<a
 								className="bg-red-principal rounded shadow py-4 px-6 font-bold text-white">

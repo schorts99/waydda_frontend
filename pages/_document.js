@@ -20,12 +20,12 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<link rel="icon" href="/favicon.ico"/>
 					<link rel="preconnect" href="https://waydda-api.herokuapp.com" crossOrigin/>
 					<link rel="dns-prefetch" href="https://waydda-api.herokuapp.com"/>
 					<link rel="preconnect" href="https://d1nrrr6y3ujrjz.cloudfront.net" crossOrigin/>
 					<link rel="dns-prefetch" href="https://d1nrrr6y3ujrjz.cloudfront.net"/>
 					<meta name="facebook-domain-verification" content="p8zbzkp4c30r8bldnbatw2tvtpfslx"/>
+					<link rel="icon" href="/favicon.ico"/>
 					<link
 						crossOrigin="anonymous"
 						rel="prefetch"
