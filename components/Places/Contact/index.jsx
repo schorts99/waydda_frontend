@@ -3,7 +3,7 @@ import Map from "../../Map";
 import ContactForm from "../ContactForm";
 import WhatsAppButton from "../../WhatsAppButton";
 
-export default function ContactPlace({data: {coordinates, address, addressState, slug, social: {whatsapp}}}) {
+export default function ContactPlace({data: {coordinates, address, addressState, slug, social}}) {
 	return (
 		<>
 			<div className="flex w-11/12 mx-auto my-12">
@@ -35,8 +35,14 @@ export default function ContactPlace({data: {coordinates, address, addressState,
 					</div>
 				</div>
 			</div>
-			{whatsapp && <WhatsAppButton
-				data={{number: whatsapp, message: `Hola, visita mi menú en: https://waydda.vercel.app/places/${slug}`}}/>}
+			{social &&
+			social.whatsapp &&
+			<WhatsAppButton
+				data={{
+					number: social.whatsapp,
+					message: `Hola, visita mi menú en: https://waydda.vercel.app/places/${slug}`
+				}}/>
+			}
 		</>
 	)
 }

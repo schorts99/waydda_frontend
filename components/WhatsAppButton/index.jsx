@@ -24,7 +24,7 @@ export default function WhatsAppButton({data: {number, message, style}}) {
 			<a
 				target={"_blank"}
 				href={`https://wa.me/${number}?text=${message}`}
-				className={`grid grid-cols-1 z-20 py-3 items-center rounded shadow-2xl fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0 ${style ? "hidden md:block" : "block md:hidden"}`}
+				className={`grid grid-cols-1 z-50 py-3 items-center rounded shadow-2xl fixed bottom-0 w-11/12 right-0 mb-5 mx-auto left-0 ${style ? "hidden md:block" : "block md:hidden"}`}
 				style={{
 					background: "#075E54"
 				}}
@@ -42,7 +42,7 @@ export default function WhatsAppButton({data: {number, message, style}}) {
 			<a
 				href={`https://wa.me/${number}?text=${message}`}
 				target="_blank"
-				className={`fixed bottom-0 z-20 right-0 mb-6 mr-6 ${style ? "block" : "hidden md:block"}`}>
+				className={`fixed bottom-0 z-50 right-0 mb-6 mr-6 ${style ? "block" : "hidden md:block"}`}>
 				<button
 					// onClick={handleClick}
 					style={{background: "#075E54"}}

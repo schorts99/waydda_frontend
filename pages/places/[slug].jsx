@@ -23,10 +23,12 @@ import PlacePresentation from "../../components/Places/Presentation";
 // import GetPlaceData from "../../components/Places/GetPlaceData";
 
 const GetPlaceData = dynamic(() => import('../../components/Places/GetPlaceData'), {
-	ssr: false
+	ssr: false,
+	loading: () => (<p>Cargando...</p>)
 })
 const ContactPlace = dynamic(() => import('../../components/Places/Contact'), {
-	ssr: false
+	ssr: false,
+	loading: () => (<p>Cargando...</p>)
 })
 import {initializeApollo} from "../../lib/apolloClient";
 

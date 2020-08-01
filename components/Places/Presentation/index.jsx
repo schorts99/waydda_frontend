@@ -15,9 +15,16 @@
 import PropTypes from 'prop-types'
 import {useState} from "react";
 import PlaceHeader from "../../Headers/PlaceHeader";
-import PlaceCover from "../Cover";
-import PlaceMenu from "../../PlaceMenu";
+import dynamic from "next/dynamic";
 
+const PlaceCover = dynamic(() => import('../Cover'), {
+	ssr: true,
+	loading: () => (<p>Cargando...</p>)
+})
+const PlaceMenu = dynamic(() => import('../../PlaceMenu'), {
+	ssr: false,
+	loading: () => (<p>Cargando...</p>)
+})
 export default function PlacePresentation({
 	                                          children,
 	                                          withSticky,
@@ -56,7 +63,7 @@ export default function PlacePresentation({
 			</div>
 			<div className="col-span-12 z-10 md:z-40 w-full mt-6">
 				<div className="flex">
-					<div className="w-11/12 mx-auto md:gap-6 flex" >
+					<div className="w-11/12 mx-auto md:gap-6 flex">
 						<div className="w-3/12">
 							<PlaceMenu items={items}
 							           handleSendItem={() => {
