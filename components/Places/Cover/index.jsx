@@ -47,5 +47,5 @@ export default function PlaceCover({data}) {
 
 
 PlaceCover.propTypes = {
-	image: PropTypes.object.isRequired
+	data: PropTypes.object.isRequired
 }
